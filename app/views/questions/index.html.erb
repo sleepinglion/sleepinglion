@@ -1,0 +1,44 @@
+<% breadcrumb :questions %>
+<div id="sl_question_index">
+	<article class="table-responsive">	
+		<table width="100%" cellpadding="0" cellspacing="0" class="table table-striped">
+			<colgroup>
+				<col width="100px" />
+				<col />
+				<col width="90px" />
+				<col width="90px" />
+				<col width="130px" />
+			</colgroup>
+			<thead>
+				<tr>
+					<th class="sl_t_name"><%=t(:label_name) %></th>
+					<th class="sl_t_title"><%=t(:label_title) %></th>
+					<th class="sl_t_count"><%=t(:label_answer) %></th>
+					<th class="sl_t_count"><%=t(:label_count) %></th>
+					<th class="sl_t_created_at"><%=t(:label_created_at) %></th>
+				</tr>
+			</thead>
+			<tbody>
+				<% unless @questions.empty? %>
+				<% @questions.each do |question| %>
+				<tr>
+					<td class="sl_t_name"><%=userName(question,10) %></td>
+					<td class="sl_t_title"><%=checkPrivLink(question) %> &nbsp; <% if(question.secret?) %><%=image_tag('/assets/board/lock.png') %><% end %></td>
+					<td class="sl_t_count"><% if question.question_comments_count? %><%=t(:answer) %><% else %><%=t(:no_answer) %><% end %></td>
+					<td class="sl_t_count"><%=question.count+question.impressionist_count(:filter=>:ip_address) %></td>
+					<td class="sl_t_created_at"><%=question.created_at.to_date %></td>
+				</tr>
+				<% end %>
+				<% else %>
+				<tr>
+					<td colspan="5"><p><%=t(:no_data) %></p></td>
+				</tr>
+				<% end %>
+			</tbody>
+		</table>
+	</article>
+	<div id="sl_index_bottom_menu">
+		<%= link_to t(:link_new), new_question_path,:rel=>"nofollow",:class=>"btn btn-default" %>
+		<%= paginate @questions %>
+	</div>
+</div>
