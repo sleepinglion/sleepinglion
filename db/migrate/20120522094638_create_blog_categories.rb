@@ -1,4 +1,3 @@
-# encoding: utf-8
 class CreateBlogCategories < ActiveRecord::Migration
   def up
     create_table :blog_categories do |t|

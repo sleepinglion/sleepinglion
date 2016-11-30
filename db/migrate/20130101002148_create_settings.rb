@@ -1,5 +1,3 @@
-# encoding: utf-8
-
 class CreateSettings < ActiveRecord::Migration
   def change
     create_table :setting_global do |t|    

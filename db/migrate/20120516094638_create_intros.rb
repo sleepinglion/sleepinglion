@@ -1,4 +1,3 @@
-# encoding: utf-8
 class CreateIntros < ActiveRecord::Migration
   def change
     create_table :intros do |t|

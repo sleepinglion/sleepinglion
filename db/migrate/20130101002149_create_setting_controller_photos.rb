@@ -1,5 +1,3 @@
-# encoding: utf-8
-
 class CreateSettingControllerPhotos < ActiveRecord::Migration
   def change
     create_table :setting_controller_photos do |t|

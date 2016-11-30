@@ -1,5 +1,3 @@
-# encoding: utf-8
-
 class CreatePrograms < ActiveRecord::Migration
   def change
     create_table :programs do |t|

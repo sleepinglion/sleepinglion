@@ -1,5 +1,3 @@
-# encoding: utf-8
-
 class CreateAdPositions < ActiveRecord::Migration
   def change
     create_table :ad_positions do |t| 

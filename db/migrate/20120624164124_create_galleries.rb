@@ -1,4 +1,3 @@
-# encoding: utf-8
 class CreateGalleries < ActiveRecord::Migration
   def up
     create_table :gallery_categories do |t|
