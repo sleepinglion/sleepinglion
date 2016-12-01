@@ -1,5 +1,3 @@
-# encoding: utf-8
-
 module AnonBoard
   def authenticate(password)
     puts password 

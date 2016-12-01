@@ -1,5 +1,3 @@
-# encoding: utf-8
-
 class Question < ActiveRecord::Base
   is_impressionable  
   include AnonBoard

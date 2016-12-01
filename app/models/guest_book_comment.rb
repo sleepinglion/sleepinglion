@@ -1,5 +1,3 @@
-# encoding: utf-8
-
 class GuestBookComment < ActiveRecord::Base
   include AnonBoard  
   validates_presence_of  :content

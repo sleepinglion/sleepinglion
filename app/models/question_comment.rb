@@ -1,5 +1,3 @@
-# encoding: utf-8
-
 class QuestionComment < ActiveRecord::Base
   validates_presence_of :content
   belongs_to :question, :autosave=>true, :counter_cache=>true

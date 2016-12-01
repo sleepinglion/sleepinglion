@@ -1,5 +1,3 @@
-# encoding: utf-8
-
 class Intro < ActiveRecord::Base
   belongs_to :user, :autosave=>true  
   validates_presence_of :title

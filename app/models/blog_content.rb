@@ -1,5 +1,3 @@
-# encoding: utf-8
-
 class BlogContent < ActiveRecord::Base
   validates_presence_of :content
   belongs_to :blog, :foreign_key => :id, :autosave=>true

@@ -1,5 +1,3 @@
-# encoding: utf-8
-
 class ProgramContent < ActiveRecord::Base
   validates_presence_of :content
   belongs_to :program, :foreign_key => :id, :autosave=>true

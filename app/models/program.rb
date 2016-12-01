@@ -1,5 +1,3 @@
-# encoding: utf-8
-
 class Program < ActiveRecord::Base
   is_impressionable
   validates_presence_of :title
