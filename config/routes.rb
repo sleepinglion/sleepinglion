@@ -1,6 +1,6 @@
 Sleepinglion::Application.routes.draw do
   root 'home#index'
-  mount Ckeditor::Engine => '/ckeditor'
+  mount Ckeditor::Engine => 'ckeditor'
 
   devise_for :users, :controllers => { :sessions => "users/sessions",:registrations => "users/registrations" }, :path_names =>  {:sign_up=>'new',:sign_in => 'login', :sign_out => 'logout'} do
     get '/users', :to => 'users/registrations#index'
