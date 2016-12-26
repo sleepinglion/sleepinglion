@@ -38,7 +38,7 @@ gem 'unf'
 gem 'jquery-easing-rails'
 gem 'sitemap_generator'
 gem 'impressionist'
-gem 'ckeditor', :path=>"vendor/gems/ckeditor"
+gem 'ckeditor'
 gem 'fancybox2-rails', :path=>"vendor/gems/fancybox2-rails"
 #gem 'sprockets-webp'
 #gem 'carrierwave-webp'

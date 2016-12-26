@@ -3,9 +3,6 @@
 //= require bootstrap-sprockets
 //= require plugin/jquery.tagcanvas.min.js
 
-
-window['CKEDITOR_BASEPATH']='/ckeditor/';
-
 $(document).ready(function(){
 	if(!$('#myCanvas').tagcanvas({
      outlineThickness : 1,
