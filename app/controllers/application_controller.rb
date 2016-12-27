@@ -33,6 +33,10 @@ class ApplicationController < ActionController::Base
   #  end
   end
   
+  rescue_from CanCan::AccessDenied do |exception|
+    redirect_to new_admin_session_path, :alert => exception.message
+  end  
+  
   def set_resources
     @resources = SettingController.where(:enable=>true).where(:menu_display=>true).order([:priority,:id])
   end
