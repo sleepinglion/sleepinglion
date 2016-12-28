@@ -69,7 +69,6 @@ end
 
 group :production do
   #gem 'asset_sync'
-  gem 'mysql2'  
   gem 'connect'
   gem 'redis-rails'
   gem 'dotenv-rails'
