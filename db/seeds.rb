@@ -1,7 +1,24 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+Group.create!(:title=>'admin')
+Group.create!(:title=>'manage')
+Group.create!(:title=>'user')
+Group.create!(:title=>'viewer')
+
+User.create!(:group_id=>1,:email => 'toughjjh@gmail.com', :nickname=>'잠자는-사자', :password => 'jjh123456', :password_confirmation => 'jjh123456',:photo=>File.open(Rails.root.join("app", "assets", "images", "intro", "sl.jpg")))
+
+AdPosition.create!(:id=>1,:title=>'광고 표시안함',:position=>'none')
+AdPosition.create!(:id=>2,:title=>'위에 표시',:position=>'top')
+AdPosition.create!(:id=>3,:title=>'아래에 표시',:position=>'bottom')
+
+Resource.create!(:id=>1,:ad_position_id=>3,:title=>'메인',:menu_display=>false,:controller=>'home',:description=>'처음화면',:priority=>9000)
+Resource.create!(:id=>2,:ad_position_id=>3,:title=>'소개',:menu_display=>true,:controller=>'intro',:description=>'소개',:priority=>1000)
+Resource.create!(:id=>3,:ad_position_id=>2,:title=>'갤러리',:menu_display=>true,:controller=>'galleries',:use_category=>true,:description=>'갤러리',:priority=>2000)
+Resource.create!(:id=>4,:ad_position_id=>2,:title=>'블로그',:menu_display=>true,:controller=>'blogs',:use_category=>true,:description=>'블로그',:priority=>3000)
+Resource.create!(:id=>5,:ad_position_id=>2,:title=>'질문, 답변',:menu_display=>true,:controller=>'questions',:description=>'질문,답변',:priority=>4000)
+Resource.create!(:id=>6,:ad_position_id=>2,:title=>'FAQ',:menu_display=>true,:controller=>'faqs',:use_category=>true,:description=>'FAQ',:priority=>5000)
+Resource.create!(:id=>7,:ad_position_id=>2,:title=>'상담,문의',:menu_display=>false,:controller=>'contacts',:menu_action=>'new',:description=>'상담 문의를 받을수 있게 합니다.',:priority=>6000)
+Resource.create!(:id=>8,:ad_position_id=>1,:title=>'공지사항',:menu_display=>false,:controller=>'notices',:description=>'운영자가 방문자들에게 알릴 공지사항을 알릴수 있게 합니다.',:priority=>7000)
+Resource.create!(:id=>9,:ad_position_id=>2,:title=>'방명록',:menu_display=>true,:controller=>'guest_books',:description=>'방문자가 글을 쓸수 있는 방명록입니다.',:priority=>8000)
+Resource.create!(:id=>10,:ad_position_id=>2,:title=>'연혁',:menu_display=>false,:controller=>'histories',:description=>'연혁',:priority=>8000)
+Resource.create!(:id=>11,:ad_position_id=>2,:title=>'포트폴리오',:menu_display=>false,:controller=>'portfolios',:description=>'포트폴리오',:priority=>8000)
+Resource.create!(:id=>12,:ad_position_id=>2,:title=>'회원가입',:menu_display=>false,:controller=>'users',:menu_action=>'new',:description=>'사용자',:priority=>9000)
+Resource.create!(:id=>13,:ad_position_id=>2,:title=>'사이트',:menu_display=>false,:controller=>'site',:menu_action=>'new',:description=>'사이트 소개',:priority=>9000)

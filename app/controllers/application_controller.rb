@@ -22,7 +22,6 @@ class ApplicationController < ActionController::Base
     
     @menu_setting=nil
     
-    
     @aside_blog_categories = BlogCategory.where(:enable=>true)
     @tags = Blog.tag_counts_on(:tags)
     
