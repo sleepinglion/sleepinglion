@@ -1,5 +1,3 @@
-# encoding: utf-8
-
 class BlogCommentsController < AnonCommentController
   before_action :set_blog_comment, only: [:show, :edit, :destroy]
 

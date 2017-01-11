@@ -1,5 +1,3 @@
-# encoding: utf-8
-
 class Admin::IntroController < Admin::AdminController
   # GET /menus
   # GET /menus.json

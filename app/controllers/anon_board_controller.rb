@@ -1,5 +1,3 @@
-# encoding: utf-8
-
 class AnonBoardController < ApplicationController
   before_action :check_edit_password, :only => [:edit]
   before_action :check_destroy_password, :only => [:destroy]

@@ -1,4 +1,3 @@
-# encoding: utf-8
 class BlogCategoryController < ApplicationController
   before_action :authenticate_user!, :except => [:index,:show]
   before_action :set_notice, only: [:show, :edit, :update, :destroy]

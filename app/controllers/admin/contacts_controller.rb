@@ -1,5 +1,3 @@
-# encoding: utf-8
-
 class Admin::ContactsController < Admin::AdminController
   before_action :set_contact, only: [:show, :edit, :update, :destroy]  
   

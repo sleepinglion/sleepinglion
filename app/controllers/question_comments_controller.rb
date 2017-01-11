@@ -1,5 +1,3 @@
-# encoding: utf-8
-
 class QuestionCommentsController < AnonCommentController
   before_action :set_question_comment, only: [:show, :edit, :update, :destroy]  
   

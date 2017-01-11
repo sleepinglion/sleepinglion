@@ -1,5 +1,3 @@
-# encoding: utf-8
-
 class QuestionsController < AnonBoardController
   include SecretBoard
   impressionist :actions=>[:show]  

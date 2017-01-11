@@ -1,5 +1,3 @@
-# encoding: utf-8
-
 class Admin::GalleriesController < Admin::AdminController
   before_action :set_gallery, only: [:show, :edit, :update, :destroy]
   

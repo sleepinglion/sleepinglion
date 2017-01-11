@@ -1,5 +1,3 @@
-# encoding: utf-8
-
 class AboutController < ApplicationController
   def initialize(*params)
     super(*params)   

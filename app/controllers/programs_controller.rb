@@ -1,5 +1,3 @@
-# encoding: utf-8
-
 class ProgramsController < BoardController
   impressionist :actions=>[:show]
   before_action :set_program, only: [:show, :edit, :update, :destroy]

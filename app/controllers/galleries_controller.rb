@@ -1,4 +1,3 @@
-# encoding: utf-8
 class GalleriesController < BoardController
   impressionist :actions=>[:show]
   before_action :authenticate_user!, :except => [:index,:show]

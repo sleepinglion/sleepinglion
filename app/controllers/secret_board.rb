@@ -1,5 +1,3 @@
-# encoding: utf-8
-
 module SecretBoard
   def read_password_fail
     

@@ -1,5 +1,3 @@
-# encoding: utf-8
-
 class Admin::FaqsController < Admin::AdminController
   before_action :set_faq, only: [:show, :edit, :update, :destroy]
   

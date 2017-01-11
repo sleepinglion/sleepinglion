@@ -1,5 +1,3 @@
-# encoding: utf-8
-
 class Admin::GuestBooksController < Admin::AdminController
   before_action :set_guest_book, only: [:show, :edit, :update, :destroy]
 

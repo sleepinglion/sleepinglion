@@ -1,5 +1,3 @@
-# encoding: utf-8
-
 class IntroController < ApplicationController
   before_action :authenticate_user!, :except => [:index,:show] 
 

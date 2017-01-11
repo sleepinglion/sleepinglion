@@ -1,5 +1,3 @@
-# encoding: utf-8
-
 class GuestBookCommentsController < AnonCommentController
   before_action :set_guest_book_comment, only: [:show, :edit, :update, :destroy]  
   

@@ -1,5 +1,3 @@
-# encoding: utf-8
-
 class Admin::BlogsController < Admin::AdminController
   before_action :set_blog, only: [:show, :edit, :update, :destroy]
   

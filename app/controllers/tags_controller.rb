@@ -1,5 +1,3 @@
-# encoding: utf-8
-
 class TagsController < BoardController
   before_action :set_tag, only: [:show, :edit, :update, :destroy]
   before_action :set_ad, only: [:index, :show]  

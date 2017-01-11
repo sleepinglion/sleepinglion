@@ -1,5 +1,3 @@
-# encoding: utf-8
-
 class Admin::HistoriesController < Admin::AdminController
   before_action :set_history, only: [:show, :edit, :update, :destroy]  
   

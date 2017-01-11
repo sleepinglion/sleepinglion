@@ -1,5 +1,3 @@
-# encoding: utf-8
-
 class Admin::ResourcesController < Admin::AdminController
   before_action :set_resource, only: [:show, :edit, :update, :destroy]
   

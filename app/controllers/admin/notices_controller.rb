@@ -1,5 +1,3 @@
-# encoding: utf-8
-
 class Admin::NoticesController < Admin::AdminController
   before_action :set_notice, only: [:show, :edit, :update, :destroy]
 

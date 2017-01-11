@@ -1,5 +1,3 @@
-# encoding: utf-8
-
 class Admin::PortfoliosController < Admin::AdminController
   before_action :set_portfolio, only: [:show, :edit, :update, :destroy]   
   

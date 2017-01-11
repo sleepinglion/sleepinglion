@@ -1,5 +1,3 @@
-# encoding: utf-8
-
 class Admin::GalleryCategoriesController < Admin::AdminController
   before_filter :authenticate_user!  
   
