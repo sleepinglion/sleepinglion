@@ -1,5 +1,5 @@
 set :application, 'sleepinglion'
-set :repo_url, 'git@github.com:sleeping-lion/sleepinglion.git'
+set :repo_url, 'git@github.com:sleepinglion/sleepinglion.git'
 set :branch, 'master'
 set :deploy_to, '/home/deploy/sleepinglion'
 # set :scm, :git
@@ -22,7 +22,7 @@ namespace :deploy do
       # execute :touch, release_path.join('tmp/restart.txt')
     end
   end
-  
+
   desc 'Refresh sitemap'
   task :refresh_sitemap do
     on roles(:app), in: :sequence, wait: 1 do
