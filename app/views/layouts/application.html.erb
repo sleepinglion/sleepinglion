@@ -40,7 +40,7 @@
 					<%=link_to '깨끗한 웹을 꿈꾸고 있습니다','/home/popup',:class=>'modal_link btn btn-large btn-success',:'data-toggle'=>"modal",:'data-target'=>"#myModal" %>
 				</div>
 				<hr class="none">
-					<div id="main_main" class="sub_main">
+				<div id="main_main" class="sub_main">
 				<% else %>
 				<div class="page-header" itemscope itemtype="http://schema.org/WebPage">
 					<h2 itemprop="mainContentOfPage" itemscope itemtype="http://schema.org/WebPageElement"><span itemprop="headline"><%=@controller_name %></span></h2>
@@ -48,18 +48,20 @@
 				</div>
 				<div class="sub_main">
 				<% end %>
-
-<% unless @menu_setting.nil? %>
-	<% if @ad && @menu_setting.ad_position_id==2 %>
-	<%= render :partial => 'layouts/ad' %>
-	<% end %>
-	<% end %>			
+				
+				<% unless @menu_setting.nil? %>
+				<% if @ad && @menu_setting.ad_position_id==2 %>
+				<%= render :partial => 'layouts/ad' %>
+				<% end %>
+				<% end %>			
+				
 				<%=yield %>
-	<% unless	@menu_setting.nil? %>				
-	<% if @ad && @menu_setting.ad_position_id==3 %>
-	<%= render :partial => 'layouts/ad' %>
-	<% end %>
-	<% end %>
+				
+				<% unless	@menu_setting.nil? %>
+				<% if @ad && @menu_setting.ad_position_id==3 %>
+				<%= render :partial => 'layouts/ad' %>
+				<% end %>
+				<% end %>
 		
 				</div>
 				<%= render :partial => 'layouts/aside' %>
