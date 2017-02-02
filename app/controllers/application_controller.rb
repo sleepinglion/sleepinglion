@@ -20,6 +20,8 @@ class ApplicationController < ActionController::Base
     @style='application'
     @script='application'
     
+    @page_itemtype="http://schema.org/WebPage"    
+    
     @menu_setting=nil
     
     @aside_blog_categories = BlogCategory.where(:enable=>true)

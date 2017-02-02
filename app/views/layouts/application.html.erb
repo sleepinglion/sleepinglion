@@ -21,14 +21,10 @@
 	<%= stylesheet_link_tag "application", :media=>"all", "data-turbolinks-track" => true %>
 	<%= csrf_meta_tags %>
 	<!--[if IE]>
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
 	<![endif]-->
-	<!--[if lt IE 9]>
-	<script type="text/javascript" src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <script type="text/javascript" src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
-    <![endif]-->
 </head>
-<body>
+<body itemscope itemtype="<%=@page_itemtype %>">
 <%= render :partial => 'layouts/header' %>
 	<div id="mom">
 		<section id="main" class="container">
@@ -42,10 +38,7 @@
 				<hr class="none">
 				<div id="main_main" class="sub_main">
 				<% else %>
-				<div class="page-header" itemscope itemtype="http://schema.org/WebPage">
-					<h2 itemprop="mainContentOfPage" itemscope itemtype="http://schema.org/WebPageElement"><span itemprop="headline"><%=@controller_name %></span></h2>
-					<%= breadcrumbs :semantic=>true, style: :bootstrap %>
-				</div>
+				<%= render :partial => 'layouts/page_header' %>
 				<div class="sub_main">
 				<% end %>
 				
