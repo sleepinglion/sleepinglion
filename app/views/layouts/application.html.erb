@@ -28,7 +28,7 @@
 <%= render :partial => 'layouts/header' %>
 	<div id="mom">
 		<section id="main" class="container">
-			<div class="row">			
+			<div class="row">
 				<% if controller.controller_name=='home' %>
 				<div class="jumbotron hero-unit">
 					<h2><%=raw t(:home_main_title) %></h2>
@@ -41,25 +41,25 @@
 				<%= render :partial => 'layouts/page_header' %>
 				<div class="sub_main">
 				<% end %>
-				
+
 				<% unless @menu_setting.nil? %>
 				<% if @ad && @menu_setting.ad_position_id==2 %>
 				<%= render :partial => 'layouts/ad' %>
 				<% end %>
-				<% end %>			
-				
+				<% end %>
+
 				<%=yield %>
-				
+
 				<% unless	@menu_setting.nil? %>
 				<% if @ad && @menu_setting.ad_position_id==3 %>
 				<%= render :partial => 'layouts/ad' %>
 				<% end %>
 				<% end %>
-		
+
 				</div>
 				<%= render :partial => 'layouts/aside' %>
 			</div>
-		</section>		
+		</section>
 	</div>
 <%= render :partial => 'layouts/footer' %>
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"></div>
