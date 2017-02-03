@@ -1,27 +1,27 @@
 class TagsController < BoardController
   before_action :set_tag, only: [:show, :edit, :update, :destroy]
-  before_action :set_ad, only: [:index, :show]  
+  before_action :set_ad, only: [:index, :show]
 
   def initialize(*params)
     super(*params)
     @controller_name=t('activerecord.models.tag')
     @script="board/index"
-    
-    get_menu('tags')    
+
+    get_menu('tags')
   end
 
   # GET /tags
   # GET /tags.json
   def index
-    if params[:tag].present? 
+    if params[:tag].present?
       @blogs = Blog.tagged_with(params[:tag]).page(params[:page]).per(@menu_setting.per)
-      
+
       if @menu_setting.use_category
-        @blog_categories=BlogCategory.where(:leaf=>true).where(:enable=>true)  
+        @blog_categories=BlogCategory.where(:leaf=>true).where(:enable=>true)
       end
-      
+
       @meta_keywords=params[:tag]+','+t(:meta_keywords)
-    else
+    end
   end
 
   # GET /tags/1
@@ -33,13 +33,13 @@ class TagsController < BoardController
   def new
     @tag = Tag.new
     @tag.build_tag_content
-        
+
     @script="board/new"
   end
 
   # GET /tags/1/edit
   def edit
-    @script="board/edit"  
+    @script="board/edit"
   end
 
   # POST /tags
@@ -47,8 +47,8 @@ class TagsController < BoardController
   def create
     @tag = Tag.new(tag_params)
     @tag.user_id=current_user.id
-    
-    @script="board/new"       
+
+    @script="board/new"
 
     respond_to do |format|
       if @tag.save
@@ -65,7 +65,7 @@ class TagsController < BoardController
   # PATCH/PUT /tags/1.json
   def update
     @script="board/edit"
-  
+
     respond_to do |format|
       if @tag.update(tag_params)
         format.html { redirect_to @tag, tag: @controller_name +t(:message_success_update)}
@@ -81,7 +81,7 @@ class TagsController < BoardController
   # DELETE /tags/1.json
   def destroy
     @tag.destroy
-    
+
     respond_to do |format|
       format.html { redirect_to tags_url }
       format.json { head :no_content }
@@ -93,7 +93,7 @@ class TagsController < BoardController
   def set_tag
     @tag = Tag.find(params[:id])
   end
-  
+
   # Never trust parameters from the scary internet, only allow the white list through.
   def tag_params
     params.require(:tag).permit(:id,:title,tag_content_attributes: [:id,:content])
