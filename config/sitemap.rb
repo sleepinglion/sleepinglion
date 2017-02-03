@@ -21,31 +21,29 @@ SitemapGenerator::Sitemap.create do
   Gallery.find_each do |gallery|
     add gallery_path(gallery), :priority => 0.5, :lastmod => gallery.updated_at
   end
-  
+
   add blogs_path, :priority => 0.9, :changefreq => 'daily'
   #
   # Add all articles:
-  
+
   Blog.find_each do |blog|
     add blog_path(blog), :priority => 0.9, :lastmod => blog.updated_at
   end
-  
+
   add questions_path
-  
+
   Question.find_each do |question|
     add question_path(question), :lastmod => question.updated_at
   end
-  
+
   add guest_books_path
-  
+
   GuestBook.find_each do |guest_book|
     add guest_book_path(guest_book), :lastmod => guest_book.updated_at
   end
-  
-  add portfolios_path
-  
+
   add notices_path
-  
+
   Notice.find_each do |notice|
     add notice_path(notice), :lastmod => notice.updated_at
   end
