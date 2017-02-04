@@ -25,11 +25,11 @@
 	<![endif]-->
 </head>
 <body itemscope itemtype="<%=@page_itemtype %>">
-<%= render :partial => 'layouts/header' %>
+	<%= render :partial => 'layouts/header' %>
 	<div id="mom">
 		<section id="main" class="container">
 			<div class="row">
-				<% if controller.controller_name=='home' %>
+				<% if(current_page?(root_path)) %>
 				<div class="jumbotron hero-unit">
 					<h2><%=raw t(:home_main_title) %></h2>
 					<p class="lead"><%=raw t(:home_main_description) %></p>
@@ -61,8 +61,8 @@
 			</div>
 		</section>
 	</div>
-<%= render :partial => 'layouts/footer' %>
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"></div>
-<%= javascript_include_tag @script, "data-turbolinks-track" => true %>
+	<%= render :partial => 'layouts/footer' %>
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"></div>
+	<%= javascript_include_tag @script, "data-turbolinks-track" => true %>
 </body>
 </html>
