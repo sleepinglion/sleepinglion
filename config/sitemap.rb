@@ -41,6 +41,12 @@ SitemapGenerator::Sitemap.create do
   GuestBook.find_each do |guest_book|
     add guest_book_path(guest_book), :lastmod => guest_book.updated_at
   end
+  
+  add programs_path
+
+  Program.find_each do |program|
+    add program_path(program), :lastmod => program.updated_at
+  end  
 
   add notices_path
 
