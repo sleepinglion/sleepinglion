@@ -51,6 +51,15 @@ crumb :program do |portfolio|
    parent :programs
 end
 
+crumb :notices do
+   link t('activerecord.models.notice'), notices_path
+end
+
+crumb :notice do |notice|
+   link notice.title, notice_path(notice)
+   parent :notices
+end
+
 # crumb :project_issues do |project|
 #   link "Issues", project_issues_path(project)
 #   parent :project, project
