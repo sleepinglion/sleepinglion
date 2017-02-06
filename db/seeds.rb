@@ -22,3 +22,19 @@ SettingController.create!(:id=>10,:ad_position_id=>2,:title=>'연혁',:menu_disp
 SettingController.create!(:id=>11,:ad_position_id=>2,:title=>'포트폴리오',:menu_display=>false,:controller=>'portfolios',:description=>'포트폴리오',:priority=>8000)
 SettingController.create!(:id=>12,:ad_position_id=>2,:title=>'회원가입',:menu_display=>false,:controller=>'users',:menu_action=>'new',:description=>'사용자',:priority=>9000)
 SettingController.create!(:id=>13,:ad_position_id=>2,:title=>'사이트',:menu_display=>false,:controller=>'site',:menu_action=>'new',:description=>'사이트 소개',:priority=>9000)
+
+ProgramLanguage.create(:id=>1,:title=>'Ruby On Rails',:enable=>1)
+ProgramLanguage.create(:id=>2,:title=>'PHP',:enable=>1)
+
+ProgramCategory.create!(:id=>1,:program_language_id=>1,:title=>'Ruby on Rails',:enable=>1)
+ProgramCategory.create!(:id=>1,:program_language_id=>2,:title=>'Wordpress',:enable=>1)
+ProgramCategory.create!(:id=>1,:program_language_id=>2,:title=>'Mediawiki',:enable=>1)
+ProgramCategory.create!(:id=>1,:program_language_id=>2,:title=>'Codeigniter',:enable=>1)
+
+Program(:program_category_id=>1,:title=>'',:enable=>true)
+Program(:program_category_id=>1,:title=>'',:title=>'',:enable=>true)
+Program(:program_category_id=>1,:title=>'',:enable=>true)
+Program(:program_category_id=>1,:title=>'',:enable=>true)
+Program(:program_category_id=>1,:title=>'',:enable=>true)
+Program(:program_category_id=>1,:title=>'',:enable=>true)
+Program(:program_category_id=>1,:title=>'',:enable=>true)
