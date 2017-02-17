@@ -1,9 +1,12 @@
 class CreateGalleries < ActiveRecord::Migration
-  def up
+  def change
     create_table :gallery_categories do |t|
       t.references :user, :null=>false
+      t.references :gallery_category      
       t.string :title, :null=>false, :limit=>60
       t.integer :galleries_count, :null=>false, :default=>0
+      t.integer :gallery_categories_count, :null=>false, :default=>0
+      t.boolean :leaf, :default=>true      
       t.boolean :enable, :null=>false, :default=>true
       t.timestamps :null=>false
     end
@@ -27,12 +30,5 @@ class CreateGalleries < ActiveRecord::Migration
 
 #    GalleryCategory.create_translation_table! :title => {:type => :string, :limit=>60}
 #    Gallery.create_translation_table! :title => {:type => :string, :limit=>60}, :content=>:text, :location => {:type => :string, :limit => 60}
-  end
-
-  def down
-    drop_table :gallery_categories
-    drop_table :galleries
- #   GalleryCategory.drop_translation_table!
- #   Gallery.drop_translation_table!
   end
 end

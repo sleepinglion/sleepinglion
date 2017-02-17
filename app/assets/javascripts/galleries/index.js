@@ -44,7 +44,7 @@ $(document).ready(function() {
       $("#sl_gallery_right div:first").html(nl2br(data.content));
       $("#sl_gallery_menu a:first").attr('href','/galleries/'+data.id+'/edit');
       $("#sl_gallery_menu a:eq(1)").attr('href','/galleries/'+data.id);
-      document.title=data.title+'<%=I18n.t 'title_separator' %>'+'<%=I18n.t 'application_name' %>';
+//      document.title=data.title+'<%=I18n.t 'title_separator' %>'+'<%=I18n.t 'application_name' %>';
       if (history && history.pushState) {
       history.pushState('','gallery_'+galleryId,'/galleries/'+galleryId);
             }

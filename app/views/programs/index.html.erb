@@ -6,16 +6,34 @@
 		소스 설치와 사용에 대해서는 지원하지 않습니다.<br />
 		하지만 <strong>많은 돈</strong> 준다면 지원할 수 있습니다~ ^^</p>	
 	</article>
+	<% unless @programs.empty? %>
+	<% @programs.each do |program| %>
 	<article>
-		<h3>잠자는 사자의 집</h3>
+		<h3><%=program.title %></h3>
 		<div>
 			<h4>정보</h4>
-			<p>현재 보고있는 이 홈페이지의 소스입니다.</p>
-			<ol>
-				<li>언어 : <a href="http://www.php.net/" target="_blank" title="새창으로 열림 - PHP 홈페이지로 이동">PHP</a>(<a href="https://www.codeigniter.com/" target="_blank" title="새창으로 열림 - Codeignigter 홈페이지로 이동">Codeignigter</a>)</li>
-				<li>DB : <a href="https://www.mysql.com/" target="_blank" title="새창으로 열림 - MySQL 홈페이지로 이동">MySQL</a></li>
-				<li>기타 라이브러리 : <a href="http://getbootstrap.com/"  target="_blank" title="새창으로 열림 - Bootsrap 홈페이지로 이동">Bootsrap</a></li>
-			</ol>
+			<p><%=raw program.description %></p>
+			<ul>
+				<li>주 사용프로그램 : 
+				<% unless program.program_categories_programs.empty? %>
+					<ul>
+					<% program.program_categories_programs.each do |use_program| %>
+					<% next if use_program.main %>
+						<li><%=link_to use_program.program_category.title,use_program.program_category.link,:target=>"_blank",:title=>'새창으로 열림 - '+use_program.program_category.title+'홈페이지로 이동' %></li>
+					<% end %>
+					</ul>
+				<% end %>
+				<li>기타 사용프로그램 : 
+				<% unless program.program_categories_programs.empty? %>
+					<ul>
+					<% program.program_categories_programs.each do |use_program| %>
+					<% next unless use_program.main %>
+						<li><%=link_to use_program.program_category.title,use_program.program_category.link,:target=>"_blank",:title=>'새창으로 열림 - '+use_program.program_category.title+'홈페이지로 이동' %></li>
+					<% end %>
+					</ul>
+				<% end %>
+				</li>
+			</ul>
 		</div>
 		<div>
 			<h4>내려받기</h4>
@@ -25,51 +43,6 @@
 			</ul>
 		</div>
 	</article>
-	<article>
-		<h3>잠자는 사자의 집(ROR)</h3>
-		<div>
-			<h4>정보</h4>
-			<p>ROR버젼</p>
-			<ol>
-				<li>언어 : <a href="https://www.ruby-lang.org/" target="_blank">ruby</a>(<a href="www.rubyonrails.org/" target="_blank">RubyOnRails</a>)</li>
-				<li>DB : 마이그레이션 가능한 모든 DB</li>
-				<li>기타 라이브러리 : <a href="http://getbootstrap.com/"  target="_blank" title="새창으로 열림 - Bootsrap 홈페이지로 이동">Bootsrap</a></li>				
-			</ol>
-		</div>
-		<div>
-			<h4>내려받기</h4>		
-			<ul>
-				<li><a href="https://github.com/sleeping-lion/sleepinglion" title="GitHub로 보기">GitHub</a></li>
-				<li><a href="https://github.com/sleeping-lion/sleepinglion/archive/master.zip" title="ZIP다운받기">ZIP파일 다운로드(GitHub)</a></li>
-			</ul>
-		</div>
-	</article>
-<!--	
-	<article>
-		<h3>모바일중심 콘텐츠 게시판</h3>
-		<p>모바일중심으로 디자인된 게시판</p>
-		<ol>
-			<li>언어 : <a href="http://www.php.net/" target="_blank">PHP</a>(<a href="https://www.codeigniter.com/" target="_blank">Codeignigter</a>)</li>
-			<li>DB : <a href="https://www.mysql.com/" target="_blank">MySQL</a></li>
-		</ol>
-		<ul>
-			<li><a href="https://github.com/sleeping-lion/sleepinglion_codeigniter" title="GitHub로 보기">GitHub</a></li>
-			<li><a href="https://github.com/sleeping-lion/sleepinglion_codeigniter/archive/master.zip" title="ZIP다운받기">ZIP파일 다운로드(GitHub)</a></li>
-		</ul>		
-	</article>
--->	
-<!--	
-	<article>
-		<h3>공용 채팅프로그램</h3>
-		<p>웹브라우저로 가능한 채팅</p>
-		<ol>
-			<li>언어 : Nodejs</li>
-			<li>DB : MySQL</li>
-		</ol>
-		<ul>
-			<li><a href="https://github.com/sleeping-lion/sleepinglion_codeigniter" title="GitHub로 보기">GitHub</a></li>
-			<li><a href="https://github.com/sleeping-lion/sleepinglion_codeigniter/archive/master.zip" title="ZIP다운받기">ZIP파일 다운로드(GitHub)</a></li>
-		</ul>		
-	</article>
--->
+	<% end %>
+	<% end %>
 </div>

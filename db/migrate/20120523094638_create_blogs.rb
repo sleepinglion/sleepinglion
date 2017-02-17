@@ -1,5 +1,5 @@
 class CreateBlogs < ActiveRecord::Migration
-  def up
+  def change
     create_table :blogs do |t|
       t.references :user, :null=>false
       t.references :blog_category, :null=>false
@@ -35,14 +35,5 @@ class CreateBlogs < ActiveRecord::Migration
 #    Blog.create_translation_table! :title => {:type => :string, :limit=>60,:null=>false},:description => {:type => :string, :limit=>255,:null=>false}
 #    BlogContent.create_translation_table! :content=>{:type => :text,:null=>false}
 #    BlogComment.create_translation_table! :title => {:type => :string, :limit=>60,:null=>false}, :content=>{:type => :text,:null=>false }
-  end
-
-  def down
-    drop_table :blogs
-    drop_table :blog_contents
-    drop_table :blog_comments
-#    Blog.drop_translation_table!
-#    BlogContent.drop_translation_table!
-#    BlogComment.drop_translation_table!
   end
 end
