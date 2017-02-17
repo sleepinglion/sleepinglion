@@ -7,7 +7,7 @@ class CreateDeviseToUsers < ActiveRecord::Migration
       t.string :nickname, :null => false, :limit=>60
       t.string :photo, :null=>false, :limit=>100
       t.string :encrypted_password, :null => false, :limit=>100
-      t.string :description
+      t.string :description, :limit=>150
 
       ## Recoverable
       t.string   :reset_password_token, :limit=>150
@@ -36,6 +36,7 @@ class CreateDeviseToUsers < ActiveRecord::Migration
 
       ## Token authenticatable
       # t.string :authentication_token
+      t.boolean :admin, :null=>false, :default => false
       t.boolean :enable, :null=>false, :default=>true
       t.timestamps :null=>false
     # Uncomment below if timestamps were not included in your original model.

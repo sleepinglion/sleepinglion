@@ -6,8 +6,8 @@ class CreateBlogCategories < ActiveRecord::Migration
       t.string :title, :null=>false, :limit=>60
       t.integer :blogs_count, :null=>false, :default=>false
       t.integer :blog_categories_count, :null=>false, :default=>false
+      t.boolean :leaf, :default=>true      
       t.boolean :enable, :null=>false, :default=>true
-      t.boolean :leaf, :default=>true
       t.timestamps :null=>false
     end
 
