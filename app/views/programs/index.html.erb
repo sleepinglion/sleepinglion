@@ -4,7 +4,7 @@
 		<h3>알림</h3>
 		<p>소스를 가져다 마음껏 수정해서 쓰는것은 상관없으나<br />
 		소스 설치와 사용에 대해서는 지원하지 않습니다.<br />
-		하지만 <strong>많은 돈</strong> 준다면 지원할 수 있습니다~ ^^</p>	
+		하지만 <strong>많은 돈</strong> 준다면 지원할 수 있습니다~ ^^</p>
 	</article>
 	<% unless @programs.empty? %>
 	<% @programs.each do |program| %>
@@ -14,7 +14,7 @@
 			<h4>정보</h4>
 			<p><%=raw program.description %></p>
 			<ul>
-				<li>주 사용프로그램 : 
+				<li>주 사용프로그램 :
 				<% unless program.program_categories_programs.empty? %>
 					<ul>
 					<% program.program_categories_programs.each do |use_program| %>
@@ -23,7 +23,7 @@
 					<% end %>
 					</ul>
 				<% end %>
-				<li>기타 사용프로그램 : 
+				<li>기타 사용프로그램 :
 				<% unless program.program_categories_programs.empty? %>
 					<ul>
 					<% program.program_categories_programs.each do |use_program| %>
@@ -45,4 +45,5 @@
 	</article>
 	<% end %>
 	<% end %>
+  <%= paginate @programs %>	
 </div>

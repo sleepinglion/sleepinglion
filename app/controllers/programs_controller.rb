@@ -1,20 +1,20 @@
 class ProgramsController < BoardController
   impressionist :actions=>[:show]
   before_action :set_program, only: [:show, :edit, :update, :destroy]
-  before_action :set_ad, only: [:index, :show]  
+  before_action :set_ad, only: [:index, :show]
 
   def initialize(*params)
     super(*params)
     @controller_name=t('activerecord.models.program')
     @script="board/index"
-    
-    get_menu('programs')    
+
+    get_menu('programs')
   end
 
   # GET /programs
   # GET /programs.json
   def index
-    @programs = Program.order(@menu_setting.order).page(params[:page]).per(@menu_setting.per)
+    @programs = Program.order(:id=>'asc').page(params[:page]).per(5)
   end
 
   # GET /programs/1
@@ -26,13 +26,13 @@ class ProgramsController < BoardController
   def new
     @program = Program.new
     @program.build_program_content
-        
+
     @script="board/new"
   end
 
   # GET /programs/1/edit
   def edit
-    @script="board/edit"  
+    @script="board/edit"
   end
 
   # POST /programs
@@ -40,8 +40,8 @@ class ProgramsController < BoardController
   def create
     @program = Program.new(program_params)
     @program.user_id=current_user.id
-    
-    @script="board/new"       
+
+    @script="board/new"
 
     respond_to do |format|
       if @program.save
@@ -58,7 +58,7 @@ class ProgramsController < BoardController
   # PATCH/PUT /programs/1.json
   def update
     @script="board/edit"
-  
+
     respond_to do |format|
       if @program.update(program_params)
         format.html { redirect_to @program, program: @controller_name +t(:message_success_update)}
@@ -74,7 +74,7 @@ class ProgramsController < BoardController
   # DELETE /programs/1.json
   def destroy
     @program.destroy
-    
+
     respond_to do |format|
       format.html { redirect_to programs_url }
       format.json { head :no_content }
@@ -86,7 +86,7 @@ class ProgramsController < BoardController
   def set_program
     @program = Program.find(params[:id])
   end
-  
+
   # Never trust parameters from the scary internet, only allow the white list through.
   def program_params
     params.require(:program).permit(:id,:title,program_content_attributes: [:id,:content])
