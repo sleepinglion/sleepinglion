@@ -354,7 +354,8 @@ ko:
       history : '연혁'
       about : '사이트 소개'
       user : '회원'
-      resource : '메뉴'              
+      resource : '메뉴'
+      program : '프로그램'              
     attributes :
       intro : 
         title : '제목'
