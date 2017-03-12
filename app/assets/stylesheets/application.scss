@@ -64,7 +64,7 @@ footer div {margin:0.3em 0 0}
 
 /* header */
 header {position:relative}
-header h1 {float:left;margin:1em 0 0;padding:0}
+header h1 {float:left;margin:1.5em 0 0;padding:0}
 header h1 a:active {color:red}
 header nav { position: relative; z-index: 999; margin:0; padding:0}
 header nav ul { float: right; margin: 1.5em 0 0 0; padding: 0}
@@ -90,6 +90,8 @@ aside .box {margin-top:0}
 
 /* */
 #sl_blog_categories ul li.active a {font-weight:bold}
+
+#sl_program_index article {background:#e7e7e7;border-radius:10px;margin:20px 0;padding:20px}
 
 /* footer */
 footer address {margin-top:10px }
@@ -293,7 +295,7 @@ a.left:active {background-position: -60px 0}
 .box_content {float:left;width:100%;margin-top: -1px;padding: 10px;border: 1px solid #ddd;background: #fcfcfc;-webkit-border-radius: 0px 0px 2px 2px;-moz-border-radius: 0px 0px 2px 2px;border-radius: 0px 0px 2px 2px;-webkit-box-shadow: 0 1px 0px rgba(255, 255, 255, .6);-moz-box-shadow: 0 1px 0px rgba(255, 255, 255, .6);box-shadow: 0 1px 0px rgba(255, 255, 255, .6);}
 
 
-@media all and (max-width: 768px) {
+@media all and (max-width: 767px) {
 	html,body {background:#ccc}
 	header {background:none;border-bottom:0;margin:1% 0}
 	header h1 {margin:2%;padding:0;font-size:1.6em}
@@ -327,7 +329,11 @@ a.left:active {background-position: -60px 0}
 	footer {background:#fff;border-radius:5px;width:100%;margin:1% 0}
 }
 
-@media all and (min-width: 768px) and (max-width: 1024px) {
+@media all and (max-width: 992px) {
+
+}
+
+@media all and (min-width: 768px) and (max-width: 992px) {
 	header {height:8em;background:#f8f8f8;border-bottom:1px solid #e7e7e7}
 	header nav ul li:first-child {margin-left:0}
 	#sl_intro_index #sl_intro_right dd {width:200px}
@@ -336,9 +342,16 @@ a.left:active {background-position: -60px 0}
 	#main {padding-top:6em;padding-bottom:5em}
 }
 
-@media all and (min-width: 1025px) {
+@media all and (min-width: 992px) {
+
+}
+
+@media all and (min-width: 992px) and (max-width: 1200px) {
+
+}
+
+@media all and (min-width: 1200px) {
 	header {height:6em;background:#f8f8f8;border-bottom:1px solid #e7e7e7}
-	header nav {width:80%}
 	#sl_intro_index #sl_intro_right dd {width:200px}
 	footer {height:5em;border-top:1px solid #e7e7e7}
 	#mom {margin:-6em 0 -5em;min-height:100%}
@@ -352,4 +365,9 @@ a.left:active {background-position: -60px 0}
 	.sl_content_tags ul li {float:left;margin:0 0 0 5px;padding:0;list-style:none;line-height:150%}
 	.sl_content_tags ul li:after {content:','}
 	.sl_content_tags ul li:last-child:after {content:none}
+}
+
+
+@media all and (min-width:1200px) {
+
 }

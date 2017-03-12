@@ -8,6 +8,12 @@ class CreateDeviseToUsers < ActiveRecord::Migration
       t.string :photo, :null=>false, :limit=>100
       t.string :encrypted_password, :null => false, :limit=>100
       t.string :description, :limit=>150
+      t.string :alternate_name, :limit=>100
+      t.string :name, :limit=>60
+      t.boolean :gender, :default=>false
+      t.datetime :birth_date
+      t.string :job, :limit=>60
+      t.string :url, :limit=>150
 
       ## Recoverable
       t.string   :reset_password_token, :limit=>150

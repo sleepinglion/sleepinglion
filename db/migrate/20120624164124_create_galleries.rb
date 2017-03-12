@@ -2,11 +2,11 @@ class CreateGalleries < ActiveRecord::Migration
   def change
     create_table :gallery_categories do |t|
       t.references :user, :null=>false
-      t.references :gallery_category      
+      t.references :gallery_category
       t.string :title, :null=>false, :limit=>60
       t.integer :galleries_count, :null=>false, :default=>0
       t.integer :gallery_categories_count, :null=>false, :default=>0
-      t.boolean :leaf, :default=>true      
+      t.boolean :leaf, :default=>true
       t.boolean :enable, :null=>false, :default=>true
       t.timestamps :null=>false
     end
@@ -15,10 +15,10 @@ class CreateGalleries < ActiveRecord::Migration
       t.references :user, :null=>false
       t.references :gallery_category,:null=>false
       t.string :title, :null=>false, :limit=>60
-      t.string :content, :null=>false, :limit=>255
       t.string :location, :limit=>255
       t.string :photo,:null=>false
-      t.integer :count, :null=>false, :default=>0
+      t.string :photo_url, :null=>false
+      t.string :content, :null=>false, :limit=>255
       t.boolean :enable, :null=>false, :default=>true
       t.timestamps :null=>false
     end

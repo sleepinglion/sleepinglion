@@ -6,6 +6,7 @@ class CreateBlogs < ActiveRecord::Migration
       t.string :title,:null=>false, :limit=>60
       t.string :description, :null=>false, :limit=>255
       t.string :photo
+      t.string :photo_url
       t.integer :blog_comments_count, :default=>0, :null=>false
       t.integer :count, :null=>false, :default=>0
       t.boolean :enable, :null=>false, :default=>true
