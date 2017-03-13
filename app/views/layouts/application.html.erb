@@ -16,9 +16,12 @@
   	image:    @meta_image
 	}
 	%>
-	<meta name="author" content="Sleeping-Lion" />
-	<link rel="shortcut icon" href="<%=asset_path('favicon.ico') %>" />
-	<%= stylesheet_link_tag "application", :media=>"all", "data-turbolinks-track" => true %>
+	<meta name="author" content="Sleeping-Lion">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="shortcut icon" href="<%=asset_path 'favicon.ico' %>">
+	<noscript id="deferred-styles">
+		<%= stylesheet_link_tag "application", :media=>"all", "data-turbolinks-track" => true %>
+	</noscript>
 	<%= csrf_meta_tags %>
 	<!--[if IE]>
 	<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
@@ -60,9 +63,22 @@
 				<%= render :partial => 'layouts/aside' %>
 			</div>
 		</div>
-	</section>		
+	</section>
 	<%= render :partial => 'layouts/footer' %>
 	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"></div>
 	<%= javascript_include_tag @script, "data-turbolinks-track" => true %>
+	<script>
+		var loadDeferredStyles = function() {
+			var addStylesNode = document.getElementById("deferred-styles");
+			var replacement = document.createElement("div");
+			replacement.innerHTML = addStylesNode.textContent;
+			document.body.appendChild(replacement)
+			addStylesNode.parentElement.removeChild(addStylesNode);
+		};
+		var raf = requestAnimationFrame || mozRequestAnimationFrame ||
+				webkitRequestAnimationFrame || msRequestAnimationFrame;
+		if (raf) raf(function() { window.setTimeout(loadDeferredStyles, 0); });
+		else window.addEventListener('load', loadDeferredStyles);
+	</script>
 </body>
 </html>
