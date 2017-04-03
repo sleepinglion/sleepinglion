@@ -17,20 +17,14 @@ module ApplicationHelper
   	case type
       when 'large'
   			prefix='large_thumb'
-  			break
   		when 'medium'
   			prefix='medium_thumb'
-  			break
   		when 'small'
   			prefix='small_thumb'
-  			break
-  		else
-  			break
   	end
 
   	if prefix
-  		$pathinfo=pathinfo($url);
-  		url=$pathinfo['dirname'].'/'.$prefix.'_'.$pathinfo['basename'];
+  		url=File.dirname(url)+'/'+prefix+'_'+File.basename(url)
   	end
 
   	return url
