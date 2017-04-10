@@ -14,6 +14,8 @@ module ApplicationHelper
   end
 
   def sl_get_thumb(url,type='origin')
+    require 'uri'
+
   	case type
       when 'large'
   			prefix='large_thumb'
@@ -23,8 +25,9 @@ module ApplicationHelper
   			prefix='small_thumb'
   	end
 
+    uri = URI.parse(url)
   	if prefix
-  		url=File.dirname(url)+'/'+prefix+'_'+File.basename(url)
+  		url="#{uri.scheme}://#{uri.host}"+'/'+prefix+'_'+File.basename(url)
   	end
 
   	return url

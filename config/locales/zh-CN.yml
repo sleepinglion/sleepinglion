@@ -1,25 +1,50 @@
 zh-CN:
-  application_name : '잠자는 사자의 집'
-  meta_description : '잠자는 사자의 집'
-  meta_keyword : '정종호,잠자는사자,SL,SleepingLion,Sleeping-Lion,웹개발,html,웹프로그래머,퍼블리셔,퍼블리싱,publishing'
+  application_name : '웹프로그래머 잠자는사자의 집'
+  meta_description : '깨끗한웹을 꿈꾸는 웹프로그래머 잠자는사자의 집입니다.'
+  meta_description_intro : '웹프로그래머 잠자는사자를 여러분께 소개합니다.'
+  meta_description_about : '웹프로그래머 잠자는 사자의 집소개'
+  meta_description_blog : '웹프로그래머 잠자는사자의 블로그'
+  meta_description_gallery : '웹프로그래머 잠자는사자의 사진첩'
+  meta_description_question : '웹프로그래머 잠자는사자에게 질문 , 요청'
+  meta_description_portfolio : '웹프로그래머 잠자는사자의 포트폴리오'
+  meta_description_guest_book : '웹프로그래머 잠자는사자의 방명록'
+  meta_keywords : '정종호,웹프로그래머,웹표준,퍼블리셔,웹개발,리눅스,html,html5,javascript,php,ruby,rails,레일즈,퍼블리싱,publishing,잠자는사자,SL,SleepingLion,Sleeping-Lion'
+  meta_image : 'http://images.sleepinglion.pe.kr/sl.jpg'
+  meta_url : 'http://www.sleepinglion.pe.kr'
+  title_separator : '-'
+
+  korean : '한국어'
+  english : '영어'
+  french : '프랑스어'
+  chineses : '중국어'
+  japanese : '일본어'
+  change_language : '언어바꾸기'
+
   home : '홈'
-  home_title : '잠자는 사자의 집'
+  home_title : '잠자는사자의 집'
   welcome : '님 환영합니다.'
-  search : '검색' 
+  search : '검색'
   ad : '광고'
+  login : '로그인'
+  logout : '로그아웃'
+  confirm : '확인'
+  sign : '서명하기'
   image : '이미지'
   status : '상태'
   status_use : '사용중'
   status_stop : '중지'
   flag_true : '사용'
   flag_false : '중지'
-  
-  no_data : '해당 데이터가 없습니다.'
-  
-  success_title : '축하합니다!!'  
+  no_data : '글이 없습니다.'
+  all_category : '전체'
+
+  home_main_title : '웹프로그래머 잠자는-사자입니다.'
+  home_main_description : '잠자는사자의 사자굴에 오신것을 환영합니다.'
+
+  success_title : '축하합니다!!'
   message_success_create : '이(가) 성공적으로  등록되었습니다.'
   message_success_update : '이(가) 성공적으로  수정되었습니다.'
-  
+
   label_name : '작성자'
   label_email : '이메일'
   label_password : '비밀번호'
@@ -35,21 +60,21 @@ zh-CN:
   action_index : '목록'
   action_show : '상세'
   action_edit : '수정'
-  action_new : '생성'  
-  link_delete_admin : '계정삭제 ' 
-  link_list : '목록으로'  
+  action_new : '생성'
+  link_delete_admin : '계정삭제 '
+  link_list : '목록으로'
   link_new : '새로작성'
-  link_show : '상세보기'  
-  link_edit : '수정'  
-  link_delete : '삭제' 
+  link_show : '상세보기'
+  link_edit : '수정'
+  link_delete : '삭제'
   link_more : '더보기'
   link_back : '뒤로'
   link_home : '홈으로'
-  
+
   delete_confirm : '정말로삭제합니까?'
   delete_cascade_confirm : "중대 경고!!\n이 항목을 삭제할 경우 이 항목뿐아니라 이 항목의 정보를 포함하는 모든 데이터가 삭제됩니다.\n그래도 진행하시겠습니까?"
-  delete_user_cascade_confirm : "정말로 탈퇴하겠습니까? \n 탈퇴할 경우 본인이 작성한 모든 내용 또한 연관삭제됩니다."  
-  
+  delete_user_cascade_confirm : "정말로 탈퇴하겠습니까? \n 탈퇴할 경우 본인이 작성한 모든 내용 또한 연관삭제됩니다."
+
   ckeditor:
     page_title: "CKEditor Files Manager"
     confirm_delete: "파일을 지웁니까?"
@@ -57,15 +82,15 @@ zh-CN:
       cancel: "취소"
       upload: "업로드"
       delete: "삭제"
-      
+
   views :
     pagination :
       truncate : '&nbsp;...&nbsp;'
       previous : '上一页'
       last : '最后一页'
       next : '下一页'
-      first : '第一页' 
-  
+      first : '第一页'
+
   date:
     abbr_day_names:
     - 日

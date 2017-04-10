@@ -1,47 +1,54 @@
 ja:
-  service_name : '잠자는 사자의 집'
-  home : '홈'
-  search : '검색' 
-  ad : '광고'
-  image : '이미지'
-  status : '상태'
-  status_use : '사용중'
-  status_stop : '중지'
-  
-  message_success_insert : '이(가) 성공적으로  등록되었습니다.'
-  message_success_update : '이(가) 성공적으로  수정되었습니다.'       
-    
+  application_name : '웹프로그래머 잠자는사자의 집'
+  meta_description : '깨끗한웹을 꿈꾸는 웹프로그래머 잠자는사자의 집입니다.'
+  meta_description_intro : '웹프로그래머 잠자는사자를 여러분께 소개합니다.'
+  meta_description_about : '웹프로그래머 잠자는 사자의 집소개'
+  meta_description_blog : '웹프로그래머 잠자는사자의 블로그'
+  meta_description_gallery : '웹프로그래머 잠자는사자의 사진첩'
+  meta_description_question : '웹프로그래머 잠자는사자에게 질문 , 요청'
+  meta_description_portfolio : '웹프로그래머 잠자는사자의 포트폴리오'
+  meta_description_guest_book : '웹프로그래머 잠자는사자의 방명록'
+  meta_keywords : '정종호,웹프로그래머,웹표준,퍼블리셔,웹개발,리눅스,html,html5,javascript,php,ruby,rails,레일즈,퍼블리싱,publishing,잠자는사자,SL,SleepingLion,Sleeping-Lion'
+  meta_image : 'http://images.sleepinglion.pe.kr/sl.jpg'
+  meta_url : 'http://www.sleepinglion.pe.kr'
+  title_separator : '-'
+
+  english : '영어'
+  french : '프랑스어'
+  chineses : '중국어'
+  japanese : '일본어'
+
   menu_home : '잠자는사자의 집'
   menu_sl : '잠자는사자'
-  submenu_sl : '소개' 
-  submenu_diary : '일기'  
+  submenu_sl : '소개'
+  submenu_diary : '일기'
   submenu_essay : '생각'
   submenu_album : '사진첩'
   menu_linux : '리눅스'
-  submenu_install : '설치' 
-  submenu_application : '응용프로그램'  
+  submenu_install : '설치'
+  submenu_application : '응용프로그램'
   submenu_basic_command : '기본명령어'
   submenu_server : '서버'
   menu_web : '웹개발'
-  submenu_html : 'html' 
-  submenu_css : '스타일시트'  
-  submenu_javascript : '자바스크립트'  
+  submenu_html : 'html'
+  submenu_css : '스타일시트'
+  submenu_javascript : '자바스크립트'
   menu_portfolio : '제작작품'
-  menu_guestbook : '방명록' 
+  menu_guestbook : '방명록'
 
   go_edit : '수정'
   go_list : '목록'
   go_show : '상세'
   go_new : '생성'
-  
+
   views :
     pagination :
       truncate : '&nbsp;...&nbsp;'
-      previous : '이전' 
+      previous : '이전'
       last : '마지막'
       next : '다음'
       first : '처음'
-        
+
   date:
     abbr_day_names:
     - 日

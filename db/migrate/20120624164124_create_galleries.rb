@@ -27,8 +27,5 @@ class CreateGalleries < ActiveRecord::Migration
     add_index :gallery_categories, :user_id
     add_index :galleries, :user_id
     add_index :galleries, :gallery_category_id
-
-#    GalleryCategory.create_translation_table! :title => {:type => :string, :limit=>60}
-#    Gallery.create_translation_table! :title => {:type => :string, :limit=>60}, :content=>:text, :location => {:type => :string, :limit => 60}
   end
 end

@@ -15,12 +15,12 @@
 		<div class="item<% if index.zero? %> active<% end %>">
 			<% gallery.each_with_index do |gallery,index2| %>
 			<% if(index2==5) then g_class='nm' else if(index2==2) then g_class='m_nm' else g_class='' end %>
-			<%= link_to image_tag(asset_path('ajax-loader.gif'),:width=>100,:height=>100,:alt=>gallery.title,:'data-original'=>gallery.photo.small_thumb,:class=>'lazy'),gallery_path(gallery),:class=>g_class %>
+			<%= link_to image_tag(asset_path('ajax-loader.gif'),:width=>100,:height=>100,:alt=>gallery.title,:'data-original'=>sl_get_thumb(gallery[:photo_url],'small_thumb'),:class=>'lazy'),gallery_path(gallery),:class=>g_class %>
 			<noscript>
-				<%= link_to image_tag(gallery.photo.small_thumb,:width=>100,:height=>100,:alt=>gallery.title),gallery_path(gallery),:title=>gallery.title %>
+				<%= link_to image_tag(sl_get_thumb(gallery[:photo_url],'small_thumb'),:width=>100,:height=>100,:alt=>gallery.title),gallery_path(gallery),:title=>gallery.title %>
 			</noscript>
 			<% end %>
-			<% end %>			
+			<% end %>
 		</div>
 		<% end %>
 	</div>
