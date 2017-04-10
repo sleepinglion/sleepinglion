@@ -21,8 +21,8 @@
   <% @blogs.each do |blog| %>
   <article class="media" itemscope itemprop="blogPost" itemtype="http://schema.org/Blog">
     <%=link_to blog_path(blog),:class=>"pull-left" do %>
-    <% if blog.photo? %>
-      <%=image_tag blog.photo.small_thumb, :class=>"media-object",:itemprop=>"thumbnailUrl",:alt=>"..." %>
+    <% if blog.photo_url? %>
+      <%=image_tag sl_get_thumb(blog[:photo_url],'small'), :class=>"media-object",:itemprop=>"thumbnailUrl",:alt=>"..." %>
     <% end %>
     <% end %>
     <div class="media-body">
@@ -41,6 +41,6 @@
   <%= link_to t(:link_new), new_blog_path,:rel=>"nofollow",:class=>"btn btn-default" %>
   <% end %>
   <%= paginate @blogs %>
-  </div>   
+  </div>
 	</section>
 </section>
