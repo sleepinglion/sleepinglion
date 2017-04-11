@@ -27,7 +27,7 @@ module ApplicationHelper
 
     uri = URI.parse(url)
   	if prefix
-  		url="#{uri.scheme}://#{uri.host}"+'/'+prefix+'_'+File.basename(url)
+  		url="#{uri.scheme}://#{uri.host}"+File.dirname(uri.path)+'/'+prefix+'_'+File.basename(url)
   	end
 
   	return url

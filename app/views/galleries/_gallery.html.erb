@@ -21,7 +21,7 @@
 		<span class="none" itemprop="genre"><%= @gallery.gallery_category_id %></span>
 		<%=link_to @gallery.photo.url,{:title=>@gallery.title,:class=>'simple_image'} do %>
 		<figure>
-			<%= image_tag sl_get_thumb(@gallery[:photo_url],'medium'),:class=>'img-responsive',:itemprop=>"contentURL" %>
+			<%= image_tag sl_get_thumb(@gallery[:photo_url],'large'),:class=>'img-responsive',:itemprop=>"contentURL" %>
 			<figcaption id="gallery<%= @gallery.id %>_img<%= @gallery.id %>_span" class="image_caption" itemprop="name">
 				<%= @gallery.title %>
 			</figcaption>
