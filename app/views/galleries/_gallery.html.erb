@@ -1,4 +1,6 @@
 <% if @menu_setting.use_category %>
+<input id="image_url" type="hidden" value="http://slboard.cdn3.cafe24.com" />
+<input id="gallery_model" type="hidden" value="gallery" />
 <ol class="nav nav-tabs sl_categories">
 	<% unless @gallery_categories.empty? %>
 	<% @gallery_categories.each do |gallery_category| %>
