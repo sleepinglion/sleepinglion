@@ -11,7 +11,6 @@ class HomeController < ApplicationController
     @questions = Question.order('id desc').page(0).per(5)
     @galleries = Gallery.order('id desc').page(0).per(24)
     @blogs = Blog.order('id desc').where('photo IS NOT NULL').page(0).per(6)
-    @tags= Tag.order('id desc').page(0).per(24)
   end
 
   def popup

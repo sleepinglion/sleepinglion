@@ -124,8 +124,8 @@ footer form {position:absolute;top:10px;right:10px}
 #sl_main_gallery .carousel-inner a {display:block}
 #sl_main_gallery .carousel-inner a.nm  {margin-right:0}
 #sl_main_gallery .carousel-control {width:20px;color:#999}
-#sl_main_gallery .carousel-control.left {display:block;background:none;left:-30px}
-#sl_main_gallery .carousel-control.right {display:block;background:none;right:-30px}
+#sl_main_gallery .carousel-control.left {display:block;background:none;left:-30px;z-index:9}
+#sl_main_gallery .carousel-control.right {display:block;background:none;right:-30px;z-index:9}
 #sl_main_gallery .carousel-indicators {bottom:-40px}
 #sl_main_gallery .carousel-indicators li {border-color:#ccc}
 #sl_main_gallery .carousel-indicators .active {background:#ccc}
