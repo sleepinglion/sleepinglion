@@ -12,9 +12,9 @@ class CkeditorPictureUploader < CarrierWave::Uploader::Base
   def store_dir
     upload_dir="ckeditor/pictures/#{model.id}"
     unless Rails.env.production?
-      upload_dir='uploads/'+upload_dir 
+      upload_dir='uploads/'+upload_dir
     end
-    
+
     return upload_dir
   end
 
@@ -29,7 +29,7 @@ class CkeditorPictureUploader < CarrierWave::Uploader::Base
   # def scale(width, height)
   #   # do something
   # end
-  
+
   process :read_dimensions
 
   # Create different versions of your uploaded files:

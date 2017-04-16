@@ -1,21 +1,18 @@
 class AlbumUploader < CarrierWave::Uploader::Base
-  
-  # Include RMagick or MiniMagick support:
-  # include CarrierWave::RMagick
   include CarrierWave::MiniMagick
-  #include CarrierWave::WebP::Converter 
+  #include CarrierWave::WebP::Converter
   # Choose what kind of storage to use for this uploader:
   #storage :file
   #storage :fog
-  
+
   # Override the directory where uploaded files will be stored.
   # This is a sensible default for uploaders that are meant to be mounted:
   def store_dir
     upload_dir="#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
     unless Rails.env.production?
-      upload_dir='uploads/'+upload_dir 
+      upload_dir='uploads/'+upload_dir
     end
-    
+
     return upload_dir
   end
 
@@ -28,20 +25,20 @@ class AlbumUploader < CarrierWave::Uploader::Base
   def scale(width, height)
     # do something
   end
-  
+
   # Create different versions of your uploaded files:
   version :small_thumb do
     process :resize_to_fill => [100, 100]
   end
-  
+
   version :medium_thumb do
     process :resize_to_fill => [400, 300]
   end
-  
+
   version :large_thumb do
     process :resize_to_fill => [800, 600]
   end
-  
+
   # Add a white list of extensions which are allowed to be uploaded.
   # For images you might use something like this:
   def extension_white_list

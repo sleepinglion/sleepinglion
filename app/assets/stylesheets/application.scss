@@ -121,11 +121,11 @@ footer form {position:absolute;top:10px;right:10px}
 #sl_gallery_right div.add_info {color:#999}
 /* gallery slide */
 #sl_main_gallery {float:left;width:100%;margin:30px 0}
-#sl_main_gallery .carousel-inner a {float:left;margin:0 25px 10px 0;padding:0;width:100px}
+#sl_main_gallery .carousel-inner a {display:block}
 #sl_main_gallery .carousel-inner a.nm  {margin-right:0}
 #sl_main_gallery .carousel-control {width:20px;color:#999}
-#sl_main_gallery .carousel-control.left {background:none;left:-40px}
-#sl_main_gallery .carousel-control.right {background:none;right:-40px}
+#sl_main_gallery .carousel-control.left {display:block;background:none;left:-30px}
+#sl_main_gallery .carousel-control.right {display:block;background:none;right:-30px}
 #sl_main_gallery .carousel-indicators {bottom:-40px}
 #sl_main_gallery .carousel-indicators li {border-color:#ccc}
 #sl_main_gallery .carousel-indicators .active {background:#ccc}
@@ -142,25 +142,29 @@ footer form {position:absolute;top:10px;right:10px}
 
 /* Main Common*/
 #main_main section {margin:0 0 3em;padding:0}
-#main_main article {position:relative;float:left;width:100%;margin:0 0 3em;padding:0px}
+#main_main article {position:relative;float:left;width:100%;margin:0 0 3em;padding-left:0px}
+#main_main article ul {list-style: none outside none;margin-bottom:10px;padding:0}
+#main_main article ul li a img {width:100%}
 #main_main article h3 {float:left;width:100%;margin:0 0 1em;padding:0.5em 0;border-bottom:1px solid #ccc}
-#main_main a.more {position:absolute;top:0.5em;right:0;color:#999}
+#main_main a.more {position:absolute;top:0.5em;right:15px;color:#999}
 #main_main .section_main2 article {margin-right:30px;width:220px}
 #main_main .section_main2 .article3 {float:right;margin-right:0}
 #main_main .section_main2 article ul {margin:0;padding:0;list-style:none}
 #main_main .section_main2 article li {margin:0.3em;padding:0}
 #main_main .sl_created_at {float:right;color:#ccc}
+#main_main .carousel-control.left {display:block;background:none;top:3em;left:-40px}
+#main_main .carousel-control.right {display:block;background:none;top:3em;right:-25px}
 
 /* SL main list */
-.sl_main_list {float:left;width:100%}
-.sl_main_list h3 {float:left;width:100%}
-.sl_main_list ul {float:left;width:100%;margin:0;padding:0 0 0 20px}
-.sl_main_list ul li {float:left;width:100%;margin:0;padding:0}
+
+.sl_main_list li.nm {margin:0}
+
 
 /* Main Blog */
-#sl_main_blog ul {float: left;list-style: none outside none;margin: 0 0 10px;padding: 0;width: 100%;}
-#sl_main_blog li {float:left; margin:0 25px 0 0; padding:0; width:100px}
-#sl_main_blog li.nm {margin:0}
+#sl_main_blog ul {margin-bottom:10px}
+#sl_main_blog li a {display:block;width:100%}
+
+
 
 /* default */
 .slboard_main a {outline:none}

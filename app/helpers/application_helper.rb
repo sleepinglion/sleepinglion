@@ -25,7 +25,9 @@ module ApplicationHelper
   			prefix='small_thumb'
   	end
 
-    uri = URI.parse(url)
+    require "addressable/uri"
+    uri= Addressable::URI.parse(url)
+  #  uri = URI.parse(url)
   	if prefix
   		url="#{uri.scheme}://#{uri.host}"+File.dirname(uri.path)+'/'+prefix+'_'+File.basename(url)
   	end

@@ -1,6 +1,6 @@
 class CkeditorAttachmentFileUploader < CarrierWave::Uploader::Base
   include Ckeditor::Backend::CarrierWave
-  
+
   # Include RMagick or ImageScience support:
   # include CarrierWave::RMagick
   include CarrierWave::MiniMagick
@@ -12,11 +12,11 @@ class CkeditorAttachmentFileUploader < CarrierWave::Uploader::Base
   def store_dir
     upload_dir="ckeditor/attachments/#{model.id}"
     unless Rails.env.production?
-      upload_dir='uploads/'+upload_dir 
+      upload_dir='uploads/'+upload_dir
     end
-    
+
     return upload_dir
-  end  
+  end
 
   # Provide a default URL as a default if there hasn't been a file uploaded:
   # def default_url

@@ -30,9 +30,9 @@ class GalleriesController < BoardController
         end
       end
 
-      @galleries = Gallery.where(:gallery_category_id=>@gallery_category_id).order(@menu_setting.order).page(params[:page]).per(@menu_setting.per)
+      @galleries = Gallery.where(:gallery_category_id=>@gallery_category_id).order(:id=>'desc').page(params[:page]).per(30)
     else
-      @galleries = Gallery.order(@menu_setting.order).page(params[:page]).per(@menu_setting.per)
+      @galleries = Gallery.order(:id=>'desc').page(params[:page]).per(30)
     end
 
     if(params[:id])
@@ -60,9 +60,9 @@ class GalleriesController < BoardController
     if @menu_setting.use_category
       @gallery_categories=GalleryCategory.all
       @gallery_category_id=@gallery.gallery_category_id
-      @galleries = Gallery.where(:gallery_category_id=>@gallery_category_id).order(@menu_setting.order).page(params[:page]).per(@menu_setting.per)
+      @galleries = Gallery.where(:gallery_category_id=>@gallery_category_id).order(:id=>'desc').page(params[:page]).per(30)
     else
-      @galleries = Gallery.order(@menu_setting.order).page(params[:page]).per(@menu_setting.per)
+      @galleries = Gallery.order(:id=>'desc').page(params[:page]).per(30)
     end
 
     if @gallery
@@ -70,11 +70,12 @@ class GalleriesController < BoardController
       @meta_description=@gallery.content
     end
 
+
     @script='galleries/index'
 
     respond_to do |format|
       format.html # show.html.erb
-      format.json { render :json => @gallery }
+      format.json {render :json => @gallery}
     end
   end
 

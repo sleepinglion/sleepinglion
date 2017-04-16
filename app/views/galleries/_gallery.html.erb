@@ -56,12 +56,12 @@
 		<% unless @galleries.empty? %>
 		<div class="carousel-inner" role="listbox" style="clear:both">
 			<% @galleries.each_slice(6).each_with_index do |gallery,index| %>
-			<div class="item<% if index.zero? %> active<% end %>">
+			<div class="row item<% if index.zero? %> active<% end %>">
 				<% gallery.each_with_index do |gallery,index2| %>
-				<% if(index2>=5) then g_class='nm' else g_class='' end %>
-				<%= link_to image_tag(asset_path('ajax-loader.gif'),:width=>100,:height=>100,:alt=>gallery.title,:'data-original'=>sl_get_thumb(gallery[:photo_url],'small'),:class=>'lazy'),gallery_path(gallery),:class=>g_class %>
+				<% if(index2>=5) then g_class=' nm' else g_class='' end %>
+				<%= link_to image_tag(asset_path('ajax-loader.gif'),:alt=>gallery.title,:'data-original'=>sl_get_thumb(gallery[:photo_url],'medium'),:class=>'lazy'),gallery_path(gallery),:class=>"col-md-2#{g_class}" %>
 				<noscript>
-					<%= link_to image_tag(sl_get_thumb(gallery[:photo_url],'small'),:width=>100,:height=>100,:alt=>gallery.title),gallery_path(gallery),:title=>gallery.title %><% if gallery.id==@gallery.id %><span class="none" itemprop="thumbnailUrl"><%= sl_get_thumb(gallery[:photo_url],'small') %></span><% end %>
+					<%= link_to image_tag(sl_get_thumb(gallery[:photo_url],'medium'),:alt=>gallery.title),gallery_path(gallery),:title=>gallery.title %><% if gallery.id==@gallery.id %><span class="none" itemprop="thumbnailUrl"><%= sl_get_thumb(gallery[:photo_url],'small') %></span><% end %>
 				</noscript>
 				<% end %>
 			</div>

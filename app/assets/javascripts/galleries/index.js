@@ -36,9 +36,9 @@ $(document).ready(function() {
   	var image_url=$("#image_url").val();
   	var gallery_model=$("#gallery_model").val();
     $.getJSON($(this).attr('href'),{'json':true},function(data){
-      $("#sl_gallery_left a").attr('href',image_url+'/'+gallery_model+'/photo/'+data.id+'/'+data.photo).attr('title',data.title);
+      $("#sl_gallery_left a").attr('href',image_url+'/'+gallery_model+'/photo/'+data.id+'/'+basename(data.photo_url)).attr('title',data.title);
       $("#sl_gallery_left span").text(data.title).css('bottom',-30);
-      $("#sl_gallery_left img").attr('src',image_url+'/'+gallery_model+'/photo/'+data.id+'/large_thumb_'+data.photo).animate({ opacity: "1" }, 400,function(){
+      $("#sl_gallery_left img").attr('src',image_url+'/'+gallery_model+'/photo/'+data.id+'/large_thumb_'+basename(data.photo_url)).animate({ opacity: "1" }, 400,function(){
         $("#sl_gallery_left span").animate({bottom:0,opacity:'0.8'},400);
               });
       $("#sl_gallery_right div:first").html(nl2br(data.content));
@@ -56,4 +56,8 @@ $(document).ready(function() {
 function nl2br (str, is_xhtml) {
   var breakTag = (is_xhtml || typeof is_xhtml === 'undefined') ? '<br ' + '/>' : '<br>';
   return (str + '').replace(/([^>\r\n]?)(\r\n|\n\r|\r|\n)/g, '$1' + breakTag + '$2');
+}
+
+function basename(path) {
+   return path.split('/').reverse()[0];
 }
