@@ -9,15 +9,15 @@ $(document).ready(function(){
      maxSpeed : 0.05,
  			textFont: null,
  			textColour: null,
- 			weight: true,   
+ 			weight: true,
      depth : 1
    },'tags')) {
      // TagCanvas failed to load
      $('#myCanvasContainer').hide();
      $("#tags ul").css({'margin':0,'padding':0,'list-style':'none'});
-     $("#tags ul li").css({'float':'left','margin':'0 10px'});     
+     $("#tags ul li").css({'float':'left','margin':'0 10px'});
    }
-   
+
 	$('.modal_link').click(function(event){
   	event.preventDefault();
   	$('#myModal').removeData("modal");
@@ -37,13 +37,13 @@ $(document).ready(function(){
         }
 		return false;
 	});
-	
+
 	$(".btn_close").click(function(){
 		$(this).parent().parent().parent().remove();
 		return false;
 	});
-	
-	$("#sl_blog_categories .box_content ul span.c_pointer").click(function(){		
+
+	$("#sl_blog_categories .box_content ul span.c_pointer").click(function(){
 		if($(this).parent().find('ul').is(':visible')) {
 			$(this).parent().find('ul').hide();
 			$(this).find('span:eq(1)').html('&nbsp;&lt;&lt;');
