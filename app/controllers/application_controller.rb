@@ -25,8 +25,8 @@ class ApplicationController < ActionController::Base
     @menu_setting=nil
 
     @aside_blog_categories = BlogCategory.where(:enable=>true)
-    @tags = Blog.tag_counts_on(:tags)
-    #Tagging.joins(:tag).where('tags.taggings_count>1').group('tags.id')
+    @tags = Blog.tag_counts_on(:tags, :limit => 20, :order => "taggings_count desc")
+    #@tags =Tagging.joins(:tag).where('tags.taggings_count>1').group('tags.id')
   #  @aside_blog_categories.each do |blog_category|
   #  if(blog_category
   #  end

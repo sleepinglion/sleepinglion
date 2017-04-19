@@ -1,6 +1,5 @@
 <% breadcrumb :blogs %>
 <section id="sl_blog_index">
-	<% if @menu_setting.use_category %>
 	<ol class="nav nav-pills sl_categories hidden-lg">
 		<li <% unless params[:blog_category_id] %>class="active"<% end %>><%= link_to t(:all_category),blogs_path %></li>
   	<% unless @blog_categories.empty? %>
@@ -15,7 +14,6 @@
   	<li><%=t(:no_data)%></li>
 		<% end %>
   </ol>
-  <% end %>
   <section id="sl_blog" <% unless @blogs.empty? %>itemscope itemprop="blogPosts" itemtype="http://schema.org/Blog"<% end %>>
   <% unless @blogs.empty? %>
   <% @blogs.each do |blog| %>
@@ -41,6 +39,6 @@
   <%= link_to t(:link_new), new_blog_path,:rel=>"nofollow",:class=>"btn btn-default" %>
   <% end %>
   <%= paginate @blogs %>
-  </div>   
+  </div>
 	</section>
 </section>

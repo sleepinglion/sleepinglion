@@ -19,6 +19,6 @@ module Sleepinglion
     I18n.enforce_available_locales=true
     #config.cache_store = :redis_store, 'redis://localhost:6379/0/cache', { expires_in: 10.days}
     #config.autoload_paths += %W(#{config.root}/app/models/ckeditor)
-    config.assets.paths << Rails.root.join("app", "assets", "fonts")    
+    config.assets.paths << Rails.root.join("app", "assets", "fonts")
   end
 end

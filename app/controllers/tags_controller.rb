@@ -4,7 +4,7 @@ class TagsController < BoardController
 
   def initialize(*params)
     super(*params)
-    @controller_name=t('activerecord.models.tag')
+    @controller_name=t('activerecord.models.blog')
     @script="board/index"
 
     get_menu('tags')
@@ -14,12 +14,8 @@ class TagsController < BoardController
   # GET /tags.json
   def index
     if params[:tag].present?
-      @blogs = Blog.tagged_with(params[:tag]).page(params[:page]).per(@menu_setting.per)
-
-      if @menu_setting.use_category
-        @blog_categories=BlogCategory.where(:leaf=>true).where(:enable=>true)
-      end
-
+      @blogs = Blog.tagged_with(params[:tag]).page(params[:page]).per(15)
+      @blog_categories=BlogCategory.where(:leaf=>true).where(:enable=>true)
       @meta_keywords=params[:tag]+','+t(:meta_keywords)
     end
   end

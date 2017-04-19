@@ -363,6 +363,7 @@ ko:
       user : '회원'
       resource : '메뉴'
       program : '프로그램'
+      tag : '이름표'
     attributes :
       intro :
         title : '제목'

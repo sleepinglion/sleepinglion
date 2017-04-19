@@ -40,6 +40,9 @@ $(document).ready(function(){
 
 	$(".btn_close").click(function(){
 		$(this).parent().parent().parent().remove();
+		if(!$(".sl_aside").length) {
+			$('.sub_main').css('width','100%');
+		}
 		return false;
 	});
 
