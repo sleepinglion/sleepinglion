@@ -1,5 +1,5 @@
 CarrierWave.configure do |config|
-#  if Rails.env.production?
+if Rails.env.production?
 #    config.storage = :fog
 #    config.fog_credentials = {
 #      :provider               => 'AWS',                        # required
@@ -12,7 +12,17 @@ CarrierWave.configure do |config|
 #    config.fog_directory  = 'slhome'                     # require
 #config.fog_public     = false                                   # optional, defaults to true
 #    config.fog_attributes = {'Cache-Control'=>'max-age=315576000'}  # optional, defaults to {}
-#  else
+    config.storage = :sftp
+    config.sftp_host = "slboard.cdn3.cafe24.com"
+    config.sftp_user = "toughjjh"
+    config.sftp_folder = "public_html/uploads"
+    config.sftp_url = "http://slboard.cdn3.cafe24.com"
+    config.sftp_options = {
+      :password => ENV['FTP_PASSWORD'],
+      :port     => 22
+    }
+else
     config.storage = :file
-#  end
+end
+
 end
