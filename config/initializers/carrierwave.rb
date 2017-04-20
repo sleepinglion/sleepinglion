@@ -12,17 +12,24 @@ if Rails.env.production?
 #    config.fog_directory  = 'slhome'                     # require
 #config.fog_public     = false                                   # optional, defaults to true
 #    config.fog_attributes = {'Cache-Control'=>'max-age=315576000'}  # optional, defaults to {}
-    config.storage = :sftp
-    config.sftp_host = "slboard.cdn3.cafe24.com"
-    config.sftp_user = "toughjjh"
-    config.sftp_folder = "public_html/uploads"
-    config.sftp_url = "http://slboard.cdn3.cafe24.com"
-    config.sftp_options = {
-      :password => ENV['FTP_PASSWORD'],
-      :port     => 22
-    }
+  config.storage = :ftp
+  config.ftp_host = "slboard.cdn3.cafe24.com"
+  config.ftp_port = 21
+  config.ftp_user = "slboard"
+  config.ftp_passwd = "secret"
+  config.ftp_folder = "www"
+  config.ftp_url = "http://slboard.cdn3.cafe24.com"
 else
-    config.storage = :file
+  config.storage = :ftp
+  config.ftp_host = "iup.cdn3.cafe24.com"
+  config.ftp_port = 21
+  config.ftp_user = "sleepinglion"
+  config.ftp_passwd = "jjh30750"
+  config.ftp_folder = "www"
+  config.ftp_url = "http://iup.cdn3.cafe24.com"
+
+  #
+  #  config.storage = :file
 end
 
 end

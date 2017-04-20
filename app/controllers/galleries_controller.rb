@@ -151,6 +151,6 @@ class GalleriesController < BoardController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def gallery_params
-    params.require(:gallery).permit(:id,:user_id,:gallery_category_id,:title,:photo,:photo_cache,:content)
+    params.require(:gallery).permit(:id,:user_id,:gallery_category_id,:title,:photo,:photo_cache,:photo_url,:content)
   end
 end
