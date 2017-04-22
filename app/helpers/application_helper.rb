@@ -14,7 +14,10 @@ module ApplicationHelper
   end
 
   def sl_get_thumb(url,type='origin')
-    require 'uri'
+
+    if type=='origin'
+      return url
+    end
 
   	case type
       when 'large'
@@ -25,13 +28,6 @@ module ApplicationHelper
   			prefix='small_thumb'
   	end
 
-    require "addressable/uri"
-    uri= Addressable::URI.parse(url)
-  #  uri = URI.parse(url)
-  	if prefix
-  		url="#{uri.scheme}://#{uri.host}"+File.dirname(uri.path)+'/'+prefix+'_'+File.basename(url)
-  	end
-
-  	return url
+  	url.gsub(File.basename(url), prefix+'_'+File.basename(url))
   end
 end

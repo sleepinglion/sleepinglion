@@ -27,6 +27,7 @@ gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7', platforms: :ruby
 
+gem 'jquery-turbolinks'
 gem 'bootstrap-sass'
 gem 'devise'
 gem 'cancan'
