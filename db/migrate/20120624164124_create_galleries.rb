@@ -17,7 +17,6 @@ class CreateGalleries < ActiveRecord::Migration
       t.string :title, :null=>false, :limit=>60
       t.string :location, :limit=>255
       t.string :photo,:null=>false
-      t.string :photo_url, :null=>false
       t.string :content, :null=>false, :limit=>255
       t.boolean :enable, :null=>false, :default=>true
       t.timestamps :null=>false

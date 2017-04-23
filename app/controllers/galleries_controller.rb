@@ -92,7 +92,6 @@ class GalleriesController < BoardController
   # POST /galleries.json
   def create
     @gallery = Gallery.new(gallery_params)
-    @gallery.user_id=current_user.id
 
     respond_to do |format|
       if @gallery.save
@@ -139,6 +138,6 @@ class GalleriesController < BoardController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def gallery_params
-    params.require(:gallery).permit(:id,:user_id,:gallery_category_id,:title,:photo,:photo_cache,:content)
+    params.require(:gallery).permit(:id,:gallery_category_id,:title,:photo,:photo_cache,:content).merge(user_id: current_user.id)
   end
 end

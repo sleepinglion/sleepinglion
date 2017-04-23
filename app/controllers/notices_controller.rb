@@ -1,14 +1,13 @@
 class NoticesController < BoardController
   impressionist :actions=>[:show]
   before_action :set_notice, only: [:show, :edit, :update, :destroy]
-  before_action :set_ad, only: [:index, :show]  
 
   def initialize(*params)
     super(*params)
     @controller_name=t('activerecord.models.notice')
     @script="board/index"
-    
-    get_menu('notices')    
+
+    get_menu('notices')
   end
 
   # GET /notices
@@ -26,13 +25,13 @@ class NoticesController < BoardController
   def new
     @notice = Notice.new
     @notice.build_notice_content
-        
+
     @script="board/new"
   end
 
   # GET /notices/1/edit
   def edit
-    @script="board/edit"  
+    @script="board/edit"
   end
 
   # POST /notices
@@ -40,8 +39,8 @@ class NoticesController < BoardController
   def create
     @notice = Notice.new(notice_params)
     @notice.user_id=current_user.id
-    
-    @script="board/new"       
+
+    @script="board/new"
 
     respond_to do |format|
       if @notice.save
@@ -58,7 +57,7 @@ class NoticesController < BoardController
   # PATCH/PUT /notices/1.json
   def update
     @script="board/edit"
-  
+
     respond_to do |format|
       if @notice.update(notice_params)
         format.html { redirect_to @notice, notice: @controller_name +t(:message_success_update)}
@@ -74,7 +73,7 @@ class NoticesController < BoardController
   # DELETE /notices/1.json
   def destroy
     @notice.destroy
-    
+
     respond_to do |format|
       format.html { redirect_to notices_url }
       format.json { head :no_content }
@@ -86,7 +85,7 @@ class NoticesController < BoardController
   def set_notice
     @notice = Notice.find(params[:id])
   end
-  
+
   # Never trust parameters from the scary internet, only allow the white list through.
   def notice_params
     params.require(:notice).permit(:id,:title,notice_content_attributes: [:id,:content])

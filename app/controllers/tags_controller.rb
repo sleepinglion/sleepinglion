@@ -1,13 +1,10 @@
 class TagsController < BoardController
   before_action :set_tag, only: [:show, :edit, :update, :destroy]
-  before_action :set_ad, only: [:index, :show]
 
   def initialize(*params)
     super(*params)
     @controller_name=t('activerecord.models.blog')
     @script="board/index"
-
-    get_menu('tags')
   end
 
   # GET /tags

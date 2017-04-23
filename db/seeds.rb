@@ -43,12 +43,12 @@ ProgramCategory.create!(:id=>6,:program_language_id=>2,:title=>'CakePHP',:link=>
 ProgramCategory.create!(:id=>7,:program_language_id=>3,:title=>'Boostrap',:link=>'http://getbootstrap.com/',:enable=>1)
 ProgramCategory.create!(:id=>8,:program_language_id=>4,:title=>'Jquery',:link=>'https://jquery.com/',:enable=>1)
 
-Program.create!(:id=>1,:title=>'잠자는사자의 집',:description=>'',:service_link=>'http://www.sleepinglion.pe.kr',:use_database=>true,:enable=>true)
-Program.create!(:id=>2,:title=>'안티 살인은행',:description=>'',:service_link=>'http://www.antikb.site',:use_database=>true,:enable=>true)
-Program.create!(:id=>3,:title=>'SL FTP',:description=>'',:service_link=>'http://www.sl-ftp.site',:use_database=>false,:enable=>true)
-Program.create!(:id=>4,:title=>'모바일웹 플랫폼',:description=>'',:use_database=>true,:enable=>true)
-Program.create!(:id=>5,:title=>'관련링크관리 플러그인',:description=>'',:service_link=>'https://www.mediawiki.org/wiki/Extension:RelatedLinks',:use_database=>true,:enable=>true)
-Program.create!(:id=>6,:title=>'로고관리 플러그인',:description=>'',:service_link=>'https://www.mediawiki.org/wiki/Extension:UploadLogo',:use_database=>false,:enable=>true)
+Program.create!(:id=>1,:title=>'잠자는사자의 집',:description=>'현재보고있는 홈페이지 프로그램입니다.',:service_link=>'http://www.sleepinglion.pe.kr',:use_database=>true,:enable=>true)
+Program.create!(:id=>2,:title=>'안티 살인은행',:description=>'안티 살인자은행 홈페이지',:service_link=>'http://www.antikb.site',:use_database=>true,:enable=>true)
+Program.create!(:id=>3,:title=>'SL FTP',:description=>'웹 FTP프로그램입니다.',:service_link=>'http://www.sl-ftp.site',:use_database=>false,:enable=>true)
+Program.create!(:id=>4,:title=>'모바일웹 플랫폼',:description=>'모바일웹 홈페이지',:use_database=>true,:enable=>true)
+Program.create!(:id=>5,:title=>'관련링크관리 플러그인',:description=>'Mediawiki 관련링크관리 플러그인',:service_link=>'https://www.mediawiki.org/wiki/Extension:RelatedLinks',:use_database=>true,:enable=>true)
+Program.create!(:id=>6,:title=>'로고관리 플러그인',:description=>'Mediawiki 로고관리 플러그인',:service_link=>'https://www.mediawiki.org/wiki/Extension:UploadLogo',:use_database=>false,:enable=>true)
 
 ProgramLink.create!(:program_id=>1,:title=>'잠자는사자의 집(ROR)',:download_link=>'')
 ProgramLink.create!(:program_id=>1,:title=>'잠자는사지의 집(codeigniter)',:download_link=>'')
@@ -58,7 +58,6 @@ ProgramLink.create!(:program_id=>4,:title=>'모바일웹 플랫폼(ROR)',:downlo
 ProgramLink.create!(:program_id=>4,:title=>'모바일웹 플랫폼(codeigniter)',:download_link=>'')
 ProgramLink.create!(:program_id=>5,:title=>'관련링크관리 플러그인',:download_link=>'')
 ProgramLink.create!(:program_id=>6,:title=>'로고관리 플러그인',:download_link=>'')
-
 
 ProgramCategoriesProgram.create!(:program_category_id=>1,:program_id=>1,:main=>1)
 ProgramCategoriesProgram.create!(:program_category_id=>7,:program_id=>1)
