@@ -1,6 +1,5 @@
 <% breadcrumb :blogs %>
 <section id="sl_blog_index">
-	<% if @menu_setting.use_category %>
 	<ol class="nav nav-pills sl_categories hidden-lg">
 		<li <% unless params[:blog_category_id] %>class="active"<% end %>><%= link_to t(:all_category),blogs_path %></li>
   	<% unless @blog_categories.empty? %>
@@ -15,19 +14,25 @@
   	<li><%=t(:no_data)%></li>
 		<% end %>
   </ol>
-  <% end %>
   <section id="sl_blog" <% unless @blogs.empty? %>itemscope itemprop="blogPosts" itemtype="http://schema.org/Blog"<% end %>>
   <% unless @blogs.empty? %>
   <% @blogs.each do |blog| %>
   <article class="media" itemscope itemprop="blogPost" itemtype="http://schema.org/Blog">
     <%=link_to blog_path(blog),:class=>"pull-left" do %>
-    <% if blog.photo_url? %>
-      <%=image_tag sl_get_thumb(blog[:photo_url],'small'), :class=>"media-object",:itemprop=>"thumbnailUrl",:alt=>"..." %>
+    <% if blog.photo? %>
+      <%=image_tag sl_get_thumb(blog.photo.to_s,'small'), :class=>"media-object",:itemprop=>"thumbnailUrl",:alt=>"..." %>
     <% end %>
     <% end %>
     <div class="media-body">
       <h3 class="media-heading" itemprop="name"><%=link_to blog.title,blog_path(blog) %></h3>
       <p itemprop="description"><%=link_to blog.description,blog_path(blog) %></p>
+			<p class="tags">
+        <% blog.tags.each do |tag| %>
+				<% if tag.name? %>
+        <%=link_to "##{tag}",tag_path(:tag => tag.name) %>
+        <% end %>
+				<% end %>
+      </p>
     </div>
   </article>
   <% end %>

@@ -7,7 +7,5 @@ class CreateProgramCategories < ActiveRecord::Migration
       t.boolean :enable, :null=>false, :default=>true
       t.timestamps :null=>false
     end
-
-    add_foreign_key :program_categories, :program_languages, on_delete: :cascade, on_update: :cascade
   end
 end

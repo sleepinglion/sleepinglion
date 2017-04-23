@@ -26,6 +26,8 @@ $(document).ready(function(){
   		});
 	});
 
+ $('[data-toggle="tooltip"]').tooltip();	
+
 	$(".btn_minimize").click(function(){
 		var i=$(this).parent().find('i:first');
         if(i.hasClass('glyphicon-chevron-down')) {

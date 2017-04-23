@@ -3,7 +3,6 @@ class HomeController < ApplicationController
     super(*params)
 
     @script="home"
-    get_menu('home')
   end
 
   def index

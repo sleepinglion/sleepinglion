@@ -4,9 +4,9 @@
   <ul class="row">
     <% @blogs.each_with_index do |blog,index| %>
     <li class="col-md-2<% if index==5 %> nm<% else %><% if index==2 %> m_nm<% end %><% end %>">
-    	<%=link_to image_tag(asset_path('ajax-loader.gif'),:alt=>blog.title,:'data-original'=>sl_get_thumb(blog.photo.to_s,'medium'),:class=>'lazy'),blog_path(blog),:title=>blog.title %>
+    	<%=link_to image_tag(asset_path('ajax-loader.gif'),:alt=>blog.title,:'data-original'=>sl_get_thumb(blog.photo.to_s,'medium'),:class=>'lazy img-responsive'),blog_path(blog),:title=>blog.title %>
 			<noscript>
-				<%=link_to image_tag(sl_get_thumb(blog.photo.to_s,'medium'),:width=>200,:height=>200,:alt=>blog.title),blog_path(blog),:title=>blog.title %>
+				<%=link_to image_tag(sl_get_thumb(blog.photo.to_s,'medium'),:alt=>blog.title,:class=>'img-responsive'),blog_path(blog),:title=>blog.title %>
 			</noscript>
     </li>
   	<% end %>

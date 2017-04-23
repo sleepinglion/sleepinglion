@@ -10,30 +10,18 @@ class GalleriesController < BoardController
     @title=t('activerecord.models.gallery')
     @meta_description=t(:meta_description_gallery)
     @page_itemtype="http://schema.org/ImageGallery"
-
-    get_menu('galleries')
   end
 
   # GET /galleries
   # GET /galleries.json
   def index
-    if @menu_setting.use_category
-      @gallery_categories=GalleryCategory.all
+    @gallery_categories=GalleryCategory.all
 
-      if(params[:gallery_category_id])
-        @gallery_category_id=params[:gallery_category_id].to_i
-      else
-        if @gallery_categories[0]
-          @gallery_category_id=@gallery_categories[0].id.to_i
-        else
-          @gallery_category_id=nil
-        end
-      end
-
-      @galleries = Gallery.where(:gallery_category_id=>@gallery_category_id).order(:id=>'desc').page(params[:page]).per(30)
-    else
-      @galleries = Gallery.order(:id=>'desc').page(params[:page]).per(30)
+    if(params[:gallery_category_id])
+      @gallery_category_id=params[:gallery_category_id].to_i
     end
+
+    @galleries = Gallery.where(:gallery_category_id=>@gallery_category_id).order(:id=>'desc').page(params[:page]).per(30)
 
     if(params[:id])
       @gallery = Gallery.find(params[:id])
@@ -151,6 +139,6 @@ class GalleriesController < BoardController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def gallery_params
-    params.require(:gallery).permit(:id,:user_id,:gallery_category_id,:title,:photo,:photo_cache,:photo_url,:content)
+    params.require(:gallery).permit(:id,:user_id,:gallery_category_id,:title,:photo,:photo_cache,:content)
   end
 end

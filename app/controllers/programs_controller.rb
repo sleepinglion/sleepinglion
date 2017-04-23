@@ -1,14 +1,11 @@
 class ProgramsController < BoardController
   impressionist :actions=>[:show]
   before_action :set_program, only: [:show, :edit, :update, :destroy]
-  before_action :set_ad, only: [:index, :show]
 
   def initialize(*params)
     super(*params)
     @controller_name=t('activerecord.models.program')
     @script="board/index"
-
-    get_menu('programs')
   end
 
   # GET /programs

@@ -2,8 +2,6 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   layout :layout
   before_action :set_locale
-  before_action :set_resources
-  before_action :set_ad, only: [:index, :show]
 
   def initialize(*params)
     super(*params)
@@ -36,10 +34,6 @@ class ApplicationController < ActionController::Base
     redirect_to new_admin_session_path, :alert => exception.message
   end
 
-  def set_resources
-    @resources = SettingController.where(:enable=>true).where(:menu_display=>true).order([:priority,:id])
-  end
-
   def set_locale
     I18n.locale = params[:locale] || session[:locale] || I18n.default_locale
     session[:locale] = I18n.locale
@@ -53,15 +47,5 @@ class ApplicationController < ActionController::Base
     else
       return 'application'
     end
-  end
-
-  protected
-
-  def set_ad
-    @ad=true
-  end
-
-  def get_menu(menu)
-    @menu_setting=SettingController.where(:controller=>menu).first
   end
 end

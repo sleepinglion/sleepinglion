@@ -1,37 +1,24 @@
 class Admin::BlogsController < Admin::AdminController
   before_action :set_blog, only: [:show, :edit, :update, :destroy]
-  
+
   def initialize(*params)
     super(*params)
     @controller_name=t('activerecord.models.blog')
-    @script="board/index"    
-    @meta_description='예쁘고 귀여운 수정이의  FAQ입니다.'
-    
-    get_menu('blogs')    
+    @script="board/index"
+    @meta_description='블로그'
   end
 
   # GET /blogs
   # GET /blogs.json
   def index
-    if @menu_setting.use_category
-    
       @admin_blog_categories=BlogCategory.where(:enable=>true)
-    
+
       if(params[:blog_category_id])
         @admin_blog_category_id=params[:blog_category_id].to_i
-      else
-        if @admin_blog_categories[0]
-          @admin_blog_category_id=@admin_blog_categories[0].id.to_i
-        else
-          @admin_blog_category_id=nil        
-        end
       end
-    
-      @admin_blogs = Blog.where(:blog_category_id=>@admin_blog_category_id).order(@menu_setting.order).page(params[:page]).per(@menu_setting.per)      
-    else
-      @admin_blogs = Blog.order(@menu_setting.order).page(params[:page]).per(@menu_setting.per) 
-    end   
-    
+
+      @admin_blogs = Blog.where(:blog_category_id=>@admin_blog_category_id).order(@menu_setting.order).page(params[:page]).per(15)
+
     respond_to do |format|
       format.html
       format.json { render json: @admin_blogs }
@@ -43,26 +30,26 @@ class Admin::BlogsController < Admin::AdminController
   def show
    @admin_blog_comments=@admin_blog.blog_comment.order('id desc').page(params[:page]).per(10)
    @admin_blog_comment=BlogComment.new
-   
+
    @script="board/show"
-    
+
     respond_to do |format|
       format.html # show.html.erb
       format.json { render :json => @admin_blog_comments }
-    end  
+    end
   end
 
   # GET /blogs/new
   def new
     @admin_blog = Blog.new
     @admin_blog.build_blog_content
-    
+
     @script="board/new"
   end
 
   # GET /blogs/1/edit
   def edit
-    @script="board/edit"  
+    @script="board/edit"
   end
 
   # POST /blogs
@@ -70,8 +57,8 @@ class Admin::BlogsController < Admin::AdminController
   def create
     @admin_blog = Blog.new(blog_params)
     @admin_blog.user_id=current_user.id
-    
-    @script="board/new"    
+
+    @script="board/new"
 
     respond_to do |format|
       if @admin_blog.save
@@ -87,8 +74,8 @@ class Admin::BlogsController < Admin::AdminController
   # PATCH/PUT /blogs/1
   # PATCH/PUT /blogs/1.json
   def update
-    @script="board/edit"  
-  
+    @script="board/edit"
+
     respond_to do |format|
       if @admin_blog.update(blog_params)
         format.html { redirect_to admin_blogs_url, notice: @controller_name +t(:message_success_update)}
