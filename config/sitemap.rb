@@ -23,8 +23,6 @@ SitemapGenerator::Sitemap.create do
   end
 
   add blogs_path, :priority => 0.9, :changefreq => 'daily'
-  #
-  # Add all articles:
 
   Blog.find_each do |blog|
     add blog_path(blog), :priority => 0.9, :lastmod => blog.updated_at
@@ -41,12 +39,12 @@ SitemapGenerator::Sitemap.create do
   GuestBook.find_each do |guest_book|
     add guest_book_path(guest_book), :lastmod => guest_book.updated_at
   end
-  
+
   add programs_path
 
   Program.find_each do |program|
     add program_path(program), :lastmod => program.updated_at
-  end  
+  end
 
   add notices_path
 

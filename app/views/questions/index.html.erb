@@ -23,7 +23,7 @@
 				<% @questions.each do |question| %>
 				<tr>
 					<td class="sl_t_name"><%=userName(question,10) %></td>
-					<td class="sl_t_title"><%=checkPrivLink(question) %> &nbsp; <% if(question.secret?) %><%=image_tag('/assets/board/lock.png') %><% end %></td>
+					<td class="sl_t_title"><%=checkPrivLink(question) %> &nbsp; <% if(question.secret?) %><%=image_tag('lock.png') %><% end %></td>
 					<td class="sl_t_count"><% if question.question_comments_count? %><%=t(:answer) %><% else %><%=t(:no_answer) %><% end %></td>
 					<td class="sl_t_count"><%=question.count+question.impressionist_count(:filter=>:ip_address) %></td>
 					<td class="sl_t_created_at"><%=question.created_at.to_date %></td>

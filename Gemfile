@@ -44,7 +44,6 @@ gem 'sitemap_generator'
 gem 'meta-tags'
 gem 'gretel'
 gem 'non-stupid-digest-assets'
-gem 'addressable'
 gem 'globalize', git: 'https://github.com/globalize/globalize'
 gem 'activemodel-serializers-xml'
 

@@ -119,6 +119,6 @@ class BlogsController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def blog_params
-    params.require(:blog).permit(:blog_category_id, :user_id, :title, :description, :tag_list, :photo, :photo_cache, blog_content_attributes: [:id,:content])
+    params.require(:blog).permit(:blog_category_id, :title, :description, :tag_list, :photo, :photo_cache, blog_content_attributes: [:id,:content]).merge(user_id: current_user.id)
   end
 end

@@ -387,7 +387,6 @@ PLATFORMS
 DEPENDENCIES
   activemodel-serializers-xml
   acts-as-taggable-on
-  addressable
   bcrypt (~> 3.1.7)
   bootstrap-sass
   byebug
