@@ -346,6 +346,7 @@ a.left:active {background-position: -60px 0}
 
 @media all and (min-width: 992px) {
   html,body {font-size:14px}
+
 }
 
 @media all and (min-width: 992px) and (max-width: 1200px) {
@@ -359,7 +360,7 @@ a.left:active {background-position: -60px 0}
 	footer {height:5em;border-top:1px solid #e7e7e7}
 	#mom {margin:-6em 0 -5em;min-height:100%}
 	#main {padding-top:6em;padding-bottom:5em}
-	.ad_test {height:90px}
+	.adsbygoogle {width: 728px; height: 90px}
 
 	/* tag */
 	.sl_content_tags h4 {float:left;margin:0 5px;padding:0;line-height:150%}
@@ -371,11 +372,12 @@ a.left:active {background-position: -60px 0}
 }
 
 @media (min-width: 1200px) and (max-width: 1499px) {
-
+  .adsbygoogle {width: 900px; height: 110px}
 }
 
 @media (min-width: 1500px) {
   html,body {font-size:18px}
+  .adsbygoogle {width: 1500px; height: 140px}
   .container {width:1500px}
   .jumbotron {text-align: center}
 
