@@ -5,7 +5,7 @@ class Admin::NoticesController < Admin::AdminController
     super(*params)
     @controller_name=t('activerecord.models.notice')
     @script="board/index"
-    
+
     get_menu('notices')
   end
 
@@ -24,22 +24,21 @@ class Admin::NoticesController < Admin::AdminController
   def new
     @admin_notice = Notice.new
     @admin_notice.build_notice_content
-        
+
     @script="board/new"
   end
 
   # GET /notices/1/edit
   def edit
-    @script="board/edit"  
+    @script="board/edit"
   end
 
   # POST /notices
   # POST /notices.json
   def create
     @admin_notice = Notice.new(notice_params)
-    @admin_notice.user_id=current_user.id
-    
-    @script="board/new"       
+
+    @script="board/new"
 
     respond_to do |format|
       if @admin_notice.save
@@ -56,7 +55,7 @@ class Admin::NoticesController < Admin::AdminController
   # PATCH/PUT /notices/1.json
   def update
     @script="board/edit"
-  
+
     respond_to do |format|
       if @admin_notice.update(notice_params)
         format.html { redirect_to admin_notices_url, notice: @controller_name +t(:message_success_update)}
@@ -83,9 +82,9 @@ class Admin::NoticesController < Admin::AdminController
   def set_notice
     @admin_notice = Notice.find(params[:id])
   end
-  
+
   # Never trust parameters from the scary internet, only allow the white list through.
   def notice_params
-    params.require(:notice).permit(:id,:title,notice_content_attributes: [:id,:content])
+    params.require(:notice).permit(:id,:title,notice_content_attributes: [:id,:content]).merge(user_id: current_user.id)
   end
 end

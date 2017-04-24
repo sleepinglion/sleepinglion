@@ -17,7 +17,7 @@ class Admin::BlogsController < Admin::AdminController
         @admin_blog_category_id=params[:blog_category_id].to_i
       end
 
-      @admin_blogs = Blog.where(:blog_category_id=>@admin_blog_category_id).order(@menu_setting.order).page(params[:page]).per(15)
+      @admin_blogs = Blog.where(:blog_category_id=>@admin_blog_category_id).order(id:'desc').page(params[:page]).per(15)
 
     respond_to do |format|
       format.html
@@ -105,6 +105,6 @@ class Admin::BlogsController < Admin::AdminController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def blog_params
-    params.require(:blog).permit(:blog_category_id, :user_id, :title, :description, :photo, :photo_cache, blog_content_attributes: [:id,:content])
+    params.require(:blog).permit(:blog_category_id, :user_id, :title, :description, :photo, :photo_cache, blog_content_attributes: [:id,:content]).merge(user_id: current_user.id)
   end
 end

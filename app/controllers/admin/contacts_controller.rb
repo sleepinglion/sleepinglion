@@ -1,11 +1,11 @@
 class Admin::ContactsController < Admin::AdminController
-  before_action :set_contact, only: [:show, :edit, :update, :destroy]  
-  
+  before_action :set_contact, only: [:show, :edit, :update, :destroy]
+
   def initialize(*params)
     super(*params)
     @controller_name='수정이 요리'
   end
-   
+
   # GET /contacts
   # GET /contacts.json
   def index
@@ -81,15 +81,15 @@ class Admin::ContactsController < Admin::AdminController
       format.json { head :no_content }
     end
   end
-  
+
   private
   # Use callbacks to share common setup or constraints between actions.
   def set_contact
     @admin_contact = Contact.find(params[:id])
   end
-  
+
   # Never trust parameters from the scary internet, only allow the white list through.
   def contact_params
-    params.require(:contact).permit(:id, :name, :phone, :email, :title)
-  end  
+    params.require(:contact).permit(:id, :name, :phone, :email, :title).merge(user_id: current_user.id)
+  end
 end
