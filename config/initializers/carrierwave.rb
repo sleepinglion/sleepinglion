@@ -19,14 +19,16 @@ if Rails.env.production?
   config.ftp_passwd = "jjh30750"
   config.ftp_folder = "/www"
   config.ftp_url = "http://sleepinglion.cdn3.cafe24.com"
+  config.ftp_passive = true
 else
   config.storage = :ftp
   config.ftp_host = "slboard.cdn3.cafe24.com"
   config.ftp_port = 21
   config.ftp_user = "slboard"
   config.ftp_passwd = "jjh30750"
-  config.ftp_folder = "www"
+  config.ftp_folder = "/www"
   config.ftp_url = "http://slboard.cdn3.cafe24.com"
+  config.ftp_passive = true
 
   #
   #  config.storage = :file

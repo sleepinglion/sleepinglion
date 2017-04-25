@@ -45,13 +45,10 @@ class GalleriesController < BoardController
   # GET /galleries/1
   # GET /galleries/1.json
   def show
-    if @menu_setting.use_category
       @gallery_categories=GalleryCategory.all
       @gallery_category_id=@gallery.gallery_category_id
       @galleries = Gallery.where(:gallery_category_id=>@gallery_category_id).order(:id=>'desc').page(params[:page]).per(30)
-    else
-      @galleries = Gallery.order(:id=>'desc').page(params[:page]).per(30)
-    end
+
 
     if @gallery
       @title=@gallery.title
