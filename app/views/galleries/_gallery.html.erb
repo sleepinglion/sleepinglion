@@ -13,7 +13,7 @@
 	</li>
 	<% end %>
 </ol>
-<div id="sl_gallery" class="row" <% if @gallery %>itemscope itemtype="http://schema.org/ImageObject"<% end %> >
+<div id="sl_gallery" <% if @gallery %>itemscope itemtype="http://schema.org/ImageObject"<% end %> >
 	<% if @gallery %>
 	<div id="sl_gallery_left" class="col-xs-12 col-md-6 col-xl-5">
 		<span class="none" itemprop="genre"><%= @gallery.gallery_category_id %></span>

@@ -299,6 +299,8 @@ a.left:active {background-position: -60px 0}
 .box_content {float:left;width:100%;margin-top: -1px;padding: 10px;border: 1px solid #ddd;background: #fcfcfc;-webkit-border-radius: 0px 0px 2px 2px;-moz-border-radius: 0px 0px 2px 2px;border-radius: 0px 0px 2px 2px;-webkit-box-shadow: 0 1px 0px rgba(255, 255, 255, .6);-moz-box-shadow: 0 1px 0px rgba(255, 255, 255, .6);box-shadow: 0 1px 0px rgba(255, 255, 255, .6);}
 
 
+.adsbygoogle {width:100%}
+
 @media all and (max-width: 767px) {
 	html,body {background:#ccc}
 	header {background:none;border-bottom:0;margin:1% 0}
@@ -346,11 +348,10 @@ a.left:active {background-position: -60px 0}
 
 @media all and (min-width: 992px) {
   html,body {font-size:14px}
-
+  #sl_intro_index #sl_intro_left {padding-left:0}
 }
 
 @media all and (min-width: 992px) and (max-width: 1200px) {
-
 }
 
 @media all and (min-width: 1200px) {
@@ -360,7 +361,7 @@ a.left:active {background-position: -60px 0}
 	footer {height:5em;border-top:1px solid #e7e7e7}
 	#mom {margin:-6em 0 -5em;min-height:100%}
 	#main {padding-top:6em;padding-bottom:5em}
-	.adsbygoogle {width: 728px; height: 90px}
+	.adsbygoogle {height: 100px}
 
 	/* tag */
 	.sl_content_tags h4 {float:left;margin:0 5px;padding:0;line-height:150%}
@@ -372,12 +373,12 @@ a.left:active {background-position: -60px 0}
 }
 
 @media (min-width: 1200px) and (max-width: 1499px) {
-  .adsbygoogle {width: 900px; height: 110px}
+  .adsbygoogle {height: 110px}
 }
 
 @media (min-width: 1500px) {
   html,body {font-size:18px}
-  .adsbygoogle {width: 1500px; height: 140px}
+  .adsbygoogle {height: 140px}
   .container {width:1500px}
   .jumbotron {text-align: center}
 
