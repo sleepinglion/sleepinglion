@@ -1,4 +1,19 @@
 <% breadcrumb :programs %>
+<ol class="nav nav-tabs sl_categories">
+	<% unless @program_categories.empty? %>
+	<% @program_categories.each do |program_category| %>
+	<li <% if program_category.id!=nil && (@program_category_id==program_category.id) %>class="active"<% end %>>
+		<%= link_to programs_path(:program_category_id=>program_category.id) do %>
+		<%= program_category.title %><span class="hidden-xs">(<%= program_category.program_categories_programs_count %>)</span>
+		<% end %>
+	</li>
+	<% end %>
+	<% else %>
+	<li>
+		<%= t(:no_data)%>
+	</li>
+	<% end %>
+</ol>
 <div id="sl_program_index">
 	<article>
 		<h3>알림</h3>
@@ -18,7 +33,10 @@
 				<% unless program.program_categories_programs.empty? %>
 					<ul>
 					<% program.program_categories_programs.each do |use_program| %>
-					<% next if use_program.main %>
+					<% next unless use_program.program_category.main %>
+					<% if @program_category_id.present? %>
+					<% next unless use_program.program_category.id==@program_category_id %>
+					<% end %>
 						<li><%=link_to use_program.program_category.title,use_program.program_category.link,:target=>"_blank",:title=>'새창으로 열림 - '+use_program.program_category.title+'홈페이지로 이동' %></li>
 					<% end %>
 					</ul>
@@ -27,7 +45,7 @@
 				<% unless program.program_categories_programs.empty? %>
 					<ul>
 					<% program.program_categories_programs.each do |use_program| %>
-					<% next unless use_program.main %>
+					<% next if use_program.program_category.main %>
 						<li><%=link_to use_program.program_category.title,use_program.program_category.link,:target=>"_blank",:title=>'새창으로 열림 - '+use_program.program_category.title+'홈페이지로 이동' %></li>
 					<% end %>
 					</ul>
@@ -35,13 +53,17 @@
 				</li>
 			</ul>
 		</div>
+		<% unless program.program_links.empty? %>
+		<% program.program_links.each do |program_link| %>
 		<div>
-			<h4>내려받기</h4>
+			<h4><%=program_link.title %> <%=t(:download_source) %></h4>
 			<ul>
-				<li><a href="https://github.com/sleeping-lion/sleepinglion_codeigniter" title="GitHub로 보기">GitHub</a></li>
-				<li><a href="https://github.com/sleeping-lion/sleepinglion_codeigniter/archive/master.zip" title="ZIP 내려받기">ZIP파일 내려받기(GitHub)</a></li>
+				<li><%=link_to t(:source_repository),program_link.repository %></li>
+				<li><%=link_to t(:download_source_zip),program_link.download_link %></li>
 			</ul>
 		</div>
+		<% end %>
+		<% end %>
 	</article>
 	<% end %>
 	<% end %>

@@ -137,8 +137,7 @@ footer form {position:absolute;top:10px;right:10px}
 #sl_blog_index ol.nav-tabs {margin:0 0 10px}
 #sl_blog {float:left;width:100%;margin:20px 0}
 #sl_blog_index .media {border-bottom:1px dotted #ccc;padding-bottom:10px;margin-bottom:20px}
-#sl_blog_index .media .tags a {color:#999 }
-#sl_blog_index .media .tags a:hover {color:#333}
+#sl_blog_index .media .tags {display:none}
 
 
 /* Main Common*/
@@ -382,6 +381,10 @@ a.left:active {background-position: -60px 0}
   .container {width:1500px}
   .jumbotron {text-align: center}
 
+
+  #sl_blog_index .media .tags {display:block}
+  #sl_blog_index .media .tags a {color:#999 }
+  #sl_blog_index .media .tags a:hover {color:#333}
 
   .hidden-lg {
       display: none !important;

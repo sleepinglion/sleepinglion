@@ -11,7 +11,14 @@ class ProgramsController < BoardController
   # GET /programs
   # GET /programs.json
   def index
-    @programs = Program.order(:id=>'asc').page(params[:page]).per(5)
+    @program_categories = ProgramCategory.where(:main=>true).where('program_categories_programs_count>0',:enable=>true)
+
+    if(params[:program_category_id])
+      @program_category_id=params[:program_category_id].to_i
+      @programs = Program.joins(:program_categories_programs).where('program_categories_programs.program_category_id=?',@program_category_id).where(:enable=>true).order(:id=>'desc').page(params[:page]).per(30)
+    else
+      @programs = Program.where(:enable=>true).order(:id=>'desc').page(params[:page]).per(30)
+    end
   end
 
   # GET /programs/1
