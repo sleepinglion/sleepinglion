@@ -1,5 +1,3 @@
-# encoding: utf-8
-
 module BoardHelper
   def link_to_delete(obj,parent=nil)
 

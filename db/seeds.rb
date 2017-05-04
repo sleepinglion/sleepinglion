@@ -1,9 +1,4 @@
-Group.create!(:title=>'admin')
-Group.create!(:title=>'manage')
-Group.create!(:title=>'user')
-Group.create!(:title=>'viewer')
-
-User.create!(:group_id=>1,:email => 'toughjjh@gmail.com', :nickname=>'잠자는-사자', :password => 'jjh123456', :password_confirmation => 'jjh123456',:admin=>true)
+User.create!(:email => 'toughjjh@gmail.com', :nickname=>'잠자는-사자', :password => 'jjh123456', :password_confirmation => 'jjh123456',:admin=>true)
 
 BlogCategory.create!(:id=>1,:user_id=>1,:blog_category_id=>nil,:title=>'잡생각',:blogs_count=>16,:blog_categories_count=>0,:leaf=>0,:enable=>1,:created_at=>'2013-12-24 18:26:41',:updated_at=>'2013-12-24 18:26:41')
 BlogCategory.create!(:id=>2,:user_id=>1,:blog_category_id=>nil,:title=>'리눅스',:blogs_count=>0,:blog_categories_count=>4,:leaf=>0,:enable=>1,:created_at=>'2013-12-24 18:26:41',:updated_at=>'2013-12-24 18:26:41')

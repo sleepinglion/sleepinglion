@@ -72,6 +72,25 @@ ko:
   link_back : '뒤로'
   link_home : '홈으로'
 
+
+  ########### intro #############
+  sl_intro_title : '잠자는사자 극비 신상공개!!!'
+  name : '이름'
+  name_call : '<span itemprop="additionalName">잠자는사자</span>로 불리운다'
+  sex : '성별'
+  male : '남자'
+  birthday : '생일'
+  sl_birthday : '1981년 6월 2일'
+  job : '직업'
+  web_programer : '웹프로그래머'
+  height : '키'
+  weight : '몸무게'
+  like : '좋아하는 것'
+  hate : '싫어하는 것'
+
+
+  ########## intro end ##########
+
   answer : '답변'
   no_answer : '미답변'
 

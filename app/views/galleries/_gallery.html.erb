@@ -1,4 +1,4 @@
-<ol class="nav nav-tabs sl_categories">
+<ol class="nav nav-tabs">
 	<% unless @gallery_categories.empty? %>
 	<% @gallery_categories.each do |gallery_category| %>
 	<li <% if gallery_category.id!=nil && (@gallery_category_id==gallery_category.id) %>class="active"<% end %>>
@@ -13,7 +13,7 @@
 	</li>
 	<% end %>
 </ol>
-<div id="sl_gallery" <% if @gallery %>itemscope itemtype="http://schema.org/ImageObject"<% end %> >
+<div id="sl_gallery" class="row" <% if @gallery %>itemscope itemtype="http://schema.org/ImageObject"<% end %> >
 	<% if @gallery %>
 	<div id="sl_gallery_left" class="col-xs-12 col-md-6 col-xl-5">
 		<span class="none" itemprop="genre"><%= @gallery.gallery_category_id %></span>
@@ -64,7 +64,7 @@
 			<% end %>
 		</div>
 		<% else %>
-		<div>
+		<div class="col-xs-12">
 			<p>
 				<%= t(:no_data) %>
 			</p>
@@ -78,7 +78,7 @@
 		<% end %>
 	</div>
 
-	<div id="sl_bottom_menu">
+	<div class="col-xs-12">
 		<% if can? :create, Gallery %>
 		<%= link_to t(:link_new),new_gallery_path(:gallery_category_id=>@categoryId),:rel=>"nofollow",:class=>"btn btn-default" %>
 		<% end %>

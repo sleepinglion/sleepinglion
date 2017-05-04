@@ -1,32 +1,31 @@
 <% breadcrumb :intro %>
 <section id="sl_intro_index">
-	<article id="intro_main_content" itemscope itemtype="http://schema.org/Person">
+	<article itemscope itemtype="http://schema.org/Person">
 		<div id="sl_intro_left" class="col-sm-12 col-md-6">
-			<a href="http://slboard.cdn3.cafe24.com/intro_photo
-/photo/1/sl.jpg" class="simple_image" title="" itemprop="image"><img src="http://slboard.cdn3.cafe24.com/intro_photo
-/photo/1/large_thumb_sl.jpg" class="img-responsive" alt=""/></a>
+			<a href="http://sleepinglion.cdn3.cafe24.com/intro_photo/photo/1/sl.jpg" class="simple_image" title="" itemprop="image">
+				<img src="http://sleepinglion.cdn3.cafe24.com/intro_photo/photo/1/large_thumb_sl.jpg" class="img-responsive" alt="" />
+			</a>
 		</div>
 		<div id="sl_intro_right" class="col-sm-12 col-md-6">
-			<h3>잠자는사자 극비 신상공개!!!</h3>
+			<h3><%=t(:sl_intro_title) %></h3>
 			<dl>
-				<dt>이름</dt>
-				<dd itemprop="name">
-					<span itemprop="additionalName">잠자는사자</span>로 불리운다</dd>
-				<dt>성별</dt>
-				<dd itemprop="gender">남자</dd>
-				<dt>생일</dt>
-				<dd itemprop="birthDate" datetime="1981-06-02">1981-06-02</dd>
-				<dt>직업</dt>
-				<dd itemprop="jobTitle">웹프로그래머</dd>
-				<dt>키</dt>
+				<dt><%=t(:name) %></dt>
+				<dd itemprop="name"><%=raw t(:name_call) %></dd>
+				<dt><%=t(:sex) %></dt>
+				<dd itemprop="gender"><%=t(:male) %></dd>
+				<dt><%=t(:birthday) %></dt>
+				<dd itemprop="birthDate" datetime="1981-06-02"><%=t(:sl_birthday) %></dd>
+				<dt><%=t(:job) %></dt>
+				<dd itemprop="jobTitle"><%=t(:web_programer) %></dd>
+				<dt><%=t(:height) %></dt>
 				<dd>180cm</dd>
-				<dt>몸무게</dt>
+				<dt><%=t(:weight) %></dt>
 				<dd>80kg</dd>
-				<dt>좋아하는것</dt>
+				<dt><%=t(:like) %></dt>
 				<dd>
 					개 , 아이들 , 철도 , 프로그래밍 , 리눅스 , 중국요리
 				</dd>
-				<dt>싫어하는것</dt>
+				<dt><%=t(:hate) %></dt>
 				<dd>
 
 					자동차 , 학교 , 군대 , 윈도우 , 주한미군

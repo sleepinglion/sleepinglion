@@ -1,7 +1,6 @@
 class CreateDeviseToUsers < ActiveRecord::Migration
   def change
     create_table :users do |t|
-      t.references :group, :null=>false
       ## Database authenticatable
       t.string :email,  :null => false, :limit=>100
       t.string :nickname, :null => false, :limit=>60
@@ -49,7 +48,6 @@ class CreateDeviseToUsers < ActiveRecord::Migration
     # t.timestamps
     end
 
-    add_index :users, :group_id
     add_index :users, :email,                :unique => true
     add_index :users, :reset_password_token, :unique => true
   # add_index :users, :confirmation_token,   :unique => true

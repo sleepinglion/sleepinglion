@@ -74,7 +74,7 @@ header nav a:hover {color:#000}
 header nav a:visited {color:#666}
 header nav a:active {color:red}
 header nav ul li ul {position:absolute;display:none}
-header #top_menu {position:absolute;right:10px;top:5px;margin:0;padding:0;list-style:none;z-index:9999}
+header #top_menu {position:absolute;right:10px;top:5px;margin:0;padding:0;list-style:none;z-index:9}
 header #top_menu li {float:left;margin:0 15px 0 0;padding:0}
 
 /* aside */
@@ -96,7 +96,7 @@ footer address {margin-top:10px }
 footer form {position:absolute;top:10px;right:10px}
 
 /* intro */
-#sl_intro_index h3 {margin-bottom:40px;text-indent:0}
+#sl_intro_index h3 {margin-top:0;margin-bottom:40px;text-indent:0}
 #sl_intro_index #intro_main_content {float:left;width:100%;margin:0 0 20px}
 #sl_intro_index #sl_intro_right {float:right;position:relative}
 #sl_intro_index #sl_intro_right dl {float:left;width:100%;margin:0 0 10px;padding:0}
@@ -107,8 +107,7 @@ footer form {position:absolute;top:10px;right:10px}
 #sl_intro_index #main_content a {clear:both;display:block}
 
 /* gallery */
-#sl_gallery_index {float:left;width:100%;margin:10px 0}
-#sl_gallery_index ol.nav-tabs {margin:0 0 10px}
+.sl_gallery {float:left;width:100%;margin:10px 0}
 #gallery_main_content {float:left;width:100%;margin:0 0 20px}
 #sl_gallery_left {float:left;position:relative;overflow:hidden}
 #sl_gallery_left figure {position:relative;}
@@ -362,6 +361,8 @@ a.left:active {background-position: -60px 0}
 	#main {padding-top:6em;padding-bottom:5em}
 	.adsbygoogle {height: 100px}
 
+  .sl_gallery ol.nav-tabs {margin-bottom:20px}
+
 	/* tag */
 	.sl_content_tags h4 {float:left;margin:0 5px;padding:0;line-height:150%}
 	.sl_content_tags h4:after {content:' :'}
@@ -381,6 +382,7 @@ a.left:active {background-position: -60px 0}
   .container {width:1500px}
   .jumbotron {text-align: center}
 
+  .sl_gallery ol.nav-tabs {margin-bottom:25px}
 
   #sl_blog_index .media .tags {display:block}
   #sl_blog_index .media .tags a {color:#999 }
