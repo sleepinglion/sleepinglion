@@ -19,6 +19,8 @@ class GalleriesController < BoardController
 
     if(params[:gallery_category_id])
       @gallery_category_id=params[:gallery_category_id].to_i
+    else
+      @gallery_category_id=@gallery_categories[0].id
     end
 
     @galleries = Gallery.where(:gallery_category_id=>@gallery_category_id).order(:id=>'desc').page(params[:page]).per(30)
@@ -34,7 +36,7 @@ class GalleriesController < BoardController
       @meta_description=@gallery.content
     end
 
-    @script='galleries/index'
+    @script='galleries'
 
     respond_to do |format|
       format.html # index.html.erb
@@ -56,7 +58,7 @@ class GalleriesController < BoardController
     end
 
 
-    @script='galleries/index'
+    @script='galleries'
 
     respond_to do |format|
       format.html # show.html.erb
