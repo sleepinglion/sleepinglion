@@ -6,14 +6,12 @@ class NoticesController < BoardController
     super(*params)
     @controller_name=t('activerecord.models.notice')
     @script="board/index"
-
-    get_menu('notices')
   end
 
   # GET /notices
   # GET /notices.json
   def index
-    @notices = Notice.order(@menu_setting.order).page(params[:page]).per(@menu_setting.per)
+    @notices = Notice.order(:id=>'desc').page(params[:page]).per(15)
   end
 
   # GET /notices/1

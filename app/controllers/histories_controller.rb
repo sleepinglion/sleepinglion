@@ -1,19 +1,17 @@
 class HistoriesController < ApplicationController
-  before_action :authenticate_user!, :except => [:index,:show]  
+  before_action :authenticate_user!, :except => [:index,:show]
   before_action :set_history, only: [:show, :edit, :update, :destroy]
-  
+
   def initialize(*params)
-    super(*params)   
+    super(*params)
     @controller_name=t('activerecord.models.history')
-    
-    get_menu('histories')    
-  end   
-  
+  end
+
   # GET /histories
   # GET /histories.json
   def index
     @histories = History.order(@menu_setting.order).page(params[:page]).per(@menu_setting.per)
-    
+
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @histories }
@@ -33,7 +31,7 @@ class HistoriesController < ApplicationController
   # GET /histories/new.json
   def new
     @history = History.new
-    
+
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @history }
@@ -84,15 +82,15 @@ class HistoriesController < ApplicationController
       format.json { head :no_content }
     end
   end
-  
+
   private
   # Use callbacks to share common setup or constraints between actions.
   def set_history
     @history = Histro.find(params[:id])
   end
-  
+
   # Never trust parameters from the scary internet, only allow the white list through.
   def history_params
     params.require(:history).permit(:year, :title, :content)
-  end  
+  end
 end

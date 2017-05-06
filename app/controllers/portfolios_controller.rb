@@ -1,18 +1,16 @@
 class PortfoliosController < ApplicationController
-  impressionist :actions=>[:show]  
-  before_action :authenticate_user!, :except => [:index,:show]  
-  before_action :set_portfolio, only: [:show, :edit, :update, :destroy]  
-  
+  impressionist :actions=>[:show]
+  before_action :authenticate_user!, :except => [:index,:show]
+  before_action :set_portfolio, only: [:show, :edit, :update, :destroy]
+
   def initialize(*params)
-    super(*params)   
+    super(*params)
     @controller_name=t('activerecord.models.portfolio')
     @script="board/index"
-    @title=t('activerecord.models.portfolio')+t(:title_separator)+t(:application_name)    
+    @title=t('activerecord.models.portfolio')+t(:title_separator)+t(:application_name)
     @meta_description=t(:meta_description_portfolio)
-    
-    get_menu('portfolios')
   end
-   
+
   # GET /portfolios
   # GET /portfolios.json
   def index
@@ -37,7 +35,7 @@ class PortfoliosController < ApplicationController
   # GET /portfolios/new.json
   def new
     @portfolio = Portfolio.new
-    @portfolio.build_portfolio_content    
+    @portfolio.build_portfolio_content
 
     respond_to do |format|
       format.html # new.html.erb
@@ -69,7 +67,7 @@ class PortfoliosController < ApplicationController
   # PUT /portfolios/1.json
   def update
     respond_to do |format|
-      if @portfolio.update_attributes(portfolio_params)      
+      if @portfolio.update_attributes(portfolio_params)
         format.html { redirect_to @portfolio, notice: @controller_name +t(:message_success_update) }
         format.json { head :no_content }
       else
@@ -82,22 +80,22 @@ class PortfoliosController < ApplicationController
   # DELETE /portfolios/1
   # DELETE /portfolios/1.json
   def destroy
-    @portfolio.destroy   
+    @portfolio.destroy
 
     respond_to do |format|
       format.html { redirect_to portfolios_url }
       format.json { head :no_content }
     end
   end
-  
+
   private
   # Use callbacks to share common setup or constraints between actions.
   def set_portfolio
     @portfolio = Portfolio.find(params[:id])
   end
-  
+
   # Never trust parameters from the scary internet, only allow the white list through.
   def portfolio_params
     params.require(:portfolio).permit(:id, :url, :title, :description, :photo, portfolio_content_attributes: [:id,:content])
-  end  
+  end
 end
