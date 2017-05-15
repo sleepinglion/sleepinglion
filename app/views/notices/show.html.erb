@@ -9,7 +9,8 @@
       <p><%=t(:label_name)%> : <span  itemprop="author"><%=userName(@notice,10) %></span>&nbsp;&nbsp;&nbsp; <%=t(:label_created_at)%> : <span itemprop="dateCreated"><%= @notice.created_at %></span><span class="none" itemprop="dateModified"><%= @notice.updated_at %></span></p>
     </div>
     <div class="sl_content_main">
-      <div class="sl_content_text" itemprop="text"><%= simple_format(@notice.notice_content.content) %></div>
+      <%=debug @notice %>
+      <div class="sl_content_text" itemprop="text"><%= simple_format(@notice.title) %></div>
     </div>
   </div>
   <div id="sl_content_bottom_menu">
