@@ -332,11 +332,7 @@ a.left:active {background-position: -60px 0}
 	footer {background:#fff;border-radius:5px;width:100%;margin:1% 0}
 }
 
-@media all and (max-width: 992px) {
-
-}
-
-@media all and (min-width: 768px) and (max-width: 992px) {
+@media all and (min-width: 768px) and (max-width: 991px) {
 	header {height:8em;background:#f8f8f8;border-bottom:1px solid #e7e7e7}
 	header nav ul li:first-child {margin-left:0}
 	footer {height:5em;border-top:1px solid #e7e7e7}
@@ -349,7 +345,7 @@ a.left:active {background-position: -60px 0}
   #sl_intro_index #sl_intro_left {padding-left:0}
 }
 
-@media all and (min-width: 992px) and (max-width: 1200px) {
+@media all and (min-width: 992px) and (max-width: 1199px) {
 }
 
 @media all and (min-width: 1200px) {
