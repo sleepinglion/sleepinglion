@@ -4,7 +4,7 @@
 
 [www.sleepinglion.pe.kr](http://www.sleepinglion.pe.kr) is My Homepage
 
-This Application is composed of [Rails](http://rubyonrails.org/)(user-pages,admin-pages) + UI [Boostrap](http://getbootstrap.com) + Something(config,base-data,capistrano)
+This Application is composed of [Rails](http://rubyonrails.org/)(user-pages,admin-pages) + UI [Boostrap](http://getbootstrap.com)
 
 ## Server Requirements
 
