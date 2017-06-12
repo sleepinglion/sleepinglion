@@ -4,6 +4,25 @@
 //= require plugin/jquery.tagcanvas.min.js
 
 $(document).ready(function(){
+
+	$('#sl_main_gallery').on('slide.bs.carousel', function(e) {
+    var $nextImage;
+    $nextImage = $(e.relatedTarget).find('img');
+    $nextImage.each(function() {
+      if ($(this).attr('data-original')) {
+        $(this).attr('src', $(this).attr('data-original'));
+        $(this).removeAttr('data-original');
+      }
+    });
+  });
+
+  $('#sl_main_gallery .carousel-inner .active img,#sl_main_blog img').each(function() {
+    if ($(this).attr('data-original')) {
+      $(this).attr('src', $(this).attr('data-original'));
+      $(this).removeAttr('data-original');
+    }
+  });
+
 	if(!$('#myCanvas').tagcanvas({
      outlineThickness : 1,
      maxSpeed : 0.05,
@@ -26,7 +45,7 @@ $(document).ready(function(){
   		});
 	});
 
- $('[data-toggle="tooltip"]').tooltip();	
+ $('[data-toggle="tooltip"]').tooltip();
 
 	$(".btn_minimize").click(function(){
 		var i=$(this).parent().find('i:first');

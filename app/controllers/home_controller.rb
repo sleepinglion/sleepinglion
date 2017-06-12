@@ -1,10 +1,4 @@
 class HomeController < ApplicationController
-  def initialize(*params)
-    super(*params)
-
-    @script="home"
-  end
-
   def index
     @notices = Notice.order('id desc').page(0).per(5)
     @questions = Question.order('id desc').page(0).per(5)
