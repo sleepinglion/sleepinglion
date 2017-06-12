@@ -6,7 +6,7 @@ Sleepinglion::Application.routes.draw do
     get 'edit', :to => 'admins::Registrations#edit'
     get 'login', :to => 'admins::Sessions#new'
     get 'logout', :to=> 'admins::Sessions#destroy'
-  end  
+  end
 
   devise_for :users, :controllers => { :sessions => "users/sessions",:registrations => "users/registrations" }, :path_names =>  {:sign_up=>'new',:sign_in => 'login', :sign_out => 'logout'} do
     get '/users', :to => 'users/registrations#index'
@@ -49,7 +49,7 @@ Sleepinglion::Application.routes.draw do
   get 'guest_books/:guest_book_id/guest_book_comments/:id/password',:to=>'guest_book_comments#password'
   post 'guest_books/:guest_book_id/guest_book_comments/:id/password',:to=>'guest_book_comments#password'
 
-  # 관리자
+  
   scope 'admin', module: 'admin', as: 'admin' do
     get '/' => 'admin_home#index'
     resources :users
