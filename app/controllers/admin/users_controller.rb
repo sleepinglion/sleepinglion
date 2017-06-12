@@ -1,9 +1,8 @@
 class Admin::UsersController < Admin::AdminController
   def initialize(*params)
     super(*params)
-    @controller_name='수정이 요리'
   end
-   
+
   # GET /admin_users
   # GET /admin_users.json
   def index
@@ -79,15 +78,15 @@ class Admin::UsersController < Admin::AdminController
       format.json { head :no_content }
     end
   end
-  
+
   private
   # Use callbacks to share common setup or constraints between actions.
   def set_admin_user
     @admin_user = User.find(params[:id])
   end
-  
+
   # Never trust parameters from the scary internet, only allow the white list through.
   def admin_user_params
     params.require(:admin_user).permit(:id, :url, :title, :description, :photo)
-  end  
+  end
 end

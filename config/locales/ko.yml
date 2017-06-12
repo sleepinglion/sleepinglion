@@ -38,6 +38,13 @@ ko:
   no_data : '글이 없습니다.'
   all_category : '전체'
 
+  login_page : '로그인 페이지'
+  login_title : '관리자 로그인'
+  login_p_id : '아이디를 입력하세요'
+  login_p_email : '이메일을 입력하세요'
+  login_p_password : '비밀번호를 입력하세요'
+  login_remember : '기억해줘'  
+
   home_main_title : '웹프로그래머 잠자는-사자입니다.'
   home_main_description : '잠자는사자의 사자굴에 오신것을 환영합니다.'
 

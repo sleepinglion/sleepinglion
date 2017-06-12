@@ -1,54 +1,48 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="<%=I18n.locale %>">
 <head>
-<title><%=@title %></title>
-<meta charset="utf-8">
-<meta name="robots" content="<%=@meta_robot %>" />
-<meta name="application-name" content="<%=@meta_application_name %>" />
-<meta name="keywords" content="<%=@meta_keyword %>" />
-<meta name="description" content="<%=@meta_description %>" />
-<meta name="author" content="Sleeping-Lion" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-<link rel="shortcut icon" href="<%=asset_path('favicon.ico') %>" />
-<%= stylesheet_link_tag "//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css", :media => "all" %>
-<%= stylesheet_link_tag "admin/application", media: "all", "data-turbolinks-track" => true %>
-<%= csrf_meta_tags %>
+	<meta charset="utf-8">
+	<title><%=t(:application_name)%></title>
+	<meta name="description" content="<%=t(:application_name)%> Admin System">
+	<meta name="author" content="Sleeping-Lion">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="shortcut icon" href="<%=asset_path 'favicon.ico' %>">
+	<%= csrf_meta_tags %>
+	<%= stylesheet_link_tag "admin/application", :media=>"all", "data-turbolinks-track" => true %>
+	<!--[if IE]>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+	<![endif]-->
 </head>
 <body>
-	<!--[if IE]>
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-	<![endif]-->
-	<!--[if lt IE 9]>
-	<script type="text/javascript" src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <script type="text/javascript" src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
-    <![endif]-->
-<%= render :partial => 'layouts/admin/header' %>
-<section id="mom">
-	<section id="main" class="container">
-	<% unless current_page?(root_path) %>
-			<div class="page-header row">
-				<h1><%=@controller_name %></h1>
-				<ul class="breadcrumb">
-					<li><%=link_to t(:home),root_path %></li>
-					<% if @page_category %>
-					<li><%=link_to @page_category %></li>
+	<%= render :partial => 'layouts/admin/header' %>
+	<div id="mom" class="container-fluid">
+		<div id="main" class="row">
+			<div id="content" class="col-xs-12">
+				<% unless controller.controller_name=='admin' %>
+					<% if(!params[:no_layout] and !current_page?(admin_path)) %>
+						<ol class="breadcrumb">
+							<li><%= link_to t(:home),root_path %></li>
+							<% if(@category.present?) %>
+							<li><a href="#"><%= @category %></a><% if(@controller_name) %><% end %></li>
+							<% end %>
+							<li><a href="#"><%= @controller_name %></a></li>
+							<li><a href="#"><%=actionNameChange controller.action_name %></a></li>
+						</ol>
+						<hr class="hidden-xs" />
 					<% end %>
-					<li class="active"><%=@controller_name %></li>
-				</ul>
+					<% end %>
+					<% if notice %>
+					<%= render 'layouts/admin/notice',:locals=>{:notice=>notice} %>
+					<% end %>
+					<% if alert %>
+					<%= render 'layouts/admin/alert',:locals=>{:alert=>alert} %>
+					<% end %>
+						<%= yield %>
+					</div>
+				</div><!--/#content.span10-->
 			</div>
-		<% end %>
-		<%= render :partial => 'layouts/admin/aside' %>
-		<section class="sub_main">
-			<%=yield %>
-		</section>
-	</section>
-</section>
-<%= render :partial => 'layouts/admin/footer' %>
-<div class="slboard_overlay" id="overlay"></div>
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"></div>
-<%= javascript_include_tag "//cdn.jquerytools.org/1.2.7/full/jquery.tools.min.js" %>
-<%= javascript_include_tag "//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js" %>
-<%= javascript_include_tag @script %>
+	<%= render 'layouts/admin/footer' %>
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog"></div>
+	<%= javascript_include_tag @script %>
 </body>
 </html>

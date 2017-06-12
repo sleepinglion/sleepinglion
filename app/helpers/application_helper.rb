@@ -28,4 +28,27 @@ module ApplicationHelper
 
   	url.gsub(File.basename(url), prefix+'_'+File.basename(url))
   end
+
+
+    def actionNameChange(action_name)
+      case action_name
+      when 'index'
+        return t(:action_index)
+      when 'new'
+        return t(:action_new)
+      when 'edit'
+        return t(:action_edit)
+      when 'show'
+        return t(:action_show)
+      else
+      end
+    end
+
+    def manage_width(model)
+      if can?(:delete, model) && can?(:update, model)
+        return 'style="width:180px;"'
+      else
+        return 'style="width:90px"'
+      end
+    end  
 end
