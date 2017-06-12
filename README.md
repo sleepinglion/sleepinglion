@@ -1,24 +1,19 @@
-# README
+# What is Sleepinglion
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+[www.sleepinglion.pe.kr](http://www.sleepinglion.pe.kr) Source
 
-Things you may want to cover:
+[www.sleepinglion.pe.kr](http://www.sleepinglion.pe.kr) is My Homepage
 
-* Ruby version
+This Application is composed of [Rails](http://rubyonrails.org/)(user-pages,admin-pages) + UI [Boostrap](http://getbootstrap.com)
 
-* System dependencies
+## Server Requirements
 
-* Configuration
+[Rails](http://rubyonrails.org/) version 5 or newer is recommended.
 
-* Database creation
+## License
 
-* Database initialization
+MIT, All Free
 
-* How to run the test suite
+## Author
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+[SleepingLion](http://www.sleepinglion.pe.kr)

@@ -30,8 +30,12 @@ class ApplicationController < ActionController::Base
   #  end
   end
 
+  def current_ability
+    @current_ability ||= UserAbility.new(current_user)
+  end
+
   rescue_from CanCan::AccessDenied do |exception|
-    redirect_to new_admin_session_path, :alert => exception.message
+    redirect_to root_path, :notice => t(:login_first)
   end
 
   def set_locale
