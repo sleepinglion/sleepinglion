@@ -1,13 +1,11 @@
 class Admin::GalleriesController < Admin::AdminController
-  before_action :set_gallery, only: [:show, :edit, :update, :destroy]
+  before_action :set_admin_gallery, only: [:show, :edit, :update, :destroy]
 
   def initialize(*params)
     super(*params)
-    @controller_name=t('activerecord.models.gallery')
-    @script="galleries"
-    @meta_description='예쁘고 귀여운 수정이의 사진첩입니다.'
 
-    get_menu('galleries')
+    @category = t(:menu_gallery,scope:[:admin_menu])
+    @controller_name = t('activerecord.models.gallery')
   end
 
   # GET /galleries

@@ -1,16 +1,20 @@
 class Admin::HistoriesController < Admin::AdminController
-  before_action :set_history, only: [:show, :edit, :update, :destroy]  
-  
+  before_action :set_admin_notice, only: [:show, :edit, :update, :destroy]
+
   def initialize(*params)
     super(*params)
-    @controller_name='수정이 요리'
+
+    @category = t(:menu_board,scope:[:admin_menu])
+    @controller_name = t('activerecord.models.notice')
   end
-  
+
   # GET /histories
   # GET /histories.json
   def index
-    @admin_histories = History.order('id desc').page(params[:page]).per(10)
-    
+    params[:per_page] = 10 unless params[:per_page].present?
+
+    @admin_histories = History.order('id desc').page(params[:page]).per(params[:per_page])
+
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @admin_histories }
@@ -30,7 +34,7 @@ class Admin::HistoriesController < Admin::AdminController
   # GET /histories/new.json
   def new
     @admin_history = History.new
-    
+
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @admin_history }
@@ -82,15 +86,15 @@ class Admin::HistoriesController < Admin::AdminController
       format.json { head :no_content }
     end
   end
-  
+
   private
   # Use callbacks to share common setup or constraints between actions.
   def set_history
     @admin_history = History.find(params[:id])
   end
-  
+
   # Never trust parameters from the scary internet, only allow the white list through.
   def history_params
     params.require(:history).permit(:year, :title, :content)
-  end  
+  end
 end

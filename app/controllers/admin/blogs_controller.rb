@@ -1,11 +1,11 @@
 class Admin::BlogsController < Admin::AdminController
-  before_action :set_blog, only: [:show, :edit, :update, :destroy]
+  before_action :set_admin_blog, only: [:show, :edit, :update, :destroy]
 
   def initialize(*params)
     super(*params)
-    @controller_name=t('activerecord.models.blog')
-    @script="board/index"
-    @meta_description='블로그'
+
+    @category = t(:menu_blog,scope:[:admin_menu])
+    @controller_name = t('activerecord.models.blog')
   end
 
   # GET /blogs
@@ -43,13 +43,10 @@ class Admin::BlogsController < Admin::AdminController
   def new
     @admin_blog = Blog.new
     @admin_blog.build_blog_content
-
-    @script="board/new"
   end
 
   # GET /blogs/1/edit
   def edit
-    @script="board/edit"
   end
 
   # POST /blogs
@@ -57,8 +54,6 @@ class Admin::BlogsController < Admin::AdminController
   def create
     @admin_blog = Blog.new(blog_params)
     @admin_blog.user_id=current_user.id
-
-    @script="board/new"
 
     respond_to do |format|
       if @admin_blog.save
@@ -74,8 +69,6 @@ class Admin::BlogsController < Admin::AdminController
   # PATCH/PUT /blogs/1
   # PATCH/PUT /blogs/1.json
   def update
-    @script="board/edit"
-
     respond_to do |format|
       if @admin_blog.update(blog_params)
         format.html { redirect_to admin_blogs_url, notice: @controller_name +t(:message_success_update)}

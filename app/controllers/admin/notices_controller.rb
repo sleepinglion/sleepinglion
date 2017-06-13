@@ -1,18 +1,19 @@
 class Admin::NoticesController < Admin::AdminController
-  before_action :set_notice, only: [:show, :edit, :update, :destroy]
+  before_action :set_admin_notice, only: [:show, :edit, :update, :destroy]
 
   def initialize(*params)
     super(*params)
-    @controller_name=t('activerecord.models.notice')
-    @script="board/index"
 
-    get_menu('notices')
+    @category = t(:menu_board,scope:[:admin_menu])
+    @controller_name = t('activerecord.models.notice')
   end
 
   # GET /notices
   # GET /notices.json
   def index
-    @admin_notices = Notice.order(@menu_setting.order).page(params[:page]).per(@menu_setting.per)
+    params[:per_page] = 10 unless params[:per_page].present?
+
+    @admin_notices = Notice.order('id desc').page(params[:page]).per(params[:per_page])
   end
 
   # GET /notices/1
@@ -24,25 +25,20 @@ class Admin::NoticesController < Admin::AdminController
   def new
     @admin_notice = Notice.new
     @admin_notice.build_notice_content
-
-    @script="board/new"
   end
 
   # GET /notices/1/edit
   def edit
-    @script="board/edit"
   end
 
   # POST /notices
   # POST /notices.json
   def create
-    @admin_notice = Notice.new(notice_params)
-
-    @script="board/new"
+    @admin_notice = Notice.new(admin_notice_params)
 
     respond_to do |format|
       if @admin_notice.save
-        format.html { redirect_to admin_notices_url, notice: @controller_name +t(:message_success_create)}
+        format.html { redirect_to admin_notices_path(@admin_notice), notice: @controller_name +t(:message_success_create)}
         format.json { render action: 'show', status: :created, location: @admin_notice }
       else
         format.html { render action: 'new' }
@@ -54,11 +50,9 @@ class Admin::NoticesController < Admin::AdminController
   # PATCH/PUT /notices/1
   # PATCH/PUT /notices/1.json
   def update
-    @script="board/edit"
-
     respond_to do |format|
-      if @admin_notice.update(notice_params)
-        format.html { redirect_to admin_notices_url, notice: @controller_name +t(:message_success_update)}
+      if @admin_notice.update(admin_notice_params)
+        format.html { redirect_to admin_notices_path(@admin_notice), notice: @controller_name +t(:message_success_update)}
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
@@ -72,19 +66,19 @@ class Admin::NoticesController < Admin::AdminController
   def destroy
     @admin_notice.destroy
     respond_to do |format|
-      format.html { redirect_to admin_notices_url }
+      format.html { redirect_to admin_admin_notices_url }
       format.json { head :no_content }
     end
   end
 
   private
   # Use callbacks to share common setup or constraints between actions.
-  def set_notice
+  def set_admin_notice
     @admin_notice = Notice.find(params[:id])
   end
 
   # Never trust parameters from the scary internet, only allow the white list through.
-  def notice_params
+  def admin_notice_params
     params.require(:notice).permit(:id,:title,notice_content_attributes: [:id,:content]).merge(user_id: current_user.id)
   end
 end

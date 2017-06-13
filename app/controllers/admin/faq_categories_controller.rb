@@ -1,15 +1,18 @@
 class Admin::FaqCategoriesController < Admin::AdminController
+  before_action :set_admin_faq_category, only: [:show, :edit, :update, :destroy]
+
   def initialize(*params)
     super(*params)
-    @controller_name='제휴문의'
+
+    @category = t(:menu_faq,scope:[:admin_menu])
+    @controller_name = t('activerecord.models.faq_category')
   end
-   
+
   # GET /admin/faq_categories
   # GET /admin/faq_categories.json
   def index
     @admin_faq_categories = FaqCategory.order('id desc').page(params[:page]).per(10)
-    @script='board/faqs/index'
-    
+
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @admin_faq_categories }

@@ -1,7 +1,12 @@
 class Admin::UsersController < Admin::AdminController
-  def initialize(*params)
-    super(*params)
-  end
+  before_action :set_admin_question, only: [:show, :edit, :update, :destroy]
+
+    def initialize(*params)
+      super(*params)
+
+      @category = t(:menu_user,scope:[:admin_menu])
+      @controller_name = t('activerecord.models.user')
+    end
 
   # GET /admin_users
   # GET /admin_users.json
