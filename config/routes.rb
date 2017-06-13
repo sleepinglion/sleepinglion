@@ -49,11 +49,11 @@ Sleepinglion::Application.routes.draw do
   get 'guest_books/:guest_book_id/guest_book_comments/:id/password',:to=>'guest_book_comments#password'
   post 'guest_books/:guest_book_id/guest_book_comments/:id/password',:to=>'guest_book_comments#password'
 
-  
+
   scope 'admin', module: 'admin', as: 'admin' do
     get '/' => 'admin_home#index'
     resources :users
-    resources :intro,:gallery_categories, :galleries, :faq_categories,:faqs, :notices, :site, :intro, :contacts, :notices, :histories, :portfolios
+    resources :intro,:gallery_categories, :galleries, :faq_categories,:faqs, :blog_categories, :notices, :site, :intro, :contacts, :notices, :histories, :portfolios
     resources :questions do
       resources :question_comments
     end

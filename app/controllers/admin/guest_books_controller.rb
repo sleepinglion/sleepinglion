@@ -27,8 +27,6 @@ class Admin::GuestBooksController < Admin::AdminController
     @admin_guest_book_comments=@admin_guest_book.guest_book_comment.order(@menu_setting.order).page(params[:page]).per(@menu_setting.per)
     @admin_guest_book_comment=GuestBookComment.new
 
-    @script="board/show"
-
     respond_to do |format|
       format.html # show.html.erb
       format.json { render :json => @admin_guest_book }

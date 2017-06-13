@@ -30,6 +30,23 @@ module ApplicationHelper
   end
 
 
+
+  def flagToString(flag,no_html=false)
+    if no_html
+      if flag
+        return t(:flag_true)
+      else
+        return t(:flag_false)
+      end
+    else
+      if flag
+        return '<span class="flag_true">'+t(:flag_true)+'</span>'
+      else
+        return '<span class="flag_false">'+t(:flag_false)+'</span>'
+      end
+    end
+  end
+
     def actionNameChange(action_name)
       case action_name
       when 'index'
@@ -50,5 +67,5 @@ module ApplicationHelper
       else
         return 'style="width:90px"'
       end
-    end  
+    end
 end

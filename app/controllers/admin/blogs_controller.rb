@@ -11,13 +11,16 @@ class Admin::BlogsController < Admin::AdminController
   # GET /blogs
   # GET /blogs.json
   def index
+      params[:per_page] = 10 unless params[:per_page].present?
+
       @admin_blog_categories=BlogCategory.where(:enable=>true)
 
       if(params[:blog_category_id])
         @admin_blog_category_id=params[:blog_category_id].to_i
+        @admin_blogs = Blog.where(:blog_category_id=>@admin_blog_category_id).order(id:'desc').page(params[:page]).per(params[:per_page])
+      else
+        @admin_blogs = Blog.order('id desc').page(params[:page]).per(params[:per_page])
       end
-
-      @admin_blogs = Blog.where(:blog_category_id=>@admin_blog_category_id).order(id:'desc').page(params[:page]).per(15)
 
     respond_to do |format|
       format.html

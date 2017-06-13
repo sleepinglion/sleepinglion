@@ -53,6 +53,7 @@ ko:
   message_success_create : '이(가) 성공적으로  등록되었습니다.'
   message_success_update : '이(가) 성공적으로  수정되었습니다.'
 
+  label_number : '번호'
   label_name : '작성자'
   label_email : '이메일'
   label_password : '비밀번호'
@@ -113,6 +114,12 @@ ko:
   delete_confirm : '정말로삭제합니까?'
   delete_cascade_confirm : "중대 경고!!\n이 항목을 삭제할 경우 이 항목뿐아니라 이 항목의 정보를 포함하는 모든 데이터가 삭제됩니다.\n그래도 진행하시겠습니까?"
   delete_user_cascade_confirm : "정말로 탈퇴하겠습니까? \n 탈퇴할 경우 본인이 작성한 모든 내용 또한 연관삭제됩니다."
+
+  admin_menu :
+    menu_user : '사용자 관리'
+    menu_blog : '블로그 관리'
+    menu_gallery : '사진첩 관리'
+    menu_board : '게시판 관리'
 
   ckeditor:
     page_title: "CKEditor Files Manager"
@@ -379,20 +386,20 @@ ko:
   activerecord:
     models:
       intro : '잠자는-사자'
-      gallery : '사진첩'
-      guest_book : '방명록'
-      portfolio : '제작작품'
+      blog_category : '블로그 분류'
       blog : '블로그'
+      gallery_category : '사진첩 분류'
       gallery : '사진첩'
       notice : '공지사항'
       question : '질문, 답변'
+      guest_book : '방명록'
+      faq_category : 'FAQ 분류'
       faq : 'FAQ'
       guest_book : '방명록'
       contact : '상담, 문의'
       history : '연혁'
       about : '사이트 소개'
       user : '회원'
-      resource : '메뉴'
       program : '프로그램'
       tag : '이름표'
     attributes :
@@ -414,27 +421,34 @@ ko:
         name : '이름'
         password : '비밀번호'
         content : '내용'
+      gallery_category :
+        title : '제목'        
+        enable : '사용여부'
       gallery :
         gallery_category_id : '분류'
         title : '제목'
         photo : '사진'
         location : '장소'
         content : '내용'
+        enable : '사용여부'
       guest_book :
         name : '이름'
         password : '비밀번호'
         title : '제목'
+        enable : '사용여부'
       guest_book_content :
         content : '내용'
       guest_book_comment :
         name : '이름'
         password : '비밀번호'
         content : '내용'
+        enable : '사용여부'
       question :
         name : '이름'
         password : '비밀번호'
         title : '제목'
         secret : '비밀글'
+        enable : '사용여부'
       question_content :
         content : '내용'
       question_comment :
@@ -443,6 +457,7 @@ ko:
         content : '내용'
       notice :
         title : '제목'
+        enable : '사용여부'
       notice_content :
         content : '내용'
       user :
@@ -457,3 +472,4 @@ ko:
         description : '설명'
         url : '홈페이지'
         job_title : '직업'
+        enable : '사용여부'

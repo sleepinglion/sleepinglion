@@ -8,39 +8,21 @@ class Admin::GalleryCategoriesController < Admin::AdminController
     @controller_name = t('activerecord.models.gallery_category')
   end
 
-  # GET /admin/galleries
-  # GET /admin/galleries.json
+  # GET /admin/gallery_categories
+  # GET /admin/gallery_categories.json
   def index
-    @admin_gallery_categories=GalleryCategory.all
+    params[:per_page] = 10 unless params[:per_page].present?
 
-    if(params[:gallery_category_id])
-      @categoryId=params[:gallery_category_id].to_i
-    else
-      if @admin_gallery_categories[0]
-        @categoryId=@admin_gallery_categories[0].id.to_i
-      else
-        @categoryId=nil
-      end
-    end
-
-    @admin_galleries = Gallery.where(:gallery_category_id=>@categoryId).order('id desc').page(params[:page]).per(10)
-
-    if(params[:id])
-      @admin_gallery = Gallery.find(params[:id])
-    else
-      @admin_gallery=@admin_galleries[0]
-    end
-
-    @script='galleries'
+    @admin_gallery_categories = GalleryCategory.order('id desc').page(params[:page]).per(params[:per_page])
 
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render :json => @admin_galleries }
+      format.json { render :json => @admin_gallery_categories }
     end
   end
 
-  # GET /admin/galleries/1
-  # GET /admin/galleries/1.json
+  # GET /admin/gallery_categories/1
+  # GET /admin/gallery_categories/1.json
   def show
     @admin_gallery = Gallery.find(params[:id])
 
@@ -50,8 +32,8 @@ class Admin::GalleryCategoriesController < Admin::AdminController
     end
   end
 
-  # GET /admin/galleries/new
-  # GET /admin/galleries/new.json
+  # GET /admin/gallery_categories/new
+  # GET /admin/gallery_categories/new.json
   def new
     @admin_gallery = Gallery.new
     @admin_gallery_categories=GalleryCategory.all
@@ -63,21 +45,20 @@ class Admin::GalleryCategoriesController < Admin::AdminController
     end
   end
 
-  # GET /admin/galleries/1/edit
+  # GET /admin/gallery_categories/1/edit
   def edit
-    @admin_gallery = Gallery.find(params[:id])
     @admin_gallery_categories=GalleryCategory.all
     @admin_gallery_category_id=@admin_gallery.gallery_category.id
   end
 
-  # POST /admin/galleries
-  # POST /admin/galleries.json
+  # POST /admin/gallery_categories
+  # POST /admin/gallery_categories.json
   def create
     @admin_gallery = Gallery.new(params[:gallery])
 
     respond_to do |format|
       if @admin_gallery.save
-        format.html { redirect_to admin_galleries_url(:gallery_category_id=>@admin_gallery.gallery_category_id), :notice => '갤러리 사진이 등록되었습니다.' }
+        format.html { redirect_to admin_gallery_categories_url(:gallery_category_id=>@admin_gallery.gallery_category_id), :notice => '갤러리 사진이 등록되었습니다.' }
         format.json { render :json => @admin_gallery, :status => :created, :location => @admin_gallery }
       else
         format.html { render :action => "new" }
@@ -86,14 +67,12 @@ class Admin::GalleryCategoriesController < Admin::AdminController
     end
   end
 
-  # PUT /admin/galleries/1
-  # PUT /admin/galleries/1.json
+  # PUT /admin/gallery_categories/1
+  # PUT /admin/gallery_categories/1.json
   def update
-    @admin_gallery = Gallery.find(params[:id])
-
     respond_to do |format|
       if @admin_gallery.update_attributes(params[:gallery])
-        format.html { redirect_to admin_galleries_url(:gallery_category_id=>@admin_gallery.gallery_category_id), :notice => '갤러리 사진이 수정되었습니다.' }
+        format.html { redirect_to admin_gallery_categories_url(:gallery_category_id=>@admin_gallery.gallery_category_id), :notice => '갤러리 사진이 수정되었습니다.' }
         format.json { head :ok }
       else
         format.html { render :action => "edit" }
@@ -102,14 +81,13 @@ class Admin::GalleryCategoriesController < Admin::AdminController
     end
   end
 
-  # DELETE /admin/galleries/1
-  # DELETE /admin/galleries/1.json
+  # DELETE /admin/gallery_categories/1
+  # DELETE /admin/gallery_categories/1.json
   def destroy
-    @admin_gallery = Gallery.find(params[:id])
     @admin_gallery.destroy
 
     respond_to do |format|
-      format.html { redirect_to admin_galleries_url(:gallery_category_id=>@admin_gallery.gallery_category_id) }
+      format.html { redirect_to admin_gallery_categories_url(:gallery_category_id=>@admin_gallery.gallery_category_id) }
       format.json { head :ok }
     end
   end
