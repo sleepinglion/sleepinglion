@@ -1,4 +1,2 @@
-<section id="admin_question_new">
-  <%= render 'form' %>
-  <%= link_to t(:link_list), admin_questions_path %>
-</section>
+<%= render 'form',:question=>@admin_question %>
+<%= link_to t(:link_list), admin_questions_path %>

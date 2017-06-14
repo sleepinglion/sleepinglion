@@ -24,45 +24,39 @@ class Admin::GalleryCategoriesController < Admin::AdminController
   # GET /admin/gallery_categories/1
   # GET /admin/gallery_categories/1.json
   def show
-    @admin_gallery = Gallery.find(params[:id])
-
     respond_to do |format|
       format.html # show.html.erb
-      format.json { render :json => @admin_gallery }
+      format.json { render :json => @admin_gallery_category }
     end
   end
 
   # GET /admin/gallery_categories/new
   # GET /admin/gallery_categories/new.json
   def new
-    @admin_gallery = Gallery.new
-    @admin_gallery_categories=GalleryCategory.all
-    @admin_gallery_category_id=params[:gallery_category_id]
+    @admin_gallery_category = GalleryCategory.new
 
     respond_to do |format|
       format.html # new.html.erb
-      format.json { render :json => @admin_gallery }
+      format.json { render :json => @admin_gallery_category }
     end
   end
 
   # GET /admin/gallery_categories/1/edit
   def edit
-    @admin_gallery_categories=GalleryCategory.all
-    @admin_gallery_category_id=@admin_gallery.gallery_category.id
   end
 
   # POST /admin/gallery_categories
   # POST /admin/gallery_categories.json
   def create
-    @admin_gallery = Gallery.new(params[:gallery])
+    @admin_gallery_category = GalleryCategory.new(admin_gallery_category_params)
 
     respond_to do |format|
-      if @admin_gallery.save
-        format.html { redirect_to admin_gallery_categories_url(:gallery_category_id=>@admin_gallery.gallery_category_id), :notice => '갤러리 사진이 등록되었습니다.' }
-        format.json { render :json => @admin_gallery, :status => :created, :location => @admin_gallery }
+      if @admin_gallery_category.save
+        format.html { redirect_to admin_gallery_category_path(@admin_gallery_category), notice: @controller_name +t(:message_success_create)}
+        format.json { render :json => @admin_gallery_category, :status => :created, :location => @admin_gallery_category }
       else
         format.html { render :action => "new" }
-        format.json { render :json => @admin_gallery.errors, :status => :unprocessable_entity }
+        format.json { render :json => @admin_gallery_category.errors, :status => :unprocessable_entity }
       end
     end
   end
@@ -71,12 +65,12 @@ class Admin::GalleryCategoriesController < Admin::AdminController
   # PUT /admin/gallery_categories/1.json
   def update
     respond_to do |format|
-      if @admin_gallery.update_attributes(params[:gallery])
-        format.html { redirect_to admin_gallery_categories_url(:gallery_category_id=>@admin_gallery.gallery_category_id), :notice => '갤러리 사진이 수정되었습니다.' }
+      if @admin_gallery_category.update_attributes(admin_gallery_category_params)
+        format.html { redirect_to admin_gallery_category_path(@admin_gallery_category), notice: @controller_name +t(:message_success_update)}
         format.json { head :ok }
       else
         format.html { render :action => "edit" }
-        format.json { render :json => @admin_gallery.errors, :status => :unprocessable_entity }
+        format.json { render :json => @admin_gallery_category.errors, :status => :unprocessable_entity }
       end
     end
   end
@@ -84,11 +78,22 @@ class Admin::GalleryCategoriesController < Admin::AdminController
   # DELETE /admin/gallery_categories/1
   # DELETE /admin/gallery_categories/1.json
   def destroy
-    @admin_gallery.destroy
+    @admin_gallery_category.destroy
 
     respond_to do |format|
-      format.html { redirect_to admin_gallery_categories_url(:gallery_category_id=>@admin_gallery.gallery_category_id) }
+      format.html { redirect_to admin_gallery_categories_url }
       format.json { head :ok }
     end
+  end
+
+  private
+  # Use callbacks to share common setup or constraints between actions.
+  def set_admin_gallery_category
+    @admin_gallery_category = GalleryCategory.find(params[:id])
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def admin_gallery_category_params
+    params.require(:gallery_category).permit(:gallery_category_id,:title,:enable).merge(user_id: current_admin.id)
   end
 end

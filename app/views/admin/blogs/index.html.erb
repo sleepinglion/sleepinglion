@@ -37,7 +37,15 @@
       <% @admin_blogs.each do |admin_blog| %>
       <tr>
         <td><%=admin_blog.id %></td>
-        <td><%=image_tag admin_blog.photo.small_thumb %></td>
+        <td>
+					<% if admin_blog.photo? %>
+					<%=link_to admin_blog_path(admin_blog) do %>
+						<%=image_tag admin_blog.photo.small_thumb %>
+					<% end %>
+					<% else %>
+					<%=t(:no_photo) %>
+					<% end %>
+				</td>
         <td><%=link_to admin_blog.blog_category.title,admin_blog_category_path(admin_blog.blog_category_id) %></td>
         <td><%=link_to admin_blog.title,admin_blog_path(admin_blog) %></td>
         <td><%=admin_blog.count+admin_blog.impressionist_count(:filter=>:ip_address) %></td>
@@ -51,7 +59,7 @@
           <% end %>
           <% end %>
           <% if can? :delete, admin_blog %>
-          <%= link_to admin_blog_path(admin_blog), :method => :delete, :data => { :confirm => t(:delete_confirm) },:class=>"btn btn-danger pull-right" do %>
+          <%= link_to admin_blog_path(admin_blog), :method => :delete, :data => { :confirm => t(:delete_confirm) },:class=>"btn btn-danger" do %>
           <i class="glyphicon glyphicon-trash"></i> <%=t(:link_delete) %>
           <% end %>
           <% end %>

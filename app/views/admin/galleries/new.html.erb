@@ -1,4 +1,2 @@
-<section id="admin_resource_new">
-  <%= render 'form' %>
-  <%= link_to t(:link_list), admin_galleries_path %>
-</section>
+<%= render 'form',:gallery=>@admin_gallery %>
+<%= link_to t(:link_list), admin_galleries_path %>

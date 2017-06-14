@@ -1,4 +1,2 @@
-<section id="admin_blog_new">
-  <%= render 'form' %>
-  <%= link_to t(:link_list), admin_blogs_path %>
-</section>
+<%= render 'form',:blog=>@admin_blog %>
+<%= link_to t(:link_list), admin_blogs_path %>

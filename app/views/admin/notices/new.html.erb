@@ -1,4 +1,2 @@
-<section id="admin_notice_new">
-  <%= render 'form' %>
-  <%= link_to t(:link_list), admin_notices_path %>
-</section>
+<%= render 'form',:notice=>@admin_notice %>
+<%= link_to t(:link_list), admin_notices_path %>

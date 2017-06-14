@@ -38,7 +38,7 @@ class Admin::NoticesController < Admin::AdminController
 
     respond_to do |format|
       if @admin_notice.save
-        format.html { redirect_to admin_notices_path(@admin_notice), notice: @controller_name +t(:message_success_create)}
+        format.html { redirect_to admin_notice_path(@admin_notice), notice: @controller_name +t(:message_success_create)}
         format.json { render action: 'show', status: :created, location: @admin_notice }
       else
         format.html { render action: 'new' }
@@ -52,7 +52,7 @@ class Admin::NoticesController < Admin::AdminController
   def update
     respond_to do |format|
       if @admin_notice.update(admin_notice_params)
-        format.html { redirect_to admin_notices_path(@admin_notice), notice: @controller_name +t(:message_success_update)}
+        format.html { redirect_to admin_notice_path(@admin_notice), notice: @controller_name +t(:message_success_update)}
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
@@ -66,7 +66,7 @@ class Admin::NoticesController < Admin::AdminController
   def destroy
     @admin_notice.destroy
     respond_to do |format|
-      format.html { redirect_to admin_admin_notices_url }
+      format.html { redirect_to admin_notices_url }
       format.json { head :no_content }
     end
   end
@@ -79,6 +79,6 @@ class Admin::NoticesController < Admin::AdminController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def admin_notice_params
-    params.require(:notice).permit(:id,:title,notice_content_attributes: [:id,:content]).merge(user_id: current_user.id)
+    params.require(:notice).permit(:id,:title,:count,notice_content_attributes: [:id,:content]).merge(user_id: current_admin.id)
   end
 end

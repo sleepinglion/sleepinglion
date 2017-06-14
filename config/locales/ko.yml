@@ -414,7 +414,7 @@ ko:
         photo : '사진'
       blog_category :
         title : '제목'
-        blogs_count : '블로그수'        
+        blogs_count : '블로그수'
         enable : '사용여부'
       blog :
         blog_category_id : '분류'
@@ -446,6 +446,7 @@ ko:
         name : '이름'
         password : '비밀번호'
         title : '제목'
+        count : '시작 조회수'
         enable : '사용여부'
       guest_book_content :
         content : '내용'
@@ -459,7 +460,7 @@ ko:
         password : '비밀번호'
         title : '제목'
         secret : '비밀글'
-        count : '조회수'
+        count : '시작 조회수'
         enable : '사용여부'
       question_content :
         content : '내용'
@@ -469,11 +470,13 @@ ko:
         content : '내용'
       notice :
         title : '제목'
+        count : '시작 조회수'        
         enable : '사용여부'
       notice_content :
         content : '내용'
       user :
         name : '이름'
+        sign_in_count : '로그인 횟수'
         alternate_name : '별명'
         email : 'E-mail'
         password : '비밀번호'

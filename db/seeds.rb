@@ -1,5 +1,3 @@
-=begin
-
 User.create!(:email => 'toughjjh@gmail.com', :nickname=>'잠자는-사자', :password => 'jjh123456', :password_confirmation => 'jjh123456',:admin=>true)
 
 BlogCategory.create!(:id=>1,:user_id=>1,:blog_category_id=>nil,:title=>'잡생각',:blogs_count=>16,:blog_categories_count=>0,:leaf=>0,:enable=>1,:created_at=>'2013-12-24 18:26:41',:updated_at=>'2013-12-24 18:26:41')
@@ -22,8 +20,6 @@ GalleryCategory.create!(:id=>2,:user_id=>1,:gallery_category_id=>nil,:title=>'�
 GalleryCategory.create!(:id=>3,:user_id=>1,:gallery_category_id=>nil,:title=>'가족들',:galleries_count=>19,:gallery_categories_count=>0,:leaf=>1,:enable=>1,:created_at=>'2013-12-24 18:26:42',:updated_at=>'2013-12-24 18:26:42')
 GalleryCategory.create!(:id=>4,:user_id=>1,:gallery_category_id=>nil,:title=>'풍경',:galleries_count=>20,:gallery_categories_count=>0,:leaf=>1,:enable=>1,:created_at=>'2013-12-24 18:26:42',:updated_at=>'2013-12-24 18:26:42')
 GalleryCategory.create!(:id=>5,:user_id=>1,:gallery_category_id=>nil,:title=>'기타',:galleries_count=>1,:gallery_categories_count=>0,:leaf=>1,:enable=>1,:created_at=>'2013-12-24 18:26:42',:updated_at=>'2013-12-24 18:26:42')
-
-=end
 
 ProgramLanguage.create!(:id=>1,:title=>'ruby',:link=>'http://www.php.net/',:enable=>1)
 ProgramLanguage.create!(:id=>2,:title=>'PHP',:link=>'https://www.ruby-lang.org/',:enable=>1)

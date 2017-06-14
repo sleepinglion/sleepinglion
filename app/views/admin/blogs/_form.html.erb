@@ -1,31 +1,25 @@
-<%= form_for [:admin, @admin_blog],:html=>{:class=>'slboard_form'} do |f| %>
-	<% if @admin_blog.errors.any? %>
+<%= form_for [:admin, blog],:html => {:multipart => true,:class=>'slboard_form'} do |f| %>
+	<% if blog.errors.any? %>
 	<div id="error_explanation">
-		<h2><%= pluralize(@admin_blog.errors.count, "error") %> prohibited this notice from being saved:</h2>
+		<h2><%= pluralize(blog.errors.count, "error") %> prohibited this notice from being saved:</h2>
 		<ul>
-			<% @admin_blog.errors.full_messages.each do |msg| %>
+			<% blog.errors.full_messages.each do |msg| %>
 			<li><%= msg %></li>
 			<% end %>
 		</ul>
 	</div>
 	<% end %>
   <div class="form-group">
-    <%= f.label :blog_category_id,:class=>'control-label' %>
-    <div>
-      <%= f.select :blog_category_id, options_from_collection_for_select(BlogCategory.all, 'id', 'title',@blog_category_id),:class=>'form-control' %>
-    </div>
-  </div>  
+    <%= f.label :blog_category_id %>
+    <%= f.select :blog_category_id, options_from_collection_for_select(BlogCategory.all, 'id', 'title',@blog_category_id),:class=>'form-control' %>
+  </div>
   <div class="form-group">
     <%= f.label :title %>
-    <div>   
-      <%= f.text_field :title, :class=>'form-control', :required=>"required" %>
-    </div>
+    <%= f.text_field :title, :class=>'form-control', :required=>"required" %>
   </div>
   <div class="form-group">
     <%= f.label :description %>
-    <div>
-      <%= f.text_field :description, :class=>'form-control', :required=>"required" %>
-    </div>
+    <%= f.text_field :description, :class=>'form-control', :required=>"required" %>
   </div>
   <div class="form-group">
     <%= f.label :photo,:class=>'control-label' %>
@@ -40,9 +34,7 @@
   <%= f.fields_for :blog_content do |c| %>
   <div class="form-group">
     <%= c.label :content %>
-    <div>
     <%= c.text_area :content, :class=>'form-control',  :id => "sl_content" %>
-    </div>
   </div>
   <% end %>
   <div class="form-group actions">

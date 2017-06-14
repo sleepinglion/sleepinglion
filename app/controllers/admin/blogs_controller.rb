@@ -34,8 +34,6 @@ class Admin::BlogsController < Admin::AdminController
    @admin_blog_comments=@admin_blog.blog_comment.order('id desc').page(params[:page]).per(10)
    @admin_blog_comment=BlogComment.new
 
-   @script="board/show"
-
     respond_to do |format|
       format.html # show.html.erb
       format.json { render :json => @admin_blog_comments }
@@ -55,8 +53,7 @@ class Admin::BlogsController < Admin::AdminController
   # POST /blogs
   # POST /blogs.json
   def create
-    @admin_blog = Blog.new(blog_params)
-    @admin_blog.user_id=current_user.id
+    @admin_blog = Blog.new(admin_blog_params)
 
     respond_to do |format|
       if @admin_blog.save
@@ -73,7 +70,7 @@ class Admin::BlogsController < Admin::AdminController
   # PATCH/PUT /blogs/1.json
   def update
     respond_to do |format|
-      if @admin_blog.update(blog_params)
+      if @admin_blog.update(admin_blog_params)
         format.html { redirect_to admin_blogs_url, notice: @controller_name +t(:message_success_update)}
         format.json { head :no_content }
       else
@@ -95,12 +92,12 @@ class Admin::BlogsController < Admin::AdminController
 
   private
   # Use callbacks to share common setup or constraints between actions.
-  def set_blog
+  def set_admin_blog
     @admin_blog = Blog.find(params[:id])
   end
 
   # Never trust parameters from the scary internet, only allow the white list through.
-  def blog_params
-    params.require(:blog).permit(:blog_category_id, :user_id, :title, :description, :photo, :photo_cache, blog_content_attributes: [:id,:content]).merge(user_id: current_user.id)
+  def admin_blog_params
+    params.require(:blog).permit(:blog_category_id, :user_id, :title, :description,:count, :photo, :photo_cache, blog_content_attributes: [:id,:content]).merge(user_id: current_admin.id)
   end
 end

@@ -56,11 +56,11 @@ class Admin::GalleriesController < Admin::AdminController
   # POST /galleries
   # POST /galleries.json
   def create
-    @gallery = Gallery.new(gallery_params)
+    @gallery = Gallery.new(admin_gallery_params)
 
     respond_to do |format|
       if @gallery.save
-        format.html { redirect_to admin_gallery_url(@gallery), :notice=> @controller_name +t(:message_success_create)}
+        format.html { redirect_to admin_gallery_url(@gallery), notice: @controller_name +t(:message_success_create)}
         format.json { render :json => @gallery, :status => :created, :location => @gallery }
       else
         format.html { render :action => "new" }
@@ -73,8 +73,8 @@ class Admin::GalleriesController < Admin::AdminController
   # PUT /galleries/1.json
   def update
     respond_to do |format|
-      if @admin_gallery.update_attributes(gallery_params)
-        format.html { redirect_to admin_galleries_url, :notice=> @controller_name +t(:message_success_update)}
+      if @admin_gallery.update_attributes(admin_gallery_params)
+        format.html { redirect_to admin_galleries_url, notice: @controller_name +t(:message_success_update)}
         format.json { head :ok }
       else
         format.html { render :action => "edit" }
@@ -96,12 +96,12 @@ class Admin::GalleriesController < Admin::AdminController
 
   private
   # Use callbacks to share common setup or constraints between actions.
-  def set_gallery
+  def set_admin_gallery
     @admin_gallery = Gallery.find(params[:id])
   end
 
   # Never trust parameters from the scary internet, only allow the white list through.
-  def gallery_params
-    params.require(:gallery).permit(:id,:gallery_category_id,:title,:photo,:content).merge(user_id: current_user.id)
+  def admin_gallery_params
+    params.require(:gallery).permit(:id,:gallery_category_id,:title,:photo,:content).merge(user_id: current_admin.id)
   end
 end

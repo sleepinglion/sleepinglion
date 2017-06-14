@@ -56,7 +56,7 @@ class Admin::GuestBooksController < Admin::AdminController
 
     respond_to do |format|
       if @admin_guest_book.save
-        format.html { redirect_to admin_guest_books_url, :notice=> @controller_name +t(:message_success_create)}
+        format.html { redirect_to admin_guest_book_path(@admin_guest_book), notice: @controller_name +t(:message_success_create)}
         format.json { render :json => @admin_guest_book, :status => :created, :location => @admin_guest_book }
       else
         format.html { render :action => "new" }
@@ -70,7 +70,7 @@ class Admin::GuestBooksController < Admin::AdminController
   def update
     respond_to do |format|
       if @admin_guest_book.update_attributes(admin_guest_book_params)
-        format.html { redirect_to admin_guest_books_url, :notice=> @controller_name +t(:message_success_update)}
+        format.html { redirect_to admin_guest_book_path(@admin_guest_book), notice: @controller_name +t(:message_success_update)}
         format.json { head :ok }
       else
         format.html { render :action => "edit" }
@@ -98,6 +98,6 @@ class Admin::GuestBooksController < Admin::AdminController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def admin_guest_book_params
-    params.require(:guest_book).permit(:id,:name,:password,:title,guest_book_content_attributes: [:id,:content],guest_book_comment_attributes: [:id,:content])
+    params.require(:guest_book).permit(:id,:name,:password,:count,:title,guest_book_content_attributes: [:id,:content],guest_book_comment_attributes: [:id,:content]).merge(user_id: current_admin.id)
   end
 end

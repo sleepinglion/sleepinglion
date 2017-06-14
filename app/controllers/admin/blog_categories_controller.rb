@@ -48,11 +48,11 @@ class Admin::BlogCategoriesController < Admin::AdminController
   # POST /admin/blog_categories
   # POST /admin/blog_categories.json
   def create
-    @admin_blog_category = BlogCategory.new(params[:blog_category])
+    @admin_blog_category = BlogCategory.new(admin_blog_category_params)
 
     respond_to do |format|
       if @admin_blog_category.save
-        format.html { redirect_to admin_blogs_path(@admin_blog_category), notice: 'Faq category was successfully created.' }
+        format.html { redirect_to admin_blog_category_path(@admin_blog_category), notice: @controller_name +t(:message_success_create)}
         format.json { render json: @admin_blog_category, status: :created, location: @admin_blog_category }
       else
         format.html { render action: "new" }
@@ -65,8 +65,8 @@ class Admin::BlogCategoriesController < Admin::AdminController
   # PUT /admin/blog_categories/1.json
   def update
     respond_to do |format|
-      if @admin_blog_category.update_attributes(params[:blog_category])
-        format.html { redirect_to admin_blogs_path(@admin_blog_category), notice: 'Faq category was successfully updated.' }
+      if @admin_blog_category.update_attributes(admin_blog_category_params)
+        format.html { redirect_to admin_blogs_path(@admin_blog_category), notice: @controller_name +t(:message_success_update)}
         format.json { head :ok }
       else
         format.html { render action: "edit" }
@@ -81,8 +81,19 @@ class Admin::BlogCategoriesController < Admin::AdminController
     @admin_blog_category.destroy
 
     respond_to do |format|
-      format.html { redirect_to admin_blogs_url }
+      format.html { redirect_to admin_blog_categories_url }
       format.json { head :ok }
     end
   end
+
+    private
+    # Use callbacks to share common setup or constraints between actions.
+    def set_admin_blog_category
+      @admin_blog_category = BlogCategory.find(params[:id])
+    end
+
+    # Never trust parameters from the scary internet, only allow the white list through.
+    def admin_blog_category_params
+      params.require(:blog_category).permit(:blog_category_id,:title,:enable).merge(user_id: current_admin.id)
+    end
 end
