@@ -24,8 +24,8 @@
   <div class="form-group">
     <%= f.label :photo,:class=>'control-label' %>
     <div>
-      <% if @admin_blog.photo? %>
-      <%= image_tag(@admin_blog.photo.small_thumb) %>
+      <% if blog.photo? %>
+      <%= image_tag(blog.photo.small_thumb) %>
       <% end %>
       <%= f.file_field :photo %>
       <%= f.hidden_field :photo_cache %>
