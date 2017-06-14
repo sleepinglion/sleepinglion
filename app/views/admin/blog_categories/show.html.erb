@@ -4,6 +4,10 @@
 		<%= @blog_category.title %>
 	</p>
 	<p>
+  	<b><%=t(:blogs_count,scope:[:activerecord,:attributes,:blog_category]) %></b>
+  	<%= @blog_category.blogs_count %>
+  </p>
+	<p>
 		<b><%=t(:enable,scope:[:activerecord,:attributes,:blog_category]) %></b>
 		<%=raw flagToString(@blog_category.enable) %>
 	</p>

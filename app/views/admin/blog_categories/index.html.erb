@@ -38,14 +38,16 @@
 				<td><%= raw flagToString(blog_category.enable) %></td>
 				<td><%= blog_category.created_at.to_date %></td>
 				<% if can?(:update, BlogCategory) || can?(:delete, BlogCategory) %>
-				<td> <% if can? :update, blog_category %>
+				<td>
+				<% if can? :update, blog_category %>
 				<%= link_to edit_admin_blog_category_path(blog_category),:class=>"btn btn-default" do %> <i class="glyphicon glyphicon-pencil"></i> <%= t(:link_edit) %>
 				<% end %>
 				<% end %>
 				<% if can? :delete, blog_category %>
 				<%= link_to admin_blog_category_path(blog_category), :method => :delete, :data => { :confirm => t(:delete_confirm) },:class=>"btn btn-danger" do %> <i class="glyphicon glyphicon-trash"></i> <%= t(:link_delete) %>
 				<% end %>
-				<% end %> </td>
+				<% end %>
+				</td>
 				<% end %>
 			</tr>
 			<% end %>

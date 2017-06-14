@@ -4,6 +4,10 @@
 		<%= @gallery_category.title %>
 	</p>
 	<p>
+  	<b><%=t(:galleries_count,scope:[:activerecord,:attributes,:gallery_category]) %></b>
+  	<%= @gallery_category.galleries_count %>
+  </p>
+	<p>
 		<b><%=t(:enable,scope:[:activerecord,:attributes,:gallery_category]) %></b>
 		<%=raw flagToString(@gallery_category.enable) %>
 	</p>

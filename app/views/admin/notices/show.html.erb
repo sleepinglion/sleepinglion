@@ -4,6 +4,10 @@
 		<%= @admin_notice.title %>
 	</p>
 	<p>
+  	<b><%=t(:content,scope:[:activerecord,:attributes,:notice_content]) %></b>
+		<%= simple_format(@admin_notice.notice_content.content) %>
+	</p>
+	<p>
   	<b><%=t(:label_count) %></b>
   	<%=@admin_notice.count+@admin_notice.impressionist_count(:filter=>:ip_address) %>
   </p>
