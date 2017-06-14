@@ -403,18 +403,28 @@ ko:
       program : '프로그램'
       tag : '이름표'
     attributes :
+      admin :
+        email : '이메일'
+        password : '비밀번호'
       intro :
         title : '제목'
         description : '설명'
       intro_photo :
         title : '제목'
         photo : '사진'
+      blog_category :
+        title : '제목'
+        blogs_count : '블로그수'        
+        enable : '사용여부'
       blog :
         blog_category_id : '분류'
         title : '제목'
         photo : '사진'
         description : '설명'
         content : '내용'
+        count : '조회수'
+        blog_comments_count : '댓글수'
+        enable : '사용여부'
       blog_content :
         content : '내용'
       blog_comment :
@@ -422,7 +432,8 @@ ko:
         password : '비밀번호'
         content : '내용'
       gallery_category :
-        title : '제목'        
+        title : '제목'
+        galleries_count : '사진첩수'
         enable : '사용여부'
       gallery :
         gallery_category_id : '분류'
@@ -444,10 +455,11 @@ ko:
         content : '내용'
         enable : '사용여부'
       question :
-        name : '이름'
+        user_id : '사용자'
         password : '비밀번호'
         title : '제목'
         secret : '비밀글'
+        count : '조회수'
         enable : '사용여부'
       question_content :
         content : '내용'

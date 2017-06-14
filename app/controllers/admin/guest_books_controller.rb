@@ -24,7 +24,7 @@ class Admin::GuestBooksController < Admin::AdminController
   # GET /guest_books/1
   # GET /guest_books/1.json
   def show
-    @admin_guest_book_comments=@admin_guest_book.guest_book_comment.order(@menu_setting.order).page(params[:page]).per(@menu_setting.per)
+    @admin_guest_book_comments=@admin_guest_book.guest_book_comment.order('id desc').page(params[:page]).per(15)
     @admin_guest_book_comment=GuestBookComment.new
 
     respond_to do |format|
@@ -52,20 +52,10 @@ class Admin::GuestBooksController < Admin::AdminController
   # POST /guest_books
   # POST /guest_books.json
   def create
-    @admin_guest_book = GuestBook.new(guest_book_params)
-
-    if current_user
-      @admin_guest_book.user_id=current_user.id
-    end
+    @admin_guest_book = GuestBook.new(admin_guest_book_params)
 
     respond_to do |format|
-      if Rails.env.production?
-        result=verify_recaptcha(:model => @admin_guest_book, :message => "Oh! It's error with reCAPTCHA!") && @admin_guest_book.save
-      else
-        result=@admin_guest_book.save
-      end
-
-      if result
+      if @admin_guest_book.save
         format.html { redirect_to admin_guest_books_url, :notice=> @controller_name +t(:message_success_create)}
         format.json { render :json => @admin_guest_book, :status => :created, :location => @admin_guest_book }
       else
@@ -79,7 +69,7 @@ class Admin::GuestBooksController < Admin::AdminController
   # PUT /guest_books/1.json
   def update
     respond_to do |format|
-      if @admin_guest_book.update_attributes(guest_book_params)
+      if @admin_guest_book.update_attributes(admin_guest_book_params)
         format.html { redirect_to admin_guest_books_url, :notice=> @controller_name +t(:message_success_update)}
         format.json { head :ok }
       else
@@ -100,20 +90,14 @@ class Admin::GuestBooksController < Admin::AdminController
     end
   end
 
-  protected
-
-  def get_gg
-    return set_guest_book
-  end
-
   private
   # Use callbacks to share common setup or constraints between actions.
-  def set_guest_book
+  def set_admin_guest_book
     @admin_guest_book = GuestBook.find(params[:id])
   end
 
   # Never trust parameters from the scary internet, only allow the white list through.
-  def guest_book_params
+  def admin_guest_book_params
     params.require(:guest_book).permit(:id,:name,:password,:title,guest_book_content_attributes: [:id,:content],guest_book_comment_attributes: [:id,:content])
   end
 end

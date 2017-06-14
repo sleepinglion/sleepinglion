@@ -13,6 +13,7 @@
       <col />
       <col style="width:130px" />
       <col style="width:130px" />
+      <col style="width:130px" />
       <% if can?(:update, Blog) || can?(:delete, Blog) %>
       <col <%=raw manage_width(Blog) %> />
       <% end %>
@@ -24,8 +25,11 @@
         <th><%=t(:blog_category_id,scope:[:activerecord,:attributes,:blog]) %></th>
         <th><%=t(:title,scope:[:activerecord,:attributes,:blog]) %></th>
         <th><%=t(:count,scope:[:activerecord,:attributes,:blog]) %></th>
-        <th><%=t(:comment_counts,scope:[:activerecord,:attributes,:blog]) %></th>
-        <th><%=t(:label_manage) %></th>
+        <th><%=t(:blog_comments_count,scope:[:activerecord,:attributes,:blog]) %></th>
+        <th><%=t(:enable,scope:[:activerecord,:attributes,:blog]) %></th>
+				<% if can?(:update, Blog) || can?(:delete, Blog) %>
+				<th><%= t(:label_manage) %></th>
+				<% end %>
       </tr>
     </thead>
     <tbody>
@@ -38,6 +42,7 @@
         <td><%=link_to admin_blog.title,admin_blog_path(admin_blog) %></td>
         <td><%=admin_blog.count+admin_blog.impressionist_count(:filter=>:ip_address) %></td>
         <td><%=admin_blog.blog_comments_count %></td>
+				<td><%= raw flagToString(admin_blog.enable) %></td>
         <% if can?(:update, admin_blog) || can?(:delete, admin_blog) %>
         <td>
           <% if can? :update, admin_blog %>
@@ -56,7 +61,7 @@
       <% end %>
       <% else %>
       <tr>
-        <td colspan="6"><p><%=t(:no_data) %></p></td>
+        <td colspan="6"><%=t(:no_data) %></td>
       </tr>
       <% end %>
     </tbody>
@@ -70,5 +75,7 @@
     <% end %>
     <% end %>
   </div>
-  <%= paginate @admin_blogs %>
+	<nav class="col-xs-12 col-sm-9 col-md-10">
+		<%= paginate @admin_blogs %>
+	</nav>
 </div>
