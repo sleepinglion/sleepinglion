@@ -8,6 +8,7 @@ class ApplicationController < ActionController::Base
 
     @application_name=t(:application_name)
     @controller_name=t(:application_name)
+    @title=t(:default_title)
 
     @meta_robot='all, index, follow'
     @meta_description=t(:meta_description)
@@ -15,12 +16,7 @@ class ApplicationController < ActionController::Base
     @meta_image=t(:meta_image)
     @meta_url=t(:meta_url)
 
-    @style='application'
-    @script='application'
-
     @page_itemtype="http://schema.org/WebPage"
-
-    @menu_setting=nil
 
     @aside_blog_categories = BlogCategory.where(:enable=>true)
     @tags = Blog.tag_counts_on(:tags, :limit => 20, :order => "taggings_count desc")

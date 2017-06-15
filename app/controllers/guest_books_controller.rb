@@ -5,7 +5,6 @@ class GuestBooksController < AnonBoardController
   def initialize(*params)
     super(*params)
     @controller_name=t('activerecord.models.guest_book')
-    @script="board/index"
     @title=t('activerecord.models.guest_book')
     @meta_description=t(:meta_description_guest_book)
   end

@@ -24,7 +24,7 @@
   	<%= @admin_question.created_at %>
   </p>
 </div>
-<% if can? :update, Question %>
+<% if can? :update, @admin_question %>
 <%= link_to t(:link_edit), edit_admin_question_path(@admin_question) %> |
 <% end %>
 <%= link_to t(:link_list), admin_questions_path %>

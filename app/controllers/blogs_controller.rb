@@ -5,7 +5,6 @@ class BlogsController < ApplicationController
   def initialize(*params)
     super(*params)
     @controller_name=t('activerecord.models.blog')
-    @script="board/index"
     @title=t('activerecord.models.blog')
     @meta_description=t(:meta_description_blog)
   end

@@ -6,7 +6,6 @@ class GalleriesController < BoardController
   def initialize(*params)
     super(*params)
     @controller_name=t('activerecord.models.gallery')
-    @script="galleries"
     @title=t('activerecord.models.gallery')
     @meta_description=t(:meta_description_gallery)
     @page_itemtype="http://schema.org/ImageGallery"

@@ -20,7 +20,7 @@
   	<%= @gallery_category.created_at %>
   </p>
 </div>
-<% if can? :update, GalleryCategory %>
+<% if can? :update, @gallery_category %>
 <%= link_to t(:link_edit), edit_admin_gallery_category_path(@gallery_category) %> |
 <% end %>
 <%= link_to t(:link_list), admin_gallery_categories_path %>

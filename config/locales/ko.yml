@@ -8,10 +8,11 @@ ko:
   meta_description_question : '웹프로그래머 잠자는사자에게 질문 , 요청'
   meta_description_portfolio : '웹프로그래머 잠자는사자의 포트폴리오'
   meta_description_guest_book : '웹프로그래머 잠자는사자의 방명록'
-  meta_keywords : '정종호,웹프로그래머,웹표준,퍼블리셔,웹개발,리눅스,html,html5,javascript,php,ruby,rails,레일즈,퍼블리싱,publishing,잠자는사자,SL,SleepingLion,Sleeping-Lion'
-  meta_image : 'http://images.sleepinglion.pe.kr/sl.jpg'
+  meta_keywords : '정종호,웹프로그래머,퍼블리셔,웹개발,웹표준,리눅스,html,html5,javascript,php,ruby,rails,레일즈,퍼블리싱,publishing,잠자는사자,SL,SleepingLion,Sleeping-Lion'
+  meta_image : 'http://assets.sleepinglion.pe.kr/sl.jpg'
   meta_url : 'http://www.sleepinglion.pe.kr'
   title_separator : '-'
+  default_title : '깨끗한 웹세상을 만들어가는 웹프로그래머'
 
   korean : '한국어'
   english : '영어'
@@ -470,7 +471,7 @@ ko:
         content : '내용'
       notice :
         title : '제목'
-        count : '시작 조회수'        
+        count : '시작 조회수'
         enable : '사용여부'
       notice_content :
         content : '내용'

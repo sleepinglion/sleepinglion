@@ -24,7 +24,7 @@
   	<%= @admin_guest_book.created_at %>
   </p>
 </div>
-<% if can? :update, GuestBook %>
+<% if can? :update, @admin_guest_book %>
 <%= link_to t(:link_edit), edit_admin_guest_book_path(@admin_guest_book) %> |
 <% end %>
 <%= link_to t(:link_list), admin_guest_books_path %>

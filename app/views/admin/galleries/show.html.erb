@@ -16,7 +16,7 @@
   	<%= @admin_gallery.created_at %>
   </p>
 </div>
-<% if can? :update, Gallery %>
+<% if can? :update, @admin_gallery %>
 <%= link_to t(:link_edit), edit_admin_gallery_path(@admin_gallery) %> |
 <% end %>
 <%= link_to t(:link_list), admin_galleries_path %>
