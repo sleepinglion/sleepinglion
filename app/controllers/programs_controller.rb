@@ -5,7 +5,6 @@ class ProgramsController < BoardController
   def initialize(*params)
     super(*params)
     @controller_name=t('activerecord.models.program')
-    @script="board/index"
   end
 
   # GET /programs

@@ -5,7 +5,7 @@ class IntroController < ApplicationController
     super(*params)
 
     @controller_name=t('activerecord.models.intro')
-    @title=t('activerecord.models.intro')+t(:title_separator)+t(:application_name)
+    @title=t('activerecord.models.intro')
     @meta_description=t(:meta_description_intro)
     @page_itemtype="http://schema.org/ProfilePage"
   end

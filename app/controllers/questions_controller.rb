@@ -7,7 +7,6 @@ class QuestionsController < AnonBoardController
   def initialize(*params)
     super(*params)
     @controller_name=t('activerecord.models.question')
-    @script="board/index"
     @title=t('activerecord.models.question')
     @meta_description=t(:meta_description_question)
     @page_itemtype="http://schema.org/QAPage"

@@ -4,7 +4,6 @@ class TagsController < BoardController
   def initialize(*params)
     super(*params)
     @controller_name=t('activerecord.models.blog')
-    @script="board/index"
   end
 
   # GET /tags

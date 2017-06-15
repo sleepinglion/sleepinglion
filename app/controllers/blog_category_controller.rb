@@ -5,8 +5,6 @@ class BlogCategoryController < ApplicationController
   def initialize
     super
     @controller_name=t('activerecord.models.notice')
-    @style="board"
-    @script="board/index"
   end
 
   # GET /blog_categories

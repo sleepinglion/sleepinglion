@@ -12,8 +12,7 @@ class BlogsController < ApplicationController
   # GET /blogs
   # GET /blogs.json
   def index
-
-        @blog_categories=BlogCategory.where(:leaf=>true).where(:enable=>true)
+    @blog_categories=BlogCategory.where(:leaf=>true).where(:enable=>true)
         if(params[:blog_category_id])
           @blog_category_id=params[:blog_category_id].to_i
           @blogs = Blog.where(:blog_category_id=>@blog_category_id).order(:id=>'desc').page(params[:page]).per(15)

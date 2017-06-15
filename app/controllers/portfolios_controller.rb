@@ -6,8 +6,7 @@ class PortfoliosController < ApplicationController
   def initialize(*params)
     super(*params)
     @controller_name=t('activerecord.models.portfolio')
-    @script="board/index"
-    @title=t('activerecord.models.portfolio')+t(:title_separator)+t(:application_name)
+    @title=t('activerecord.models.portfolio')
     @meta_description=t(:meta_description_portfolio)
   end
 
