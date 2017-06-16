@@ -4,7 +4,7 @@ xml.rss :version => "2.0" do
     xml.title @application_name
     xml.author 'Sleeping-Lion'
     xml.description @meta_description
-    xml.link 'http://www.jingyu.pe.kr'
+    xml.link 'http://www.sleepinglion.pe.kr'
     xml.language I18n.locale.to_s
 
     for article in @blogs
@@ -16,7 +16,7 @@ xml.rss :version => "2.0" do
         end
         xml.author 'SleepingLion'
         xml.pubDate article.created_at.to_s(:rfc822)
-        xml.link 'http://www.jingyu.pe.kr/blog/' + article.id.to_s
+        xml.link 'http://www.sleepinglion.pe.kr/blog/' + article.id.to_s
         xml.guid article.id
 
         text = article.blog_content.content
@@ -27,7 +27,7 @@ xml.rss :version => "2.0" do
             image_caption = article.title
             image_align = ""
             image_tag = "
-                <p><img src='" + image_url +  "' alt='" + image_caption + "' title='" + image_caption + "' align='" + image_align  + "' /></p>
+                <p><img src='" + image_url +  "' alt='" + image_caption + "' title='" + image_caption + "' /></p>
               "
             text = text.sub('{image}', image_tag)
         end
