@@ -36,6 +36,7 @@ Sleepinglion::Application.routes.draw do
   end
 
   get 'home/popup'=>'home#popup'
+  get 'feed',:to=>'home#feed'  
 
   get 'tags/:tag', to: 'tags#index', as: :tag
 
@@ -48,6 +49,8 @@ Sleepinglion::Application.routes.draw do
 
   get 'guest_books/:guest_book_id/guest_book_comments/:id/password',:to=>'guest_book_comments#password'
   post 'guest_books/:guest_book_id/guest_book_comments/:id/password',:to=>'guest_book_comments#password'
+
+
 
 
   scope 'admin', module: 'admin', as: 'admin' do

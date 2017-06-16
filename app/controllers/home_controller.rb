@@ -6,6 +6,13 @@ class HomeController < ApplicationController
     @blogs = Blog.order('id desc').where('photo IS NOT NULL').page(0).per(6)
   end
 
+  def feed
+    @blogs = Blog.all
+    respond_to do |format|
+      format.rss { render :layout => false }
+    end
+  end
+
   def popup
     @meta_description=t(:meta_description_popup)
   end
