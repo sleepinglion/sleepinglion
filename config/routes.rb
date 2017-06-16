@@ -36,7 +36,7 @@ Sleepinglion::Application.routes.draw do
   end
 
   get 'home/popup'=>'home#popup'
-  get 'feed',:to=>'home#feed'  
+  get 'feed',:to=>'home#feed'
 
   get 'tags/:tag', to: 'tags#index', as: :tag
 

@@ -7,7 +7,7 @@ class HomeController < ApplicationController
   end
 
   def feed
-    @blogs = Blog.all
+    @blogs = Blog.all.where(:enable=>true)
     respond_to do |format|
       format.rss { render :layout => false }
     end
