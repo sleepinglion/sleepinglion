@@ -8,8 +8,4 @@ class Admin < ActiveRecord::Base
     def timeout_in
         1.day
     end
-
-    def email_required?
-        false
-    end
 end
