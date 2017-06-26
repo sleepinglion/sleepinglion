@@ -60,7 +60,7 @@ class BlogsController < ApplicationController
   # GET /blogs/1/edit
   def edit
     @blog_category_id=@blog.blog_category_id
-    @script="edit"
+    @script="new"
   end
 
   # POST /blogs
