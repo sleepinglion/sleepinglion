@@ -24,6 +24,7 @@ class ApplicationController < ActionController::Base
   #  @aside_blog_categories.each do |blog_category|
   #  if(blog_category
   #  end
+    @script='application'
   end
 
   def current_ability

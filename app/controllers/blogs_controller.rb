@@ -54,13 +54,13 @@ class BlogsController < ApplicationController
       @blog_category_id=params[:blog_category_id]
     end
 
-    @script="board/new"
+    @script="new"
   end
 
   # GET /blogs/1/edit
   def edit
     @blog_category_id=@blog.blog_category_id
-    @script="board/edit"
+    @script="edit"
   end
 
   # POST /blogs
@@ -69,7 +69,7 @@ class BlogsController < ApplicationController
     @blog = Blog.new(blog_params)
     @blog.user_id=current_user.id
 
-    @script="board/new"
+    @script="new"
 
     respond_to do |format|
       if @blog.save
