@@ -38,7 +38,6 @@ class BlogsController < ApplicationController
 
    @meta_keywords=@blog.tag_list+','+t(:meta_keywords)
    @title=@blog.title
-   @script="board/show"
 
     respond_to do |format|
       format.html # show.html.erb
@@ -85,7 +84,7 @@ class BlogsController < ApplicationController
   # PATCH/PUT /blogs/1
   # PATCH/PUT /blogs/1.json
   def update
-    @script="board/edit"
+    @script="new"
 
     respond_to do |format|
       if @blog.update(blog_params)
