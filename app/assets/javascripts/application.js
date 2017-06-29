@@ -92,7 +92,7 @@ $(document).ready(function(){
 			}
 	});
 
-  $("#sl_main_gallery .item a").click(function(){
+  $("#sl_gallery .item a").click(function(){
   	var image_url=$("#image_url").val();
     $.getJSON($(this).attr('href'),{'json':true},function(data){
       $("#sl_gallery_left a").attr('href',data.photo.url).attr('title',data.title);

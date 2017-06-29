@@ -35,8 +35,6 @@ class GalleriesController < BoardController
       @meta_description=@gallery.content
     end
 
-    @script='galleries'
-
     respond_to do |format|
       format.html # index.html.erb
       format.json { render :json => @galleries }
