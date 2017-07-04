@@ -82,6 +82,7 @@ group :production do
   # Redis Cache
   gem 'redis-rails'
   gem 'redis-rack-cache'
+  gem 'carrierwave-ftp'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
