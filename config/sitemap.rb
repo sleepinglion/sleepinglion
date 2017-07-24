@@ -1,5 +1,5 @@
 # Set the host name for URL creation
-SitemapGenerator::Sitemap.default_host = "http://www.sleepinglion.pe.kr"
+SitemapGenerator::Sitemap.default_host = "http://www.jingyu.pe.kr"
 
 SitemapGenerator::Sitemap.create do
   # Put links creation logic here.
@@ -17,15 +17,21 @@ SitemapGenerator::Sitemap.create do
   #
  # Add '/blogs'
   add intro_index_path, :priority => 0.9, :changefreq => 'monthly'
-  add galleries_path, :priority => 0.7, :changefreq => 'daily'
+  add galleries_path, :priority => 0.7, :changefreq => 'weekly'
   Gallery.find_each do |gallery|
     add gallery_path(gallery), :priority => 0.5, :lastmod => gallery.updated_at
   end
 
-  add blogs_path, :priority => 0.9, :changefreq => 'daily'
+  add blogs_path, :priority => 0.9, :changefreq => 'weekly'
 
   Blog.find_each do |blog|
     add blog_path(blog), :priority => 0.9, :lastmod => blog.updated_at
+  end
+
+  add faqs_path, :changefreq => 'monthly'
+
+  Faq.find_each do |faq|
+    add faq_path(faq), :lastmod => faq.updated_at
   end
 
   add questions_path

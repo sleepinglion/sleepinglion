@@ -1,4 +1,4 @@
-set :application, 'sleepinglion'
+set :application, 'jingyu'
 set :repo_url, 'git@github.com:sleepinglion/sleepinglion.git'
 set :branch, 'jingyu'
 set :deploy_to, '/home/deploy/jingyu'
