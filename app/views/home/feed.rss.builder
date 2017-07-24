@@ -2,9 +2,9 @@ xml.instruct! :xml, :version => "1.0"
 xml.rss :version => "2.0" do
   xml.channel do
     xml.title @application_name
-    xml.author 'Sleeping-Lion'
+    xml.author 'Jingyu'
     xml.description @meta_description
-    xml.link 'http://www.sleepinglion.pe.kr'
+    xml.link 'http://www.jingyu.pe.kr'
     xml.language I18n.locale.to_s
 
     for article in @blogs
@@ -14,9 +14,9 @@ xml.rss :version => "2.0" do
         else
           xml.title ''
         end
-        xml.author 'SleepingLion'
+        xml.author 'Jingyu'
         xml.pubDate article.created_at.to_s(:rfc822)
-        xml.link 'http://www.sleepinglion.pe.kr/blog/' + article.id.to_s
+        xml.link 'http://www.jingyu.pe.kr/blog/' + article.id.to_s
         xml.guid article.id
 
         text = article.blog_content.content

@@ -46,8 +46,6 @@ gem 'meta-tags'
 gem 'gretel'
 gem 'i18n-js'
 gem 'non-stupid-digest-assets'
-gem 'globalize', git: 'https://github.com/globalize/globalize'
-gem 'activemodel-serializers-xml'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

@@ -42,13 +42,13 @@ crumb :guest_book do |guest_book|
    parent :guest_books
 end
 
-crumb :programs do
-   link t('activerecord.models.program'), programs_path
+crumb :faqs do
+   link t('activerecord.models.faq'), faqs_path
 end
 
-crumb :program do |portfolio|
-   link program.title, program_path(program)
-   parent :programs
+crumb :faq do |faq|
+   link faq.title, faq_path(faq)
+   parent :faqs
 end
 
 crumb :notices do
