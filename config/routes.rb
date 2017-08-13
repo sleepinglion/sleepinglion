@@ -14,7 +14,7 @@ Rails.application.routes.draw do
     get '/signup', :to => 'users/registrations#new'
   end
 
-  resources :intro, :gallery_categories, :galleries, :notices, :faq_categories,:faqs
+  resources :intro, :gallery_categories, :galleries, :notices, :faq_categories,:faqs, :histories
 
   resources :blogs do
     resources :blog_comments
