@@ -9,8 +9,8 @@ ko:
   meta_description_portfolio : '웹프로그래머 잠자는사자의 포트폴리오'
   meta_description_guest_book : '웹프로그래머 잠자는사자의 방명록'
   meta_keywords : '정종호,웹프로그래머,퍼블리셔,웹개발,웹표준,리눅스,html,html5,javascript,php,ruby,rails,레일즈,퍼블리싱,publishing,잠자는사자,SL,SleepingLion,Sleeping-Lion'
-  meta_image : 'http://assets.sleepinglion.pe.kr/sl.jpg'
-  meta_url : 'http://www.sleepinglion.pe.kr'
+  meta_image : 'https://assets.sleepinglion.pe.kr/sl.jpg'
+  meta_url : 'https://www.sleepinglion.pe.kr'
   title_separator : '-'
   default_title : '깨끗한 웹세상을 만들어가는 웹프로그래머'
 

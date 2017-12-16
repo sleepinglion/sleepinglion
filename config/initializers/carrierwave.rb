@@ -6,7 +6,7 @@ CarrierWave.configure do |config|
     config.ftp_user = "sleepinglion"
     config.ftp_passwd = "jjh30750"
     config.ftp_folder = "/www"
-    config.ftp_url = "http://sleepinglion.cdn3.cafe24.com"
+    config.ftp_url = "https://sleepinglion.cdn3.cafe24.com"
     config.ftp_passive = true
   else
     config.storage = :file
