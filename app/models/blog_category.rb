@@ -5,5 +5,5 @@ class BlogCategory < ActiveRecord::Base
   belongs_to :user, :autosave=>true
   has_many :blog_category, :dependent=>:destroy
   has_many :blog, :dependent=>:destroy
-  translates :title
+  #translates :title
 end

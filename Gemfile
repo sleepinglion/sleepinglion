@@ -28,7 +28,8 @@ gem 'jquery-rails'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production
-gem 'redis', '~> 3.0'
+gem 'redis', '~> 4.0'
+gem 'redis-store','~> 1.4.0'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7', platforms: :ruby
 
@@ -37,14 +38,14 @@ gem 'bcrypt', '~> 3.1.7', platforms: :ruby
 
 
 #gem 'jquery-turbolinks'
-gem 'bootstrap-sass'
+gem 'bootstrap', '~> 4.0.0'
 gem 'devise'
 gem 'cancan'
 gem 'kaminari'
 gem 'carrierwave'
 gem 'carrierwave-ftp', :require => 'carrierwave/storage/ftp' # FTP only
 gem 'mini_magick'
-gem 'rmagick'
+#gem 'rmagick'
 gem 'impressionist'
 gem 'acts-as-taggable-on'
 gem 'ckeditor'
@@ -95,4 +96,4 @@ group :production do
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+#gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]

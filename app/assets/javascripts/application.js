@@ -1,6 +1,7 @@
-//= require jquery
+//= require jquery3
+//= require popper
+//= require bootstrap
 //= require jquery_ujs
-//= require bootstrap-sprockets
 //= require plugin/jquery.uri.js
 //= require plugin/jquery.tagcanvas.min.js
 //= require jquery.easing
