@@ -3,7 +3,7 @@ class CkeditorAttachmentFileUploader < CarrierWave::Uploader::Base
 
   # Include RMagick or ImageScience support:
   # include CarrierWave::RMagick
-  include CarrierWave::RMagick
+  include CarrierWave::MiniMagick
   #include CarrierWave::WebP::Converter
   # include CarrierWave::ImageScience
 

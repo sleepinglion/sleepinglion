@@ -35,7 +35,7 @@ gem 'kaminari'
 gem 'carrierwave'
 gem 'carrierwave-ftp', :require => 'carrierwave/storage/ftp' # FTP only
 gem 'mini_magick'
-gem 'rmagick'
+#gem 'rmagick'
 gem 'impressionist'
 gem 'acts-as-taggable-on'
 gem 'ckeditor'
