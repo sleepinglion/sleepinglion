@@ -24,7 +24,7 @@
 /db/schema.rb
 .env
 #Gemfile.lock
-*.sql
+#*.sql
 
 # Ignore Byebug command history file.
 .byebug_history
