@@ -1,8 +1,14 @@
 <ol class="nav nav-tabs">
 	<% unless gallery_categories.empty? %>
 	<% gallery_categories.each do |gallery_category| %>
-	<li <% if gallery_category.id!=nil && (gallery_category_id==gallery_category.id) %>class="active"<% end %>>
-		<%= link_to galleries_path(:gallery_category_id=>gallery_category.id) do %>
+	<li class="nav-item">
+		<% if gallery_category.id!=nil && (gallery_category_id==gallery_category.id)
+			m_class="nav-link active"
+			else
+			m_class="nav-link"
+			end				
+		%>
+		<%= link_to galleries_path(:gallery_category_id=>gallery_category.id),:class=>m_class do %>
 		<%= gallery_category.title %><span class="hidden-xs">(<%= gallery_category.galleries_count %>)</span>
 		<% end %>
 	</li>
@@ -15,7 +21,7 @@
 </ol>
 <div id="sl_gallery" class="row" <% if gallery %>itemscope itemtype="http://schema.org/ImageObject"<% end %> >
 	<% if gallery %>
-	<div id="sl_gallery_left" class="col-xs-12 col-md-6 col-xl-5">
+	<div id="sl_gallery_left" class="col-xs-12 col-lg-5">
 		<span class="none" itemprop="genre"><%= gallery.gallery_category_id %></span>
 		<%=link_to gallery.photo.to_s,{:title=>gallery.title,:class=>'simple_image'} do %>
 		<figure>
@@ -26,7 +32,7 @@
 		</figure>
 		<% end %>
 	</div>
-	<div id="sl_gallery_right" class="col-xs-12 col-md-6 col-xl-7">
+	<div id="sl_gallery_right" class="col-12 col-lg-7">
 		<div itemprop="description">
 			<%= simple_format gallery.content %>
 		</div>

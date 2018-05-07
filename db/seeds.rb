@@ -1,5 +1,6 @@
 User.create!(:email => 'toughjjh@gmail.com', :nickname=>'잠자는-사자', :password => 'jjh123456', :password_confirmation => 'jjh123456',:admin=>true)
 
+=begin 
 BlogCategory.create!(:id=>1,:user_id=>1,:blog_category_id=>nil,:title=>'잡생각',:blogs_count=>16,:blog_categories_count=>0,:leaf=>0,:enable=>1,:created_at=>'2013-12-24 18:26:41',:updated_at=>'2013-12-24 18:26:41')
 BlogCategory.create!(:id=>2,:user_id=>1,:blog_category_id=>nil,:title=>'리눅스',:blogs_count=>0,:blog_categories_count=>4,:leaf=>0,:enable=>1,:created_at=>'2013-12-24 18:26:41',:updated_at=>'2013-12-24 18:26:41')
 BlogCategory.create!(:id=>3,:user_id=>1,:blog_category_id=>nil,:title=>'웹개발',:blogs_count=>0,:blog_categories_count=>6,:leaf=>0,:enable=>1,:created_at=>'2013-12-24 18:26:41',:updated_at=>'2013-12-24 18:26:41')
@@ -71,3 +72,5 @@ ProgramLink.create!(:program_categories_program_id=>11,:title=>'모바일웹 플
 ProgramLink.create!(:program_categories_program_id=>12,:title=>'모바일웹 플랫폼(codeigniter)',:repository=>'https://github.com/sleepinglion/free_ad_codeigniter',:download_link=>'https://github.com/sleepinglion/free_ad_codeigniter/archive/master.zip')
 ProgramLink.create!(:program_categories_program_id=>15,:title=>'관련링크관리 플러그인',:repository=>'https://phabricator.wikimedia.org/diffusion/EREL/',:download_link=>'')
 ProgramLink.create!(:program_categories_program_id=>17,:title=>'로고관리 플러그인',:repository=>'https://phabricator.wikimedia.org/diffusion/EULL/',:download_link=>'')
+
+=end

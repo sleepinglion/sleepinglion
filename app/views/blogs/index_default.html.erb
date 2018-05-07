@@ -1,11 +1,22 @@
 <% breadcrumb :blogs %>
 <section id="sl_blog_index">
 	<ol class="nav nav-pills sl_categories hidden-lg">
-		<li <% unless params[:blog_category_id] %>class="active"<% end %>><%= link_to t(:all_category),blogs_path %></li>
+    <li class="nav-item">
+    <% if(params[:blog_category_id])
+    d_class='nav-link'
+  else 
+    d_class='nav-link active' end %>
+    <%= link_to t(:all_category),blogs_path,{:class=>d_class} %>
+    </li>
   	<% unless @blog_categories.empty? %>
   	<% @blog_categories.each do |blog_category| %>
-  	<li <% if(@blog_category_id==blog_category.id) %>class="active"<% end %>>
-  	<%= link_to blogs_path(:blog_category_id=>blog_category.id) do %>
+    <li class="nav-item">
+    <% 
+      if(@blog_category_id==blog_category.id) 
+        m_class='nav-link active'
+      else m_class='nav-link'
+      end %>
+  	<%= link_to blogs_path(:blog_category_id=>blog_category.id),{:class=>m_class} do %>
   	<%=blog_category.title.truncate(20) %><span class="hidden-xs">(<%=blog_category.blogs_count %>)</span>
   	<% end %>
   	</li>

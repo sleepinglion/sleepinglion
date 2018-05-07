@@ -2,8 +2,10 @@
 <ol class="nav nav-tabs sl_categories">
 	<% unless @program_categories.empty? %>
 	<% @program_categories.each do |program_category| %>
-	<li <% if program_category.id!=nil && (@program_category_id==program_category.id) %>class="active"<% end %>>
-		<%= link_to programs_path(:program_category_id=>program_category.id) do %>
+	<li class="nav-item">
+	<% if(program_category.id!=nil && (@program_category_id==program_category.id))
+		m_class="nav-link active" else  m_class="nav-link" end %>
+		<%= link_to programs_path(:program_category_id=>program_category.id),:class=>m_class do %>
 		<%= program_category.title %><span class="hidden-xs">(<%= program_category.program_categories_programs_count %>)</span>
 		<% end %>
 	</li>
