@@ -457,6 +457,7 @@ ko:
         content : '내용'
         enable : '사용여부'
       question :
+        name : '이름'
         user_id : '사용자'
         password : '비밀번호'
         title : '제목'

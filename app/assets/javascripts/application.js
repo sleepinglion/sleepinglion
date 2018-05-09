@@ -157,12 +157,12 @@ $(document).ready(function(){
  $('[data-toggle="tooltip"]').tooltip();
 
 	$(".btn_minimize").click(function(){
-		var i=$(this).parent().find('i:first');
-        if(i.hasClass('glyphicon-chevron-down')) {
-            i.removeAttr('class').addClass('glyphicon').addClass('glyphicon-chevron-up');
+		var i=$(this).find('i:first');
+        if(i.text()=='expand_more') {
+            i.text('expand_less');
             $(this).parent().parent().parent().find('.box_content').slideDown();
         } else {
-            i.removeAttr('class').addClass('glyphicon').addClass('glyphicon-chevron-down');
+            i.text('expand_more');
             $(this).parent().parent().parent().find('.box_content').slideUp();
         }
 		return false;
