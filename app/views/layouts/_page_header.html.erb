@@ -4,9 +4,9 @@
 			<h2 itemprop="mainContentOfPage" itemscope itemtype="http://schema.org/WebPageElement"><span itemprop="headline"><%=@controller_name %></span></h2>
 			<% breadcrumbs.tap do |links| %>
 				<% if links.any? %>
-					<ol class='breadcrumb'>
+					<ol class="breadcrumb">
 						<% links.each do |link| %>
-						  <li class='breadcrumb-item<%= ' active' if link.current? %>'>
+						  <li class="breadcrumb-item<%= ' active' if link.current? %>">
 							<%= link_to_unless(link.current?, link.text, link.url) %>
 						  </li>
 						<% end %>
