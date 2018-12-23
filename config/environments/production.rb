@@ -51,16 +51,16 @@ Rails.application.configure do
 
   # Use a different cache store in production.
   config.cache_store = :redis_store, {
-    host: "localhost",
-    port: 6379,
+    host: "sleepinglion.redis.cache.windows.net",
+    port: 6380,
     db: 0,
-    password: "mysecret",
+    password: "pRDuVA9FoJ7azjEwYcK+Tow08ofH+e4IoyrUJ1bn6wQ=",
     namespace: "cache"
   }
 
   config.action_dispatch.rack_cache = {
-    metastore: "redis://localhost:6379/1/metastore",
-    entitystore: "redis://localhost:6379/1/entitystore"
+    metastore: "redis://sleepinglion.redis.cache.windows.net:6380/1/metastore",
+    entitystore: "redis://sleepinglion.redis.cache.windows.net:6380/1/entitystore"
   }
 
   # Use a real queuing backend for Active Job (and separate queues per environment)
