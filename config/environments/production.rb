@@ -54,8 +54,7 @@ Rails.application.configure do
     host: "localhost",
     port: 6379,
     db: 0,
-    password: "mysecret",
-    namespace: "cache"
+    namespace: "cache",
   }
 
   config.action_dispatch.rack_cache = {
