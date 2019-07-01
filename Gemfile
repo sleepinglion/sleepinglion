@@ -49,7 +49,7 @@ gem 'mini_magick'
 #gem 'rmagick'
 gem 'impressionist'
 gem 'acts-as-taggable-on'
-gem "ckeditor", :git => "git@github.com:galetahub/ckeditor.git"
+gem "ckeditor"
 gem 'fancybox2-rails'
 gem 'jquery-easing-rails'
 gem 'sitemap_generator'
