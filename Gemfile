@@ -49,7 +49,7 @@ gem 'mini_magick'
 #gem 'rmagick'
 gem 'impressionist'
 gem 'acts-as-taggable-on'
-gem "ckeditor"
+gem "ckeditor", :git => "git@github.com:galetahub/ckeditor.git"
 gem 'fancybox2-rails'
 gem 'jquery-easing-rails'
 gem 'sitemap_generator'
@@ -58,7 +58,6 @@ gem 'gretel'
 gem 'i18n-js'
 gem 'non-stupid-digest-assets'
 gem 'globalize', '~> 5.1.0.beta2'
-gem 'dotenv-rails', require: 'dotenv/rails-now'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -88,6 +87,7 @@ group :production do
   gem 'asset_sync'
   gem 'fog-azure-rm'
   gem 'mysql2'
+  gem 'dotenv-rails'  
   gem 'recaptcha', :require => 'recaptcha/rails'
   gem 'rails-letsencrypt'  
 
