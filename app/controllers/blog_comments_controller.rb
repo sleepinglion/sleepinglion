@@ -1,6 +1,17 @@
 class BlogCommentsController < AnonCommentController
   before_action :set_blog_comment, only: [:show, :edit, :destroy]
 
+  # GET /blogs/new
+  def new
+    @blog_comment = BlogComment.new
+    @blog_comment.build_blog_comment_content
+    if(params[:blog_id])
+      @blog_id=params[:blog_id]
+    end
+
+    @script="new"
+  end  
+
   def show
     @parent=@blog_comment.blog
     return @blog_comment

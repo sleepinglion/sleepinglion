@@ -49,7 +49,7 @@ gem 'mini_magick'
 #gem 'rmagick'
 gem 'impressionist'
 gem 'acts-as-taggable-on'
-gem 'ckeditor'
+gem "ckeditor", :git => "git@github.com:galetahub/ckeditor.git"
 gem 'fancybox2-rails'
 gem 'jquery-easing-rails'
 gem 'sitemap_generator'
@@ -84,10 +84,12 @@ group :development do
 end
 
 group :production do
-  #gem 'asset_sync'
+  gem 'asset_sync'
+  gem 'fog-azure-rm'
   gem 'mysql2'
   gem 'dotenv-rails'
   gem 'recaptcha', :require => 'recaptcha/rails'
+  gem 'rails-letsencrypt'  
 
   # Redis Cache
   gem 'redis-rails'
