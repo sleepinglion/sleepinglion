@@ -81,6 +81,7 @@ group :development do
   gem 'capistrano', '~> 3.0'
   gem 'capistrano-bundler'
   gem 'capistrano-rails'
+  gem 'capistrano-passenger', require: false, github: 'capistrano/passenger'
 end
 
 group :production do
