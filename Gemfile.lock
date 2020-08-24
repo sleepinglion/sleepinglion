@@ -551,10 +551,10 @@ DEPENDENCIES
   rails-letsencrypt
   rails_best_practices
   recaptcha
-  redis (~> 4.0)
+  redis
   redis-rack-cache
   redis-rails
-  redis-store (~> 1.4.0)
+  redis-store
   rubocop
   rubycritic
   sass-rails (~> 5.0)
