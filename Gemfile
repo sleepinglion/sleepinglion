@@ -48,6 +48,8 @@ gem 'gretel'
 gem 'i18n-js'
 gem 'non-stupid-digest-assets'
 gem 'globalize'
+gem 'redis'
+gem 'redis-store',github: 'redis-store/redis-store'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -79,8 +81,7 @@ group :production do
   gem 'asset_sync','~> 2.8'
   gem 'fog-azure-rm'
   gem 'mysql2'
-  gem 'redis'
-  gem 'redis-store'
+
   gem 'dotenv-rails'  
   gem 'recaptcha', :require => 'recaptcha/rails'
   gem 'rails-letsencrypt'  
