@@ -32,7 +32,7 @@ gem 'active_model_serializers'
 #gem 'jquery-turbolinks'
 gem 'bootstrap', '~> 4.3.1'
 gem 'devise'
-gem 'cancan'
+gem 'cancancan'
 gem 'kaminari'
 gem 'carrierwave'
 gem 'carrierwave-ftp', :require => 'carrierwave/storage/ftp' # FTP only
