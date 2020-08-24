@@ -1,4 +1,4 @@
-class CreateIntros < ActiveRecord::Migration
+class CreateIntros < ActiveRecord::Migration[4.2]
   def change
     create_table :intros do |t|
       t.references :user, :null=>false      

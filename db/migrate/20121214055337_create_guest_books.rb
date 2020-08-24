@@ -1,4 +1,4 @@
-class CreateGuestBooks < ActiveRecord::Migration
+class CreateGuestBooks < ActiveRecord::Migration[4.2]
   def change
     create_table :guest_books do |t|
       t.references :user

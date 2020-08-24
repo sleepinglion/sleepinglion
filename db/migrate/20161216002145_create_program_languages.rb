@@ -1,4 +1,4 @@
-class CreateProgramLanguages < ActiveRecord::Migration
+class CreateProgramLanguages < ActiveRecord::Migration[4.2]
   def change
     create_table :program_languages do |t|
       t.string :title, :limit=>60, :null=>false

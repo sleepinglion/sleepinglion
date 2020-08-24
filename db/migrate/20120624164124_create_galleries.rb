@@ -1,4 +1,4 @@
-class CreateGalleries < ActiveRecord::Migration
+class CreateGalleries < ActiveRecord::Migration[4.2]
   def change
     create_table :gallery_categories do |t|
       t.references :user, :null=>false

@@ -1,4 +1,4 @@
-class CreateBlogCategories < ActiveRecord::Migration
+class CreateBlogCategories < ActiveRecord::Migration[4.2]
   def change
     create_table :blog_categories do |t|
       t.references :user, :null=>false

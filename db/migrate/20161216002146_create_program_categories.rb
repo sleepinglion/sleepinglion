@@ -1,4 +1,4 @@
-class CreateProgramCategories < ActiveRecord::Migration
+class CreateProgramCategories < ActiveRecord::Migration[4.2]
   def change
     create_table :program_categories do |t|
       t.references :program_language,:null=>false

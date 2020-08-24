@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="RUBY_MODULE" version="4">
+  <component name="FacetManager">
+    <facet type="RailsFacetType" name="Ruby on Rails">
+      <configuration>
+        <RAILS_FACET_CONFIG_ID NAME="RAILS_FACET_SUPPORT_REMOVED" VALUE="false" />
+        <RAILS_FACET_CONFIG_ID NAME="RAILS_TESTS_SOURCES_PATCHED" VALUE="true" />
+        <RAILS_FACET_CONFIG_ID NAME="RAILS_FACET_APPLICATION_ROOT" VALUE="$MODULE_DIR$/../../vendor/gems/impressionist/tests/dummy" />
+      </configuration>
+    </facet>
+  </component>
+  <component name="ModuleRunConfigurationManager">
+    <shared />
+  </component>
+  <component name="NewModuleRootManager">
+    <content url="file://$MODULE_DIR$/../../vendor/gems/impressionist/tests/dummy">
+      <sourceFolder url="file://$MODULE_DIR$/../../vendor/gems/impressionist/tests/dummy/test" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../../vendor/gems/impressionist/tests/dummy/spec" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../../vendor/gems/impressionist/tests/dummy/features" isTestSource="true" />
+      <excludeFolder url="file://$MODULE_DIR$/../../vendor/gems/impressionist/tests/dummy/.bundle" />
+      <excludeFolder url="file://$MODULE_DIR$/../../vendor/gems/impressionist/tests/dummy/components" />
+      <excludeFolder url="file://$MODULE_DIR$/../../vendor/gems/impressionist/tests/dummy/log" />
+      <excludeFolder url="file://$MODULE_DIR$/../../vendor/gems/impressionist/tests/dummy/public/packs" />
+      <excludeFolder url="file://$MODULE_DIR$/../../vendor/gems/impressionist/tests/dummy/public/system" />
+      <excludeFolder url="file://$MODULE_DIR$/../../vendor/gems/impressionist/tests/dummy/tmp" />
+      <excludeFolder url="file://$MODULE_DIR$/../../vendor/gems/impressionist/tests/dummy/vendor/bundle" />
+      <excludeFolder url="file://$MODULE_DIR$/../../vendor/gems/impressionist/tests/dummy/vendor/cache" />
+    </content>
+    <orderEntry type="jdk" jdkName="ruby-2.5.1-p57" jdkType="RUBY_SDK" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" scope="PROVIDED" name="bundler (v2.1.4, ruby-2.5.1-p57) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="erubis (v2.7.0, ruby-2.5.1-p57) [gem]" level="application" />
+  </component>
+  <component name="RubyModuleProperties">
+    <option name="autoCreated" value="true" />
+  </component>
+</module>
