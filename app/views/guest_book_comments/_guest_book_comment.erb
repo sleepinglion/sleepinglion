@@ -1,9 +1,9 @@
 <li class="media">
   <%=link_to '#',:class=>"pull-left" do %>
-    <% if guest_book_comment.user %>
-      <%= image_tag guest_book_comment.user.photo.small_thumb,:alt=>guest_book_comment.user.name %>
-    <% else %>
+    <% if guest_book_comment.user.photo.small_thumb.nil? %>
       <%= image_tag 'anon.png',:alt=>guest_book_comment.name %>
+    <% else %>
+      <%= image_tag guest_book_comment.user.photo.small_thumb.url,:alt=>guest_book_comment.user.name %>
     <% end %>
   <% end %>
   <div class="media-body">

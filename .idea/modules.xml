@@ -2,11 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ckeditor.iml" filepath="$PROJECT_DIR$/.idea/modules/ckeditor.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/dummy.iml" filepath="$PROJECT_DIR$/.idea/modules/dummy.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/fancybox2-rails.iml" filepath="$PROJECT_DIR$/.idea/modules/fancybox2-rails.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/impressionist.iml" filepath="$PROJECT_DIR$/.idea/modules/impressionist.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../anti-kb/.idea/anti-kb.iml" filepath="$PROJECT_DIR$/../anti-kb/.idea/anti-kb.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../gene_analysis/.idea/gene_analysis.iml" filepath="$PROJECT_DIR$/../gene_analysis/.idea/gene_analysis.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/sleepinglion.iml" filepath="$PROJECT_DIR$/.idea/sleepinglion.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../survey/.idea/survey.iml" filepath="$PROJECT_DIR$/../survey/.idea/survey.iml" />
     </modules>
   </component>
 </project>
