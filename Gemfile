@@ -1,8 +1,6 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-#ruby '2.7.1'
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.3', '>= 6.0.3.2'
 # Use sqlite3 as the database for Active Record
@@ -22,37 +20,36 @@ gem 'jbuilder', '~> 2.7'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
-gem 'mini_racer'
+# Use Active Storage variant
+# gem 'image_processing', '~> 1.2'
 
-gem 'jquery-rails'
-gem 'activemodel-serializers-xml'
-gem 'active_model_serializers'
+# Reduces boot times through caching; required in config/boot.rb
+gem 'bootsnap', '>= 1.4.2', require: false
+
 gem 'bootstrap', '~> 4.3.1'
+gem 'sprockets', '~> 3.7.2'
 gem 'devise'
 gem 'cancancan'
 gem 'kaminari'
 gem 'carrierwave'
 gem 'carrierwave-ftp', :require => 'carrierwave/storage/ftp' # FTP only
 gem 'mini_magick'
-#gem 'rmagick'
 gem 'impressionist'
+gem 'ckeditor'
+gem 'json'
+gem 'non-stupid-digest-assets'
+gem 'activemodel-serializers-xml'
+gem 'active_model_serializers'
 gem 'acts-as-taggable-on'
 #gem "ckeditor"
-gem 'fancybox2-rails'
-gem 'jquery-easing-rails'
 gem 'sitemap_generator'
 gem 'meta-tags'
 gem 'gretel'
 gem 'i18n-js'
-gem 'non-stupid-digest-assets'
 gem 'globalize'
-
-gem 'mysql2'
-# Use Active Storage variant
-# gem 'image_processing', '~> 1.2'
-
-# Reduces boot times through caching; required in config/boot.rb
-gem 'bootsnap', '>= 1.4.2', require: false
+gem 'jquery-rails'
+gem 'fancybox-rails'
+gem 'jquery-easing-rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -74,6 +71,24 @@ group :test do
   gem 'selenium-webdriver'
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'webdrivers'
+end
+
+group :production do
+  gem 'asset_sync','~> 2.8'
+  gem 'fog-azure-rm'
+  gem 'mysql2'
+  gem 'redis'
+  gem 'redis-store',github: 'redis-store/redis-store'
+  gem 'dotenv-rails'
+  gem 'recaptcha', :require => 'recaptcha/rails'
+  gem 'rails-letsencrypt'
+
+  gem 'mini_racer', platforms: :ruby
+  gem 'execjs'
+
+  # Redis Cache
+  gem 'redis-rails'
+  gem 'redis-rack-cache'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
