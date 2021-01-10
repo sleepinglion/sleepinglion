@@ -1,8 +1,10 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
+# ruby '2.7.2'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 6.0.3', '>= 6.0.3.2'
+gem 'rails', '~> 6.0.3', '>= 6.0.3.4'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3', '~> 1.4'
 # Use Puma as the app server
@@ -31,22 +33,17 @@ gem 'sprockets', '~> 3.7.2'
 gem 'devise'
 gem 'cancancan'
 gem 'kaminari'
-gem 'carrierwave'
-gem 'carrierwave-ftp', :require => 'carrierwave/storage/ftp' # FTP only
+gem 'carrierwave', '~> 2.0'
 gem 'mini_magick'
-gem 'impressionist'
-gem 'ckeditor'
-gem 'json'
-gem 'non-stupid-digest-assets'
-gem 'activemodel-serializers-xml'
-gem 'active_model_serializers'
-gem 'acts-as-taggable-on'
-#gem "ckeditor"
 gem 'sitemap_generator'
 gem 'meta-tags'
 gem 'gretel'
 gem 'i18n-js'
 gem 'globalize'
+
+gem 'impressionist'
+gem 'acts-as-taggable-on', '~> 7.0'
+gem 'rails-letsencrypt'
 gem 'jquery-rails'
 gem 'fancybox-rails'
 gem 'jquery-easing-rails'
@@ -63,6 +60,12 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+
+  # Capistrano
+  gem 'capistrano'
+  gem 'capistrano-bundler'
+  gem 'capistrano-passenger'
+  gem 'capistrano-rails'
 end
 
 group :test do
@@ -74,14 +77,13 @@ group :test do
 end
 
 group :production do
-  gem 'asset_sync','~> 2.8'
-  gem 'fog-azure-rm'
+  gem 'asset_sync'
+  gem 'fog-azure-rm',github: 'sleepinglion/fog-azure-rm'
   gem 'mysql2'
   gem 'redis'
   gem 'redis-store',github: 'redis-store/redis-store'
   gem 'dotenv-rails'
   gem 'recaptcha', :require => 'recaptcha/rails'
-  gem 'rails-letsencrypt'
 
   gem 'mini_racer', platforms: :ruby
   gem 'execjs'

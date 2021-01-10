@@ -15,14 +15,15 @@
   	url:      @meta_url,
   	image:    @meta_image
 	} %>
-<meta name="author" content="Sleeping-Lion" />
-<link rel="alternate" type="application/rss+xml" title="Sleeping-Lion RSS Feed" href="https://www.sleepinglion.pe.kr/feed?format=rss" />
+  <meta name="author" content="Sleeping-Lion">
+  <link rel="canonical" href="<%=t(:site_full_url) %>">
+<link rel="alternate" type="application/rss+xml" title="Sleeping-Lion RSS Feed" href="https://www.sleepinglion.pe.kr/feed?format=rss">
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <%= stylesheet_link_tag "application", :media=>"all", "data-turbolinks-track" => true %>
 <%= favicon_link_tag 'favicon.ico' %>
 <%= csrf_meta_tags %>
 <!--[if IE]>
-<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
 <![endif]-->
 </head>
 <body itemscope itemtype="<%=@page_itemtype %>">

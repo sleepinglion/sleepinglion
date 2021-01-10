@@ -3,8 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/../ad_admin/.idea/ad_admin.iml" filepath="$PROJECT_DIR$/../ad_admin/.idea/ad_admin.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../anti-kb/.idea/anti-kb.iml" filepath="$PROJECT_DIR$/../anti-kb/.idea/anti-kb.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../cafe/.idea/cafe.iml" filepath="$PROJECT_DIR$/../cafe/.idea/cafe.iml" />
       <module fileurl="file://$PROJECT_DIR$/../company/.idea/company.iml" filepath="$PROJECT_DIR$/../company/.idea/company.iml" />
       <module fileurl="file://$PROJECT_DIR$/../fitness/.idea/fitness.iml" filepath="$PROJECT_DIR$/../fitness/.idea/fitness.iml" />
       <module fileurl="file://$PROJECT_DIR$/../gene_analysis/.idea/gene_analysis.iml" filepath="$PROJECT_DIR$/../gene_analysis/.idea/gene_analysis.iml" />

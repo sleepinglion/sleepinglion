@@ -21,6 +21,10 @@ ko:
   japanese : '일본어'
   change_language : '언어바꾸기'
 
+  site_url: 'sleepinglion.pe.kr'
+  site_full_url: 'https://www.sleepinglion.pe.kr'
+  email_webmaster: 'admin@sleepinglion.pe.kr'
+
   home : '홈'
   home_title : '잠자는사자의 집'
   welcome : '님 환영합니다.'

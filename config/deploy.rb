@@ -7,7 +7,7 @@ set :deploy_to, '/home/deploy/sleepinglion'
 # set :format, :pretty
 # set :log_level, :debug
 set :pty, true
-set :linked_files, %w{config/database.yml .env}
+set :linked_files, %w{config/database.yml config/letsencrypt.key .env}
 set :linked_dirs, %w{log tmp/pids tmp/cache tmp/sockets public/assets public/ckeditor public/uploads}
 
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }
