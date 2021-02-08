@@ -1,4 +1,4 @@
-
+if Rails.env.production?
   LetsEncrypt.config do |config|
     # Using Let's Encrypt staging server or not
     # Default only `Rails.env.production? == true` will use Let's Encrypt production server.
@@ -26,3 +26,4 @@
     # Default is LetsEncrypt::Certificate
     #config.certificate_model = 'MyCertificate'
   end
+end
