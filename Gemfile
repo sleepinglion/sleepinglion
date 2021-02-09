@@ -85,9 +85,12 @@ group :production do
   gem 'redis-store',github: 'redis-store/redis-store'
   gem 'dotenv-rails'
   gem 'recaptcha', :require => 'recaptcha/rails'
+  gem 'rails-letsencrypt'
+  gem 'uglifier'
+  gem 'carrierwave-ftp'
 
-  gem 'mini_racer', platforms: :ruby
-  gem 'execjs'
+  #gem 'mini_racer', platforms: :ruby
+  #gem 'execjs'
 
   # Redis Cache
   gem 'redis-rails'
