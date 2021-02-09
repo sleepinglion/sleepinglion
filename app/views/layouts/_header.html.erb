@@ -17,7 +17,7 @@
 					m_link='nav-link' 
 				end
 				%>
-						<%=link_to intro_index_path,:class=>m_link do %><%= t('activerecord.models.intro') %><span class="visible-xs glyphicon glyphicon-chevron-right pull-right"></span><% end %></li>
+						<%=link_to intro_index_path,:class=>m_link do %><%= t('activerecord.models.intro') %><% end %></li>
 					<li class="nav-item">
 					<% if params[:controller]=='galleries'
 					m_link='nav-link active'
@@ -25,7 +25,7 @@
 					m_link='nav-link' 
 				end
 				%>
-						<%=link_to galleries_path,:class=>m_link do %><%= t('activerecord.models.gallery') %><span class="visible-xs glyphicon glyphicon-chevron-right pull-right"></span><% end %></li>
+						<%=link_to galleries_path,:class=>m_link do %><%= t('activerecord.models.gallery') %><% end %></li>
 					<li class="nav-item">
 					<% if params[:controller]=='blogs'
 					m_link='nav-link active'
@@ -33,7 +33,7 @@
 					m_link='nav-link' 
 				end
 				%>
-						<%=link_to blogs_path,:class=>m_link do %><%= t('activerecord.models.blog') %><span class="visible-xs glyphicon glyphicon-chevron-right pull-right"></span><% end %></li>
+						<%=link_to blogs_path,:class=>m_link do %><%= t('activerecord.models.blog') %><% end %></li>
 					<li class="nav-item">
 					<% if params[:controller]=='questions'
 					m_link='nav-link active'
@@ -41,7 +41,7 @@
 					m_link='nav-link' 
 				end
 				%>
-						<%=link_to questions_path,:class=>m_link do %><%= t('activerecord.models.question') %><span class="visible-xs glyphicon glyphicon-chevron-right pull-right"></span><% end %></li>
+						<%=link_to questions_path,:class=>m_link do %><%= t('activerecord.models.question') %><% end %></li>
 					<li class="nav-item">
 					<% if params[:controller]=='guest_books'
 					m_link='nav-link active'
@@ -49,7 +49,7 @@
 					m_link='nav-link' 
 				end
 				%>
-						<%=link_to guest_books_path,:class=>m_link do %><%= t('activerecord.models.guest_book') %><span class="visible-xs glyphicon glyphicon-chevron-right pull-right"></span><% end %></li>
+						<%=link_to guest_books_path,:class=>m_link do %><%= t('activerecord.models.guest_book') %><% end %></li>
 					<li class="nav-item">
 						<% if params[:controller]=='programs'
 							m_link='nav-link active'
@@ -57,7 +57,6 @@
 							m_link='nav-link' 
 						end
 						%>
-						<%=link_to programs_path,:class=>m_link do %><%= t('activerecord.models.program') %><span class="visible-xs glyphicon glyphicon-chevron-right pull-right"></span><% end %></li>
 				</ul>
 			</nav>
 		</div>
