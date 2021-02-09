@@ -1,4 +1,4 @@
-class Admin::RecipeCommentsController < Admin::AdminController
+class Admin::BlogCommentsController < Admin::AdminController
   def show   
     @recipe_comment = RecipeComment.find(params[:id])
     @parent=@recipe_comment.recipe
