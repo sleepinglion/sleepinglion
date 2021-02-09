@@ -44,10 +44,6 @@ gem 'globalize'
 
 gem 'impressionist'
 gem 'acts-as-taggable-on', '~> 7.0'
-gem 'rails-letsencrypt'
-gem 'jquery-rails'
-gem 'fancybox-rails'
-gem 'jquery-easing-rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

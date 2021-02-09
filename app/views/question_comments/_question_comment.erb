@@ -1,7 +1,7 @@
 <li class="media">
 	<%=link_to '#',:class=>"pull-left" do %>
 		<% if question_comment.user %>
-			<%= image_tag question_comment.user.photo.small_thumb,:alt=>question_comment.user.name %>
+			<%= image_tag question_comment.user.photo.small_thumb.url,:alt=>question_comment.user.name %>
 		<% else %>
 			<%= image_tag 'anon.png',:alt=>question_comment.name %>
 		<% end %>

@@ -1,18 +1,18 @@
 class GuestBooksController < AnonBoardController
-  impressionist :actions=>[:show]
+  impressionist :actions => [:show]
   before_action :set_guest_book, only: [:show, :edit, :update, :destroy]
 
   def initialize(*params)
     super(*params)
-    @controller_name=t('activerecord.models.guest_book')
-    @title=t('activerecord.models.guest_book')
-    @meta_description=t(:meta_description_guest_book)
+    @controller_name = t('activerecord.models.guest_book')
+    @title = t('activerecord.models.guest_book')
+    @meta_description = t(:meta_description_guest_book)
   end
 
   # GET /guest_books
   # GET /guest_books.json
   def index
-    @guest_books = GuestBook.order(id:'desc').page(params[:page]).per(15)
+    @guest_books = GuestBook.order(id: 'desc').page(params[:page]).per(15)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -23,11 +23,11 @@ class GuestBooksController < AnonBoardController
   # GET /guest_books/1
   # GET /guest_books/1.json
   def show
-    @guest_book_comments=@guest_book.guest_book_comment.order(id:'desc').page(params[:page]).per(15)
-    @guest_book_comment=GuestBookComment.new
+    @guest_book_comments = @guest_book.guest_book_comment.order(id: 'desc').page(params[:page]).per(15)
+    @guest_book_comment = GuestBookComment.new
 
-    @title=@guest_book.title+t(:title_separator)+t(:application_name)
-    @script="board/show"
+    @title = @guest_book.title + t(:title_separator) + t(:application_name)
+    @script = "board/show"
 
     respond_to do |format|
       format.html # show.html.erb
@@ -57,22 +57,22 @@ class GuestBooksController < AnonBoardController
     @guest_book = GuestBook.new(guest_book_params)
 
     if current_user
-      @guest_book.user_id=current_user.id
+      @guest_book.user_id = current_user.id
     end
 
     respond_to do |format|
       if Rails.env.production?
         if current_user
-          result=@guest_book.save
+          result = @guest_book.save
         else
-          result=verify_recaptcha(:model => @guest_book, :message => "Oh! It's error with reCAPTCHA!") && @guest_book.save
+          result = verify_recaptcha(:model => @guest_book, :message => "Oh! It's error with reCAPTCHA!") && @guest_book.save
         end
       else
-        result=@guest_book.save
+        result = @guest_book.save
       end
 
       if result
-        format.html { redirect_to @guest_book, :notice=> @controller_name +t(:message_success_create)}
+        format.html { redirect_to @guest_book, :notice => @controller_name + t(:message_success_create) }
         format.json { render :json => @guest_book, :status => :created, :location => @guest_book }
       else
         format.html { render :action => "new" }
@@ -86,7 +86,7 @@ class GuestBooksController < AnonBoardController
   def update
     respond_to do |format|
       if @guest_book.update_attributes(guest_book_params)
-        format.html { redirect_to @guest_book, :notice=> @controller_name +t(:message_success_update)}
+        format.html { redirect_to @guest_book, :notice => @controller_name + t(:message_success_update) }
         format.json { head :ok }
       else
         format.html { render :action => "edit" }
@@ -113,6 +113,7 @@ class GuestBooksController < AnonBoardController
   end
 
   private
+
   # Use callbacks to share common setup or constraints between actions.
   def set_guest_book
     @guest_book = GuestBook.find(params[:id])
@@ -120,6 +121,6 @@ class GuestBooksController < AnonBoardController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def guest_book_params
-    params.require(:guest_book).permit(:id,:name,:password,:title,guest_book_content_attributes: [:id,:content],guest_book_comment_attributes: [:id,:content])
+    params.require(:guest_book).permit(:id, :name, :password, :title, guest_book_content_attributes: [:id, :content], guest_book_comment_attributes: [:id, :content])
   end
 end

@@ -1,64 +1,62 @@
 <header>
-	<div class="container">
-		<div class="row">
-			<h1 class="col-12 col-lg-4"><%= link_to t(:home_title),root_path %></h1>
-			<% if user_signed_in? %>
-			<ul id="top_menu">
-				<li><%= link_to current_user.nickname,edit_user_registration_path %><%= t(:welcome)%></li>
-				<li><%= link_to t(:logout),destroy_user_session_path %></li>
-			</ul>
-			<% end %>
-			<nav class="col-12 col-lg-8">
-				<ul class="nav nav-pills float-right">
-					<li class="nav-item">
-					<% if params[:controller]=='intro'
-					m_link='nav-link active'
-				else
-					m_link='nav-link' 
-				end
-				%>
-						<%=link_to intro_index_path,:class=>m_link do %><%= t('activerecord.models.intro') %><% end %></li>
-					<li class="nav-item">
-					<% if params[:controller]=='galleries'
-					m_link='nav-link active'
-				else
-					m_link='nav-link' 
-				end
-				%>
-						<%=link_to galleries_path,:class=>m_link do %><%= t('activerecord.models.gallery') %><% end %></li>
-					<li class="nav-item">
-					<% if params[:controller]=='blogs'
-					m_link='nav-link active'
-				else
-					m_link='nav-link' 
-				end
-				%>
-						<%=link_to blogs_path,:class=>m_link do %><%= t('activerecord.models.blog') %><% end %></li>
-					<li class="nav-item">
-					<% if params[:controller]=='questions'
-					m_link='nav-link active'
-				else
-					m_link='nav-link' 
-				end
-				%>
-						<%=link_to questions_path,:class=>m_link do %><%= t('activerecord.models.question') %><% end %></li>
-					<li class="nav-item">
-					<% if params[:controller]=='guest_books'
-					m_link='nav-link active'
-				else
-					m_link='nav-link' 
-				end
-				%>
-						<%=link_to guest_books_path,:class=>m_link do %><%= t('activerecord.models.guest_book') %><% end %></li>
-					<li class="nav-item">
-						<% if params[:controller]=='programs'
-							m_link='nav-link active'
-						else
-							m_link='nav-link' 
-						end
-						%>
-				</ul>
-			</nav>
-		</div>
-	</div>
+  <div class="container">
+    <div class="row">
+      <h1 class="col-12 col-lg-4"><%= link_to t(:home_title), root_path %></h1>
+      <% if user_signed_in? %>
+        <ul id="top_menu">
+          <li><%= link_to current_user.nickname, edit_user_registration_path %><%= t(:welcome) %></li>
+          <li><%= link_to t(:logout), destroy_user_session_path %></li>
+        </ul>
+      <% end %>
+      <nav class="col-12 col-lg-8">
+        <ul class="nav nav-pills float-right">
+          <li class="nav-item">
+            <% if params[:controller] == 'intro'
+                 m_link = 'nav-link active'
+               else
+                 m_link = 'nav-link'
+               end
+            %>
+            <%= link_to intro_index_path, :class => m_link do %><%= t('activerecord.models.intro') %>
+            <% end %></li>
+          <li class="nav-item">
+            <% if params[:controller] == 'galleries'
+                 m_link = 'nav-link active'
+               else
+                 m_link = 'nav-link'
+               end
+            %>
+            <%= link_to galleries_path, :class => m_link do %><%= t('activerecord.models.gallery') %>
+            <% end %></li>
+          <li class="nav-item">
+            <% if params[:controller] == 'blogs'
+                 m_link = 'nav-link active'
+               else
+                 m_link = 'nav-link'
+               end
+            %>
+            <%= link_to blogs_path, :class => m_link do %><%= t('activerecord.models.blog') %>
+            <% end %></li>
+          <li class="nav-item">
+            <% if params[:controller] == 'questions'
+                 m_link = 'nav-link active'
+               else
+                 m_link = 'nav-link'
+               end
+            %>
+            <%= link_to questions_path, :class => m_link do %><%= t('activerecord.models.question') %>
+            <% end %></li>
+          <li class="nav-item">
+            <% if params[:controller] == 'guest_books'
+                 m_link = 'nav-link active'
+               else
+                 m_link = 'nav-link'
+               end
+            %>
+            <%= link_to guest_books_path, :class => m_link do %><%= t('activerecord.models.guest_book') %>
+            <% end %></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
 </header>
