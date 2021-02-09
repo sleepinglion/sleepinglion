@@ -34,6 +34,7 @@ gem 'devise'
 gem 'cancancan'
 gem 'kaminari'
 gem 'carrierwave', '~> 2.0'
+gem 'carrierwave-ftp', :require => 'carrierwave/storage/ftp/all'
 gem 'mini_magick'
 gem 'sitemap_generator'
 gem 'meta-tags'
@@ -87,7 +88,7 @@ group :production do
   gem 'recaptcha', :require => 'recaptcha/rails'
   gem 'rails-letsencrypt'
   gem 'uglifier'
-  gem 'carrierwave-ftp'
+
 
   #gem 'mini_racer', platforms: :ruby
   #gem 'execjs'
