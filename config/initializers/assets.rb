@@ -13,9 +13,9 @@ style_prefix = 'app/assets/stylesheets/'
 image_prefix    = 'app/assets/images/'
 
 #javascripts = Dir["#{js_prefix}**/*.js"].map      { |x| x.gsub(js_prefix,    '') }
-css         = Dir["#{style_prefix}**/*.css"].map  { |x| x.gsub(style_prefix, '') }
-image       = Dir["#{image_prefix}**/*"].map  { |x| x.gsub(image_prefix, '') }
-scss        = Dir["#{style_prefix}**/*.scss"].map { |x| x.gsub(style_prefix, '') }
+css = Dir["#{style_prefix}**/*.css"].map { |x| x.gsub(style_prefix, '') }
+image = Dir["#{image_prefix}**/*"].map { |x| x.gsub(image_prefix, '') }
+scss = Dir["#{style_prefix}**/*.scss"].map { |x| x.gsub(style_prefix, '') }
 
 Rails.application.config.assets.precompile = (css + scss + image)
 Rails.application.config.assets.precompile << Proc.new { |path|
