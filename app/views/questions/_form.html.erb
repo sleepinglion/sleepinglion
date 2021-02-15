@@ -1,16 +1,17 @@
 <%= form_for @question,:html=>{:class=>''} do |f| %>
-<% if @question.errors.any? %>
-<div id="error_explanation">
-	<h2><%= pluralize(@question.errors.count, "error") %> prohibited this notice from being saved:</h2>
-	<ul>
-		<% @question.errors.full_messages.each do |msg| %>
-		<li>
-			<%= msg %>
-		</li>
-		<% end %>
-	</ul>
-</div>
-<% end %>
+  <% if @question.errors.any? %>
+    <div id="error_explanation" class="alert alert-danger">
+      <a href="#" class="close" data-dismiss="alert">&times;</a>
+      <h2><%= pluralize(@question.errors.count, "error") %> prohibited this request from being saved:</h2>
+      <ul>
+        <% @question.errors.full_messages.each do |msg| %>
+          <li>
+            <%= msg %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
 <% unless user_signed_in? %>
 <div class="form-group">
 	<%= f.label :name, :class=>'control-label' %>

@@ -124,6 +124,6 @@ class QuestionsController < AnonBoardController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def question_params
-    params.require(:question).permit(:id,:title,:name,:password,question_content_attributes: [:id,:content],question_answer_attributes: [:id,:content])
+    params.require(:question).permit(:user_id,:title,:name,:password,question_content_attributes: [:content],question_answer_attributes: [:content]).merge(:user_id=>current_user)
   end
 end

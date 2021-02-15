@@ -286,6 +286,8 @@ GEM
     nokogiri (1.11.1)
       mini_portile2 (~> 2.5.0)
       racc (~> 1.4)
+    nokogiri (1.11.1-x86_64-linux)
+      racc (~> 1.4)
     orm_adapter (0.5.0)
     popper_js (1.16.0)
     public_suffix (4.0.6)
@@ -438,6 +440,7 @@ GEM
 
 PLATFORMS
   ruby
+  x86_64-linux
 
 DEPENDENCIES
   acts-as-taggable-on (~> 7.0)
@@ -489,4 +492,4 @@ DEPENDENCIES
   webpacker (~> 5.0)
 
 BUNDLED WITH
-   2.1.4
+   2.2.2
