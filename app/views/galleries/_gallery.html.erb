@@ -37,7 +37,8 @@
 			<%= simple_format gallery.content %>
 		</div>
 		<div class="add_info">
-			<%= render :partial => 'users/data', :locals => { :user => gallery.user, :itemprop => 'author' } %> / <span itemprop="dateCreated" datetime="<%= gallery.created_at %>"><%= gallery.created_at.to_date %></span><span class="none" itemprop="dateModified" datetime="<%= gallery.updated_at %>"><%= gallery.updated_at.to_date %></span>
+			<%= render :partial => 'users/data', :locals => { :user => gallery.user, :itemprop => 'author' } %>
+      <span itemprop="dateCreated" datetime="<%= gallery.created_at %>"><%= get_dt_format(gallery.created_at.to_date) %></span><span class="none" itemprop="dateModified" datetime="<%= gallery.updated_at %>"><%= gallery.updated_at.to_date %></span>
 		</div>
 		<% if can? :update, @manage %>
 		<div id="sl_gallery_menu">
@@ -63,7 +64,7 @@
 			<div class="carousel-item<% if index.zero? %> active<% end %>">
 				<% gallery.each_with_index do |gallery,index2| %>
 				<% if(index2>=5) then g_class=' nm' else g_class='' end %>
-				<%= link_to image_tag(asset_path('ajax-loader.gif'),:alt=>gallery.title,:'data-original'=>sl_get_thumb(gallery.photo.to_s,'medium'),:class=>'lazy'),gallery_path(gallery),:class=>"#{g_class}" %>
+				<%= link_to image_tag(asset_path('ajax-loader.gif'),:alt=>gallery.title,:'data-original'=>sl_get_thumb(gallery.photo.to_s,'medium'),:'data-date'=>get_dt_format(gallery.created_at.to_date),:class=>'lazy'),gallery_path(gallery),:class=>"#{g_class}" %>
 				<noscript>
 					<%= link_to image_tag(sl_get_thumb(gallery.photo.to_s,'medium'),:alt=>gallery.title),gallery_path(gallery),:title=>gallery.title %><% if gallery.id==gallery.id %><span class="none" itemprop="thumbnailUrl"><%= sl_get_thumb(gallery.photo.to_s,'small') %></span><% end %>
 				</noscript>
