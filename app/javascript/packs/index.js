@@ -30,7 +30,8 @@ $(document).ready(function(){
             $("#sl_gallery_left img").attr('src',data.photo.large_thumb.url).animate({ opacity: "1" }, 400,function(){
                 $("#sl_gallery_left figcaption").animate({bottom:0,opacity:'0.8'},400);
             });
-            $("#sl_gallery_right div:first p").html(nl2br(data.content));
+            $("#sl_gallery_right div:first p").html(nl2br(data.content)).effect('highlight');
+            $("#sl_gallery_right div.add_info span[itemprop='dateCreated']").text(data.created_date).effect('highlight');
             $("#sl_gallery_menu a:first").attr('href','/galleries/edit/'+data.id);
             $("#sl_gallery_menu a:eq(1)").attr('href','/galleries/confirm_delete/'+data.id);
             document.title=data.title+'title_separator'+'application_name';

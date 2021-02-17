@@ -4018,6 +4018,11 @@ jquery-tagcanvas@^2.9.0:
   resolved "https://registry.yarnpkg.com/jquery-tagcanvas/-/jquery-tagcanvas-2.9.0.tgz#8e4a0fef161516191f196e7cf194c70c4c531e90"
   integrity sha512-nZaJHtoJQY7iYgToLZX4woVqiBZYesqH82irIEMorV275HzH3Jq9r9S3OMFKRIqf1Jkyif2xLLm7wtSpZJEFug==
 
+jquery-ui-dist@^1.12.1:
+  version "1.12.1"
+  resolved "https://registry.yarnpkg.com/jquery-ui-dist/-/jquery-ui-dist-1.12.1.tgz#5c0815d3cc6f90ff5faaf5b268a6e23b4ca904fa"
+  integrity sha1-XAgV08xvkP9fqvWyaKbiO0ypBPo=
+
 jquery.easing@^1.4.1:
   version "1.4.1"
   resolved "https://registry.yarnpkg.com/jquery.easing/-/jquery.easing-1.4.1.tgz#47982c5836bd758fd48494923c4a101ef6e93e3b"

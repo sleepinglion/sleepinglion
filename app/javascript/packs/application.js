@@ -8,6 +8,7 @@
 ///require("@rails/activestorage").start()
 //require("channels")
 require("jquery");
+require("jquery-ui")
 require("bootstrap");
 require("jquery-tagcanvas");
 require("./jquery.lazyload.min");
