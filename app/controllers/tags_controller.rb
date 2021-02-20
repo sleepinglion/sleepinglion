@@ -88,6 +88,6 @@ class TagsController < BoardController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def tag_params
-    params.require(:tag).permit(:id,:title,tag_content_attributes: [:id,:content])
+    params.require(:tag).permit(:id,:title,tag_content_attributes: [:content])
   end
 end

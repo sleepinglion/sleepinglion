@@ -52,23 +52,17 @@ class BlogsController < ApplicationController
     if(params[:blog_category_id])
       @blog_category_id=params[:blog_category_id]
     end
-
-    @script="new"
   end
 
   # GET /blogs/1/edit
   def edit
     @blog_category_id=@blog.blog_category_id
-    @script="new"
   end
 
   # POST /blogs
   # POST /blogs.json
   def create
     @blog = Blog.new(blog_params)
-    @blog.user_id=current_user.id
-
-    @script="new"
 
     respond_to do |format|
       if @blog.save
@@ -84,8 +78,6 @@ class BlogsController < ApplicationController
   # PATCH/PUT /blogs/1
   # PATCH/PUT /blogs/1.json
   def update
-    @script="new"
-
     respond_to do |format|
       if @blog.update(blog_params)
         format.html { redirect_to @blog, notice: @controller_name +t(:message_success_update)}
@@ -116,6 +108,6 @@ class BlogsController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def blog_params
-    params.require(:blog).permit(:blog_category_id, :title, :description, :tag_list, :photo, :photo_cache, blog_content_attributes: [:id,:content]).merge(user_id: current_user.id)
+    params.require(:blog).permit(:blog_category_id, :title, :description, :tag_list, :photo, :photo_cache, blog_content_attributes: [:content]).merge(user_id: current_user.id)
   end
 end

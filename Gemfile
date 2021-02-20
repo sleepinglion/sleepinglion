@@ -43,7 +43,7 @@ gem 'i18n-js'
 gem 'globalize'
 
 gem 'impressionist'
-gem 'acts-as-taggable-on', '~> 7.0'
+gem 'acts-as-taggable-on'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
